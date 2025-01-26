@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pilot2254 - Web & Game Developer Portfolio</title>
+<meta name="description" content="Portfolio for Mike, a Web and Game Developer specializing in innovative solutions">
+<meta name="keywords" content="Web Development, Game Development, Portfolio, HTML, CSS, JavaScript, Unity, Unreal Engine, C++, C#, 3D, Blender">
+<meta name="author" content="Mike">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script src="https://kit.fontawesome.com/76661d0faf.js" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    primary: '#FF6B00',
+                    secondary: '#FFB700',
+                },
+                fontFamily: {
+                    'rajdhani': ['Rajdhani', 'sans-serif'],
+                },
+            }
+        }
+    }
+</script>
+
+<style>
+    body {
+        font-family: 'Rajdhani', sans-serif;
+        background-color: #0a0a0a;
+        color: #e0e0e0;
+    }
+    .bg-pattern {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23FF6B00' fill-opacity='0.05'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .text-glow {
+        text-shadow: 0 0 10px rgba(255, 107, 0, 0.7);
+    }
+    /* Custom Scrollbar Styles */
+    ::-webkit-scrollbar {
+        width: 12px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #1a1a1a;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #FF6B00;
+        border-radius: 6px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #FFB700;
+    }
+    /* For Firefox */
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: #FF6B00 #1a1a1a;
+    }
+    /* Custom Scrollbar Animation */
+    @keyframes glow {
+        0% { box-shadow: 0 0 5px #FF6B00; }
+        50% { box-shadow: 0 0 20px #FF6B00; }
+        100% { box-shadow: 0 0 5px #FF6B00; }
+    }
+    ::-webkit-scrollbar-thumb {
+        animation: glow 3s infinite;
+    }
+    /* Skill Meter Styles */
+    .skill-meter {
+        height: 10px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    .skill-progress {
+        height: 100%;
+        background-color: #FF6B00;
+        border-radius: 5px;
+        transition: width 1s ease-in-out;
+    }
+</style>
+</head>
+<body class="bg-pattern min-h-screen font-rajdhani">
+<header class="fixed w-full bg-black bg-opacity-50 backdrop-blur-md z-50">
+    <nav class="container mx-auto px-6 py-4">
+        <ul class="flex justify-center space-x-6">
+            <li><a href="#home" class="text-primary text-lg hover:text-secondary transition-colors">&lt;Home /&gt;</a></li>
+            <li><a href="#about" class="text-primary text-lg hover:text-secondary transition-colors">&lt;About /&gt;</a></li>
+            <li><a href="#skills" class="text-primary text-lg hover:text-secondary transition-colors">&lt;Skills /&gt;</a></li>
+            <li><a href="#projects" class="text-primary text-lg hover:text-secondary transition-colors">&lt;Projects /&gt;</a></li>
+            <li><a href="#contact" class="text-primary text-lg hover:text-secondary transition-colors">&lt;Contact /&gt;</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section id="home" class="min-h-screen flex items-center justify-center bg-transparent relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-primary/20 to-transparent pointer-events-none"></div>
+        <div class="text-center relative z-10">
+            <h1 class="text-6xl md:text-8xl font-bold mb-4 text-primary text-glow">Pilot2254</h1>
+            <p class="text-2xl md:text-3xl text-neutral-300">
+                I'm a <span id="typed-output" class="text-primary"></span>
+            </p>
+            <div class="mt-8">
+                <a href="#about" class="inline-block bg-primary hover:bg-secondary text-white font-bold py-3 px-6 rounded-full transition-colors shadow-lg">Explore My Work</a>
+            </div>
+        </div>
+        <div id="particles-js" class="absolute inset-0 pointer-events-none"></div>
+    </section>
+
+    <section id="about" class="py-20 bg-transparent">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-8 text-center text-primary text-glow">About Me</h2>
+            <div class="max-w-3xl mx-auto text-center bg-black bg-opacity-50 p-8 rounded-lg shadow-lg">
+                <p class="mb-6 text-lg text-neutral-300">Hello! I'm Mike, a passionate Web and Game Developer with a keen interest in creating innovative digital experiences. At 15 years old, I've already founded RedFox Studios, where I lead various exciting projects.</p>
+                <p class="text-lg text-neutral-300">Beyond coding, I'm an avid sports enthusiast, enjoying floorball and hockeyball. I also play the guitar and have a deep fascination with astronomy, physics, and mathematics. My dream? To one day explore space!</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-20 bg-transparent">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-12 text-center text-primary text-glow">My Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-black bg-opacity-50 rounded-lg p-6 transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-xl font-semibold mb-4 text-primary">HTML5</h3>
+                    <div class="skill-meter">
+                        <div class="skill-progress" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="bg-black bg-opacity-50 rounded-lg p-6 transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-xl font-semibold mb-4 text-primary">CSS3</h3>
+                    <div class="skill-meter">
+                        <div class="skill-progress" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="bg-black bg-opacity-50 rounded-lg p-6 transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-xl font-semibold mb-4 text-primary">JavaScript</h3>
+                    <div class="skill-meter">
+                        <div class="skill-progress" style="width: 40%"></div>
+                    </div>
+                </div>
+                <div class="bg-black bg-opacity-50 rounded-lg p-6 transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-xl font-semibold mb-4 text-primary">PHP</h3>
+                    <div class="skill-meter">
+                        <div class="skill-progress" style="width: 10%"></div>
+                    </div>
+                </div>
+                <div class="bg-black bg-opacity-50 rounded-lg p-6 transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-xl font-semibold mb-4 text-primary">Unity</h3>
+                    <div class="skill-meter">
+                        <div class="skill-progress" style="width: 55%"></div>
+                    </div>
+                </div>
+                <div class="bg-black bg-opacity-50 rounded-lg p-6 transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-xl font-semibold mb-4 text-primary">Unreal Engine</h3>
+                    <div class="skill-meter">
+                        <div class="skill-progress" style="width: 65%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-20 bg-transparent">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-12 text-center text-primary text-glow">My Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-black bg-opacity-50 rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <img src="/assets/images/redfox.png" alt="RedFox Studios" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-primary">RedFox Studios</h3>
+                        <p class="text-neutral-300 mb-4">Founded and manage RedFox Studios, overseeing various game development projects and an esports team.</p>
+                        <a href="/home/" class="inline-block bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded-full transition-colors">View Project</a>
+                    </div>
+                </div>
+                <div class="bg-black bg-opacity-50 rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <img src="/assets/images/strikeforce.png" alt="StrikeForce" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-primary">StrikeForce</h3>
+                        <p class="text-neutral-300 mb-4">A 5v5 strategic battleground game showcasing advanced game development and multiplayer networking skills.</p>
+                        <a href="/strikeforce/" class="inline-block bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded-full transition-colors">View Project</a>
+                    </div>
+                </div>
+                <div class="bg-black bg-opacity-50 rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <img src="/assets/images/vizzy-visualizer.jpg" alt="Audio Visualizer" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-primary">Audio Visualizer</h3>
+                        <p class="text-neutral-300 mb-4">Created stunning audio visualizations using Vizzy.io, demonstrating proficiency in VFX and creative coding.</p>
+                        <a href="https://www.youtube.com/@Pilot2254./videos" class="inline-block bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded-full transition-colors">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-transparent">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-12 text-center text-primary text-glow">Get In Touch</h2>
+            <div class="max-w-md mx-auto text-center bg-black bg-opacity-50 p-8 rounded-lg shadow-lg">
+                <p class="text-lg text-neutral-300 mb-6">I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
+                <div class="flex justify-center space-x-6 mb-8">
+                    <a href="mailto:michal-flaska@redfox-studios.org" class="text-primary hover:text-secondary transition-colors">
+                        <i class="fas fa-envelope text-3xl"></i>
+                    </a>
+                    <a href="https://github.com/pilot2254" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-secondary transition-colors">
+                        <i class="fab fa-github text-3xl"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@Pilot2254./" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-secondary transition-colors">
+                        <i class="fab fa-youtube text-3xl"></i>
+                    </a>
+                    <a href="https://x.com/pilot2254" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-secondary transition-colors">
+                        <i class="fab fa-twitter text-3xl"></i>
+                    </a>
+                </div>
+                <p class="text-neutral-300">Or join my Discord community:</p>
+                <a href="https://discord.gg/JWVMk9pvPS" target="_blank" rel="noopener noreferrer" class="inline-block bg-primary hover:bg-secondary text-white font-bold py-2 px-6 rounded-full transition-colors mt-4">Join Discord</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="bg-black bg-opacity-50 py-6">
+    <div class="container mx-auto px-6 text-center">
+        <p class="text-neutral-400">&copy; <a href="https://redfox-studios.org/" class="text-orange-500 hover:text-orange-400 underline" target="_blank" rel="noopener noreferrer">RedFox Studios</a> All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        // Particles.js
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: "#FF6B00" },
+                shape: { type: "circle" },
+                opacity: { value: 0.5, random: false },
+                size: { value: 3, random: true },
+                line_linked: { enable: true, distance: 150, color: "#FF6B00", opacity: 0.4, width: 1 },
+                move: { enable: true, speed: 6, direction: "none", random: false, straight: false, out_mode: "out", bounce: false }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: { onhover: { enable: true, mode: "repulse" }, onclick: { enable: true, mode: "push" }, resize: true },
+                modes: { repulse: { distance: 100, duration: 0.4 }, push: { particles_nb: 4 } }
+            },
+            retina_detect: true
+        });
+
+        // Intersection Observer for fade-in animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach((section) => {
+            observer.observe(section);
+        });
+
+        // Typed.js
+        new Typed('#typed-output', {
+            strings: ['Web Developer', 'Game Developer', 'UI/UX Designer', 'RedFox Studios CEO', 'Content Creator'],
+            typeSpeed: 50,
+            backSpeed: 30,
+            backDelay: 1500,
+            loop: true
+        });
+
+        // Skill Meter Animation
+        const skillProgress = document.querySelectorAll('.skill-progress');
+        skillProgress.forEach(progress => {
+            const progressValue = progress.style.width;
+            progress.style.width = '0%';
+            setTimeout(() => {
+                progress.style.width = progressValue;
+            }, 500);
+        });
+    });
+</script>
+<style>
+    .animate-fade-in {
+        animation: fadeIn 1s ease-out forwards;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
+</body>
+</html>
