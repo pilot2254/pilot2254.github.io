@@ -92,7 +92,7 @@ const CONFIG = {
             headers: {},
         },
         webhook: {
-            url: '', // Your Discord webhook URL
+            url: 'https://discord.com/api/webhooks/1338871646144172124/kM98a--P88de47a9qoq50uR4ZlVO5f9AtdzTHO7ozufuW_JcY3pgsxkKXgAWIbc-iQq7', // Your Discord webhook URL
             username: "IP Logger",
             embedColor: 1146986,
         }
