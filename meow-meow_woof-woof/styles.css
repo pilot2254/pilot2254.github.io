@@ -1,6 +1,13 @@
 /* Base Styles */
 * {
     font-family: 'Comic Neue', cursive;
+    cursor: crosshair;
+}
+
+*,
+*::before,
+*::after {
+    cursor: crosshair !important;
 }
 
 /* Scrollbar Styles */
