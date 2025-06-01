@@ -1,1 +1,0 @@
-The assets here are not owned by me
