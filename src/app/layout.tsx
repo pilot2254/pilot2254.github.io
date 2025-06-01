@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://redfox-studios.org/pilot2254",
+    url: "https://pilot2254.github.io",
     title: "Michal Flaška Portfolio | Full Stack Developer & UI/UX Designer",
     description: "Professional portfolio of Michal Flaška, showcasing web development, mobile applications, and UI/UX design projects.",
     siteName: "Michal Flaška Portfolio",
