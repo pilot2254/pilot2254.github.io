@@ -14,86 +14,105 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 import { Github, Mail, Twitter, Linkedin, ExternalLink, Code2, Brain, Contact, AlertCircle, Trophy, Briefcase, GraduationCap, Palette, Smartphone, Server, Database, HeadingIcon as HeadingQuestion, Joystick } from 'lucide-react'
 
 const skills = [
-
-
   { name: "React", level: 30, category: "Frontend" },
   { name: "Next.js", level: 30, category: "Frontend" },
   { name: "TailwindCSS", level: 60, category: "Frontend" },
+  { name: "shadcn/ui", level: 30, category: "Frontend" },
 
-  { name: "NodeJS", level: 10, category: "Backend" },
-  { name: "MySQL", level: 5, category: "Backend" },
+  { name: "NodeJS", level: 20, category: "Backend" },
+  { name: "SQLite", level: 10, category: "Backend" },
 
   { name: "HTML", level: 90, category: "Languages" },
   { name: "CSS", level: 80, category: "Languages" },
-  { name: "JavaScript", level: 20, category: "Languages" },
+  { name: "JavaScript", level: 40, category: "Languages" },
   { name: "TypeScript", level: 30, category: "Languages" },
 
   { name: "nmap", level: 20, category: "Other" },
-  { name: "Cheat Engine", level: 40, category: "Other" },
-  { name: "Hydra", level: 20, category: "Other" },
-  { name: "Flipper Zero Dev", level: 70, category: "Other" },
+  { name: "Cheat Engine", level: 10, category: "Other" },
+  { name: "Flipper Zero Dev", level: 15, category: "Other" },
 ]
 
 const projects = [
   {
     title: "RedFox Studios",
-    description: "A comprehensive web application built with Next.js and TypeScript",
-    tags: ["React", "Next.js", "TypeScript", "shadcn/ui", "Website"],
+    description: "A company website built with Next.js and TypeScript",
+    tags: ["React", "Next.js", "TypeScript", "shadcn/ui"],
     link: "https://redfox-studios.org",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/placeholder.png?height=300&width=400",
   },
   {
-    title: "Discord Bot",
-    description: "Fully functional discord bot for a company",
-    tags: ["Node.js", "JavaScript", "Discord API", "Bot", "Commands"],
-    link: "https://github.com/RedFox-Studios/discord-bot",
-    image: "/placeholder.svg?height=300&width=400",
+    title: "Contrast Bot",
+    description: "Fully functional discord bot with economy, gambling, and more",
+    tags: ["Node.js", "Typescript", "Discord.js", "SQLite", "Slash Commands"],
+    link: "https://github.com/contrast-bot/contrast-bot",
+    image: "/placeholder.png?height=300&width=400",
   },
   {
-    title: "qop3 Autocompleter",
-    description: "VBS Application level autocomplete for game qop3",
-    tags: ["VBS", "Game", "Autocomplete"],
-    link: "https://github.com/RedFox-Studios/qop3-bot",
-    image: "/placeholder.svg?height=300&width=400",
+    title: "Calculator",
+    description: "Simple and heavily configurable calculator made in electron",
+    tags: ["Electron", "JavaScript", "Customization", "Calculator"],
+    link: "https://github.com/pilot2254/calculator",
+    image: "/placeholder.png?height=300&width=400",
+  },
+  {
+    title: "Guitar Tone Finder",
+    description: "A clean, minimalist web application designed to help guitar students practice identifying tones on the fretboard.",
+    tags: ["HTML", "CSS", "TailwindCSS", "JavaScript"],
+    link: "https://github.com/pilot2254/guitar-tone-finder",
+    image: "/placeholder.png?height=300&width=400",
+  },
+  {
+    title: "Steam Playtime Farmer",
+    description: "A simple Node.js application for farming playtime across multiple Steam games simultaneously.",
+    tags: ["NodeJS", "JavaScript", "Steam API"],
+    link: "https://github.com/pilot2254/steam-playtime-farmer",
+    image: "/placeholder.png?height=300&width=400",
+  },
+  {
+    title: "See More Projects",
+    description: "See more of my projects on GitHub",
+    tags: ["See", "More", "Projects", "On", "My", "GitHub"],
+    link: "https://github.com/pilot2254?tab=repositories",
+    image: "/placeholder.png?height=300&width=400",
   },
 ]
 
 const testimonials = [
   {
     name: "Matyáš Hájek",
-    role: "Co-CEO at RedFox Studios",
+    role: "Co-Founder of RedFox Studios",
     content: "Exceptional work and great attention to detail!",
-    avatar: "/placeholder.svg?height=40&width=40",
+    avatar: "/user.svg?height=40&width=40",
   },
   {
     name: "Kayley Hájek",
     role: "Designer at RedFox Studios",
     content: "One of the most talented developers I've worked with.",
-    avatar: "/placeholder.svg?height=40&width=40",
+    avatar: "/user.svg?height=40&width=40",
   },
   {
     name: "Martin Weiss",
     role: "Investor",
     content: "Amazing, high quality and fast work. A pleasure to work with.",
-    avatar: "/placeholder.svg?height=40&width=40",
+    avatar: "/user.svg?height=40&width=40",
   },
   {
     name: "Richard Bačko",
     role: "Co Worker",
     content: "Very good man to work with.",
-    avatar: "/placeholder.svg?height=40&width=40",
+    avatar: "/user.svg?height=40&width=40",
   },
   {
     name: "Maximilián Repa",
     role: "Co Worker",
     content: "Helped us with music at gamejam 2024.",
-    avatar: "/placeholder.svg?height=40&width=40",
+    avatar: "/user.svg?height=40&width=40",
   },
   {
     name: "Martin Paluš",
     role: "Co Worker",
     content: "Did a realy good work!",
-    avatar: "/placeholder.svg?height=40&width=40",
+    avatar: "/user.svg?height=40&width=40",
   },
 ]
 
@@ -163,7 +182,7 @@ export default function Home() {
             <div className="text-center space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">About Me</h2>
               <p className="mx-auto max-w-[700px] text-muted-foreground md:text-lg">
-                Passionate about creating beautiful and functional web applications
+                Creating beautiful and functional web applications.
               </p>
             </div>
             <div className="w-full max-w-4xl mt-8">
@@ -185,7 +204,7 @@ export default function Home() {
                 <TabsContent value="experience">
                   <Card>
                     <CardHeader>
-                      <CardTitle>Professional Experience</CardTitle>
+                      <CardTitle>Experience</CardTitle>
                       <CardDescription>My journey in software development</CardDescription>
                     </CardHeader>
                     <CardContent>
@@ -193,7 +212,7 @@ export default function Home() {
                         <div className="space-y-8">
                           {[
                             {
-                              title: "Senior Developer",
+                              title: "Founder & CEO",
                               company: "RedFox Studios",
                               period: "2021 - Present",
                               description: [
@@ -210,7 +229,7 @@ export default function Home() {
                               period: "2024",
                               description: [
                                 "Developed a Beautifully looking portfolio",
-                                "Worked with TailwindCSS, HTML, CSS, SCSS, PHP, JS & jsdelivr",
+                                "Worked with TailwindCSS, HTML, CSS, TailwindCSS, JS",
                                 "Significantly improved visuals of the website",
                               ],
                             },
@@ -227,7 +246,7 @@ export default function Home() {
                             {
                               title: "Front-End Helper",
                               company: "Moonforge Studios",
-                              period: "2024 - 2025",
+                              period: "2024",
                               description: [
                                 "Helped install Next.js, Shadcn/ui and assisted with web development",
                                 "Worked with React, Node.js, Shadcn/ui and Git",
