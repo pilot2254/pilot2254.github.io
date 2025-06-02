@@ -336,7 +336,7 @@ export default function Home() {
                         <CardContent className="p-4 pt-0">
                           <div className="relative h-[150px] mb-4 rounded-md overflow-hidden bg-muted">
                             <img
-                              src={project.image || "/placeholder.svg"}
+                              src={project.image || "/placeholder.png"}
                               alt={`${project.title} project screenshot`}
                               className="object-cover w-full h-full"
                             />
@@ -413,7 +413,7 @@ export default function Home() {
                           <Star
                             key={i}
                             className={`h-4 w-4 ${
-                              i < testimonial.rating! ? "fill-yellow-400 text-yellow-400" : "text-muted-foreground/60"
+                              i < testimonial.rating! ? "fill-teal-400 text-teal-400" : "text-muted-foreground/60"
                             }`}
                             aria-hidden={i > 0}
                           />
