@@ -29,7 +29,7 @@ export interface Testimonial {
   company?: string
   content: string
   avatar: string
-  rating?: number
+  rating?: number // 1-5 star rating
   date?: string
 }
 

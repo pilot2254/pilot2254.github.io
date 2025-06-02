@@ -5,6 +5,10 @@
 
 import type { Testimonial } from "@/types"
 
+/**
+ * Testimonials data with ratings
+ * Ratings are on a scale of 1-5 stars
+ */
 export const testimonials: Testimonial[] = [
   {
     id: "matyas-hajek",

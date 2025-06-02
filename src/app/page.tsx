@@ -22,6 +22,7 @@ import {
   GraduationCap,
   Joystick,
   Server,
+  Star,
 } from "lucide-react"
 
 // Import data
@@ -406,6 +407,20 @@ export default function Home() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground">{testimonial.content}</p>
+                    {testimonial.rating && (
+                      <div className="flex items-center gap-1 mt-3">
+                        {Array.from({ length: 5 }).map((_, i) => (
+                          <Star
+                            key={i}
+                            className={`h-4 w-4 ${
+                              i < testimonial.rating! ? "fill-yellow-400 text-yellow-400" : "text-muted/30"
+                            }`}
+                            aria-hidden={i > 0}
+                          />
+                        ))}
+                        <span className="sr-only">{testimonial.rating} out of 5 stars</span>
+                      </div>
+                    )}
                   </CardContent>
                 </Card>
               ))}

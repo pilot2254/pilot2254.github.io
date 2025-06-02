@@ -85,3 +85,17 @@ export function generateSlug(text: string): string {
 export function prefersReducedMotion(): boolean {
   return window.matchMedia("(prefers-reduced-motion: reduce)").matches
 }
+
+/**
+ * Get star rating label
+ */
+export function getStarRatingLabel(rating: number): string {
+  const labels = {
+    1: "Poor",
+    2: "Fair",
+    3: "Good",
+    4: "Very Good",
+    5: "Excellent",
+  }
+  return labels[rating as keyof typeof labels] || "Not Rated"
+}
