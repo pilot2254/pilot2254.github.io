@@ -31,6 +31,10 @@ export const siteConfig: SiteConfig = {
       platform: "Twitter",
       url: "https://twitter.com/pilot2254",
     },
+    {
+      platform: "Kofi",
+      url: "https://ko-fi.com/pilot2254/",
+    },
   ],
   contact: {
     email: "michal.flaska@redfox-studios.org",
