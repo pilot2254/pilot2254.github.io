@@ -1,28 +1,18 @@
 import Image from "next/image"
-import { ExternalLink, Github } from 'lucide-react'
+import { ExternalLink, Github } from "lucide-react"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import { ARIA_LABELS } from "@/lib/constants"
+import type { Project } from "@/types"
 
-interface ProjectCardProps {
-  title: string
-  description: string
-  tags: string[]
-  image: string
-  demoLink?: string
-  githubLink: string
+interface ProjectCardProps extends Project {
+  className?: string
 }
 
-export function ProjectCard({
-  title,
-  description,
-  tags,
-  image,
-  demoLink,
-  githubLink,
-}: ProjectCardProps) {
+export function ProjectCard({ title, description, tags, image, demoLink, githubLink, className }: ProjectCardProps) {
   return (
-    <Card className="flex flex-col h-full card-hover overflow-hidden">
+    <Card className={`flex flex-col h-full card-hover overflow-hidden ${className || ""}`}>
       <CardHeader className="flex-none">
         <CardTitle className="line-clamp-1">{title}</CardTitle>
         <CardDescription className="line-clamp-2">{description}</CardDescription>
@@ -30,10 +20,11 @@ export function ProjectCard({
       <CardContent className="flex-1">
         <div className="relative aspect-project mb-4 overflow-hidden rounded-md bg-muted">
           <Image
-            src={image}
-            alt={title}
+            src={image || "/placeholder.png"}
+            alt={`${title} project screenshot`}
             fill
             className="object-cover transition-transform hover:scale-105"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
         <div className="flex flex-wrap gap-2">
@@ -52,6 +43,7 @@ export function ProjectCard({
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2"
+              aria-label={`View live demo of ${title} ${ARIA_LABELS.EXTERNAL_LINK}`}
             >
               <span>Live Demo</span>
               <ExternalLink className="h-4 w-4" />
@@ -64,6 +56,7 @@ export function ProjectCard({
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2"
+            aria-label={`View source code of ${title} ${ARIA_LABELS.EXTERNAL_LINK}`}
           >
             <Github className="h-4 w-4" />
             <span>Code</span>
