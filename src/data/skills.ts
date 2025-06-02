@@ -15,7 +15,7 @@ export const skills: Skill[] = [
   },
   {
     name: "Next.js",
-    level: 30,
+    level: 25,
     category: "Frontend",
     description: "Full-stack React framework with SSR and static generation",
   },
@@ -27,9 +27,15 @@ export const skills: Skill[] = [
   },
   {
     name: "shadcn/ui",
-    level: 30,
+    level: 20,
     category: "Frontend",
     description: "Modern React component library built on Radix UI",
+  },
+    {
+    name: "Electron",
+    level: 15,
+    category: "Frontend",
+    description: "Electron is a framework designed to create desktop applications using web technologies",
   },
 
   // Backend Skills
@@ -49,19 +55,19 @@ export const skills: Skill[] = [
   // Programming Languages
   {
     name: "HTML",
-    level: 90,
+    level: 75,
     category: "Languages",
     description: "Semantic markup language for web content structure",
   },
   {
     name: "CSS",
-    level: 80,
+    level: 65,
     category: "Languages",
     description: "Styling language for web presentation and layout",
   },
   {
     name: "JavaScript",
-    level: 40,
+    level: 35,
     category: "Languages",
     description: "Dynamic programming language for web development",
   },

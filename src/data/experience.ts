@@ -24,7 +24,8 @@ export const experiences: Experience[] = [
     id: "flegy-frontend",
     title: "Front-End Developer",
     company: "Flegy.sk",
-    period: "2024",
+    period: "2023 - Present",
+    current: true,
     description: [
       "Developed a Beautifully looking portfolio",
       "Worked with TailwindCSS, HTML, CSS, TailwindCSS, JS",
@@ -36,7 +37,6 @@ export const experiences: Experience[] = [
     title: "Discord Server Manager",
     company: "Retry Games",
     period: "2024 - 2025",
-    current: true,
     description: [
       "Successfully created and managed a discord server for Retry Games. And helped make the community better",
       "Worked with Regexes, Discord API, And Discord Bots",
@@ -45,11 +45,11 @@ export const experiences: Experience[] = [
   },
   {
     id: "moonforge-helper",
-    title: "Front-End Helper",
+    title: "Front-End Developer",
     company: "Moonforge Studios",
-    period: "2024",
+    period: "2024 - 2025",
     description: [
-      "Helped install Next.js, Shadcn/ui and assisted with web development",
+      "Helped the team to switch to Next.js, Shadcn/ui and assisted with web development",
       "Worked with React, Node.js, Shadcn/ui and Git",
       "Improved application performance by 40%",
     ],

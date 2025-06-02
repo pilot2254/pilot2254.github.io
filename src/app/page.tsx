@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
@@ -23,6 +22,9 @@ import {
   Joystick,
   Server,
   Star,
+  CheckCircle,
+  Clock,
+  Archive,
 } from "lucide-react"
 
 // Import data
@@ -33,12 +35,20 @@ import { experiences, education, achievements } from "@/data/experience"
 import { services } from "@/data/services"
 import { siteConfig, skillCategories } from "@/config/site"
 import { APP_CONSTANTS, EXTERNAL_LINKS, ARIA_LABELS } from "@/lib/constants"
+import { formatDate } from "@/lib/utils"
 
 // Icon mapping for services
 const iconMap = {
   Code2,
   Joystick,
   Server,
+} as const
+
+// Status icon mapping for projects
+const statusIconMap = {
+  completed: CheckCircle,
+  "in-progress": Clock,
+  archived: Archive,
 } as const
 
 export default function Home() {
@@ -140,14 +150,14 @@ export default function Home() {
                             <div key={exp.id} className="relative pl-6 border-l">
                               <div className="absolute left-0 top-1 w-2 h-2 rounded-full bg-primary -translate-x-[5px]" />
                               <h3 className="font-semibold">{exp.title}</h3>
-                              <p className="text-sm text-muted-foreground">
+                              <div className="text-sm text-muted-foreground">
                                 {exp.company} • {exp.period}
                                 {exp.current && (
                                   <Badge variant="secondary" className="ml-2">
                                     Current
                                   </Badge>
                                 )}
-                              </p>
+                              </div>
                               <ul className="mt-2 space-y-1">
                                 {exp.description.map((item, i) => (
                                   <li key={i} className="text-sm text-muted-foreground">
@@ -175,9 +185,9 @@ export default function Home() {
                             <div key={edu.id} className="relative pl-6 border-l">
                               <div className="absolute left-0 top-1 w-2 h-2 rounded-full bg-primary -translate-x-[5px]" />
                               <h3 className="font-semibold">{edu.title}</h3>
-                              <p className="text-sm text-muted-foreground">
+                              <div className="text-sm text-muted-foreground">
                                 {edu.institution} • {edu.period}
-                              </p>
+                              </div>
                               {edu.description && (
                                 <ul className="mt-2 space-y-1">
                                   {edu.description.map((item, i) => (
@@ -207,9 +217,12 @@ export default function Home() {
                             <div key={ach.id} className="relative pl-6 border-l">
                               <div className="absolute left-0 top-1 w-2 h-2 rounded-full bg-primary -translate-x-[5px]" />
                               <h3 className="font-semibold">{ach.title}</h3>
-                              <p className="text-sm text-muted-foreground">
+                              <div className="text-sm text-muted-foreground">
                                 {ach.company} • {ach.year}
-                              </p>
+                              </div>
+                              {ach.description && (
+                                <div className="text-sm text-muted-foreground mt-1">{ach.description}</div>
+                              )}
                             </div>
                           ))}
                         </div>
@@ -235,7 +248,7 @@ export default function Home() {
               {services.map((service) => {
                 const IconComponent = iconMap[service.icon as keyof typeof iconMap]
                 return (
-                  <Card key={service.id} className="flex flex-col">
+                  <Card key={service.id} className="flex flex-col h-full">
                     <CardHeader className="p-4">
                       <div className="flex items-center gap-2">
                         <div className="p-2 rounded-md bg-primary/10">
@@ -244,8 +257,20 @@ export default function Home() {
                         <CardTitle className="text-lg">{service.title}</CardTitle>
                       </div>
                     </CardHeader>
-                    <CardContent className="p-4 pt-0">
-                      <p className="text-sm text-muted-foreground">{service.description}</p>
+                    <CardContent className="p-4 pt-0 flex-1">
+                      <p className="text-sm text-muted-foreground mb-3">{service.description}</p>
+                      {service.features && service.features.length > 0 && (
+                        <div>
+                          <h4 className="text-sm font-medium mb-2">What's included:</h4>
+                          <ul className="space-y-1 ml-4">
+                            {service.features.map((feature, index) => (
+                              <li key={index} className="text-xs text-muted-foreground list-disc">
+                                {feature}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
                     </CardContent>
                   </Card>
                 )
@@ -284,26 +309,21 @@ export default function Home() {
                         {skills
                           .filter((skill) => skill.category === category)
                           .map((skill) => (
-                            <HoverCard key={skill.name}>
-                              <HoverCardTrigger asChild>
-                                <div className="space-y-2 cursor-pointer">
-                                  <div className="flex justify-between">
-                                    <h4 className="font-medium">{skill.name}</h4>
-                                    <span className="text-muted-foreground">{skill.level}%</span>
-                                  </div>
-                                  <Progress value={skill.level} className="h-2" />
+                            <div key={skill.name} className="space-y-2">
+                              <div className="flex justify-between items-center">
+                                <h4 className="font-medium">{skill.name}</h4>
+                                <div className="flex items-center gap-2">
+                                  <Badge variant="outline" className="text-xs">
+                                    {getSkillLevelDescription(skill.level)}
+                                  </Badge>
+                                  <span className="text-muted-foreground text-sm">{skill.level}%</span>
                                 </div>
-                              </HoverCardTrigger>
-                              <HoverCardContent>
-                                <div className="space-y-2">
-                                  <h4 className="font-semibold">{skill.name}</h4>
-                                  <p className="text-sm text-muted-foreground">
-                                    Level: {getSkillLevelDescription(skill.level)}
-                                  </p>
-                                  {skill.description && <p className="text-sm">{skill.description}</p>}
-                                </div>
-                              </HoverCardContent>
-                            </HoverCard>
+                              </div>
+                              <Progress value={skill.level} className="h-2" />
+                              {skill.description && (
+                                <div className="text-sm text-muted-foreground mt-1">{skill.description}</div>
+                              )}
+                            </div>
                           ))}
                       </CardContent>
                     </Card>
@@ -326,46 +346,82 @@ export default function Home() {
             <div className="w-full max-w-3xl mt-6">
               <Carousel className="w-full">
                 <CarouselContent>
-                  {projects.map((project) => (
-                    <CarouselItem key={project.id}>
-                      <Card className="border-0">
-                        <CardHeader className="p-4">
-                          <CardTitle className="text-lg">{project.title}</CardTitle>
-                          <CardDescription className="text-sm">{project.description}</CardDescription>
-                        </CardHeader>
-                        <CardContent className="p-4 pt-0">
-                          <div className="relative h-[150px] mb-4 rounded-md overflow-hidden bg-muted">
-                            <img
-                              src={project.image || "/placeholder.png"}
-                              alt={`${project.title} project screenshot`}
-                              className="object-cover w-full h-full"
-                            />
-                          </div>
-                          <div className="flex flex-wrap gap-2">
-                            {project.tags.map((tag) => (
-                              <Badge key={tag} variant="secondary" className="text-xs">
-                                {tag}
-                              </Badge>
-                            ))}
-                          </div>
-                        </CardContent>
-                        <CardFooter className="p-4 pt-0">
-                          <Button variant="outline" size="sm" className="w-full" asChild>
-                            <a
-                              href={project.githubLink}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="flex items-center justify-center gap-2"
-                              aria-label={`View ${project.title} project ${ARIA_LABELS.EXTERNAL_LINK}`}
-                            >
-                              <span>View Project</span>
-                              <ExternalLink className="h-4 w-4" />
-                            </a>
-                          </Button>
-                        </CardFooter>
-                      </Card>
-                    </CarouselItem>
-                  ))}
+                  {projects.map((project) => {
+                    const StatusIcon = project.status ? statusIconMap[project.status] : null
+                    return (
+                      <CarouselItem key={project.id}>
+                        <Card className={`border-0 ${project.featured ? "bg-accent/50" : ""}`}>
+                          <CardHeader className="p-4">
+                            <div className="flex items-start justify-between">
+                              <div className="flex-1">
+                                <CardTitle className="text-lg flex items-center gap-2">
+                                  {project.title}
+                                  {project.featured && (
+                                    <Badge variant="secondary" className="text-xs">
+                                      Featured
+                                    </Badge>
+                                  )}
+                                </CardTitle>
+                                <CardDescription className="text-sm">{project.description}</CardDescription>
+                              </div>
+                              {StatusIcon && project.status && (
+                                <div className="flex items-center gap-1 ml-2">
+                                  <StatusIcon className="h-4 w-4 text-muted-foreground" />
+                                  <span className="text-xs text-muted-foreground capitalize">
+                                    {project.status.replace("-", " ")}
+                                  </span>
+                                </div>
+                              )}
+                            </div>
+                          </CardHeader>
+                          <CardContent className="p-4 pt-0">
+                            <div className="relative h-[150px] mb-4 rounded-md overflow-hidden bg-muted">
+                              <img
+                                src={project.image || "/placeholder.svg"}
+                                alt={`${project.title} project screenshot`}
+                                className="object-cover w-full h-full"
+                              />
+                            </div>
+                            <div className="flex flex-wrap gap-2">
+                              {project.tags.map((tag) => (
+                                <Badge key={tag} variant="secondary" className="text-xs">
+                                  {tag}
+                                </Badge>
+                              ))}
+                            </div>
+                          </CardContent>
+                          <CardFooter className="p-4 pt-0 gap-2">
+                            {project.demoLink && (
+                              <Button variant="default" size="sm" className="flex-1" asChild>
+                                <a
+                                  href={project.demoLink}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="flex items-center justify-center gap-2"
+                                  aria-label={`View live demo of ${project.title} ${ARIA_LABELS.EXTERNAL_LINK}`}
+                                >
+                                  <ExternalLink className="h-4 w-4" />
+                                  <span>Demo</span>
+                                </a>
+                              </Button>
+                            )}
+                            <Button variant="outline" size="sm" className="flex-1" asChild>
+                              <a
+                                href={project.githubLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center justify-center gap-2"
+                                aria-label={`View ${project.title} source code ${ARIA_LABELS.EXTERNAL_LINK}`}
+                              >
+                                <Github className="h-4 w-4" />
+                                <span>Code</span>
+                              </a>
+                            </Button>
+                          </CardFooter>
+                        </Card>
+                      </CarouselItem>
+                    )
+                  })}
                 </CarouselContent>
                 <div className="hidden sm:flex">
                   <CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12" />
@@ -396,24 +452,27 @@ export default function Home() {
                         <AvatarImage src={testimonial.avatar || "/placeholder.svg"} alt={testimonial.name} />
                         <AvatarFallback>{testimonial.name[0]}</AvatarFallback>
                       </Avatar>
-                      <div>
+                      <div className="flex-1">
                         <CardTitle className="text-lg">{testimonial.name}</CardTitle>
                         <CardDescription>
                           {testimonial.role}
                           {testimonial.company && ` at ${testimonial.company}`}
                         </CardDescription>
+                        {testimonial.date && (
+                          <div className="text-xs text-muted-foreground mt-1">{formatDate(testimonial.date)}</div>
+                        )}
                       </div>
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground">{testimonial.content}</p>
+                    <div className="text-muted-foreground">{testimonial.content}</div>
                     {testimonial.rating && (
                       <div className="flex items-center gap-1 mt-3">
                         {Array.from({ length: 5 }).map((_, i) => (
                           <Star
                             key={i}
                             className={`h-4 w-4 ${
-                              i < testimonial.rating! ? "fill-teal-400 text-teal-400" : "text-muted-foreground/60"
+                              i < testimonial.rating! ? "fill-teal-500 text-teal-500" : "text-muted-foreground/60"
                             }`}
                             aria-hidden={i > 0}
                           />

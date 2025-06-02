@@ -11,18 +11,23 @@ export const services: Service[] = [
     title: "Web Development",
     description: "Building responsive and performant web applications",
     icon: "Code2",
-    features: ["React & Next.js Applications", "Responsive Design", "Performance Optimization", "SEO Implementation"],
+    features: [
+      "React & Next.js Applications",
+      "Responsive Design",
+      "Performance Optimization",
+      "SEO Implementation"
+    ],
   },
   {
-    id: "game-development",
-    title: "Game Development",
-    description: "Creating cross-platform games in Unreal Engine and Unity",
-    icon: "Joystick",
+    id: "app-development",
+    title: "App Development",
+    description: "Creating cross-platform apps in Electron and NodeJS",
+    icon: "Code2",
     features: [
-      "2D & 3D Game Development",
-      "Cross-platform Deployment",
-      "Game Mechanics Design",
-      "Performance Optimization",
+      "Basic productivity tools",
+      "Windows, Linux and Mac support",
+      "Simple calculators and utilities",
+      "Development workflow tools",
     ],
   },
   {
@@ -30,6 +35,11 @@ export const services: Service[] = [
     title: "Discord Server Building",
     description: "Building a powerful and comfortable Discord Servers",
     icon: "Server",
-    features: ["Custom Bot Development", "Server Setup & Configuration", "Community Management", "Moderation Systems"],
+    features: [
+      "Bot Setup",
+      "Server Setup & Configuration",
+      "Community Management",
+      "Moderation Systems"
+    ],
   },
 ]
