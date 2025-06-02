@@ -413,7 +413,7 @@ export default function Home() {
                           <Star
                             key={i}
                             className={`h-4 w-4 ${
-                              i < testimonial.rating! ? "fill-yellow-400 text-yellow-400" : "text-muted/30"
+                              i < testimonial.rating! ? "fill-yellow-400 text-yellow-400" : "text-muted-foreground/60"
                             }`}
                             aria-hidden={i > 0}
                           />
