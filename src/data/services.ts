@@ -17,7 +17,7 @@ export const services: Service[] = [
     id: "app-development",
     title: "App Development",
     description: "Creating cross-platform apps in Electron and NodeJS",
-    icon: "Code2",
+    icon: "Gamepad2",
     features: [
       "Basic productivity tools",
       "Windows, Linux and Mac support",
