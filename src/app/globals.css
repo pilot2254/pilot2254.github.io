@@ -193,8 +193,6 @@ html {
   @apply bg-muted-foreground/50;
 }
 
-
-
 @layer base {
   * {
     @apply border-border;
