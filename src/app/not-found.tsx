@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Home, ArrowLeft } from 'lucide-react'
+import { Home, ArrowLeft } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 
@@ -14,20 +14,13 @@ export default function NotFound() {
           <h1 className="text-8xl font-bold mb-4 bg-gradient-to-b from-foreground to-foreground/50 bg-clip-text text-transparent">
             404
           </h1>
-          <h2 className="text-xl font-semibold mb-2 text-foreground/80">
-            Page not found
-          </h2>
+          <h2 className="text-xl font-semibold mb-2 text-foreground/80">Page not found</h2>
           <p className="text-muted-foreground max-w-sm mx-auto">
             The page you're looking for doesn't exist or has been moved.
           </p>
         </CardContent>
         <CardFooter className="flex flex-col sm:flex-row items-center justify-center gap-3 pb-8 relative z-10">
-          <Button
-            variant="default"
-            size="lg"
-            className="w-full sm:w-auto min-w-[160px] gap-2"
-            asChild
-          >
+          <Button variant="default" size="lg" className="w-full sm:w-auto min-w-[160px] gap-2" asChild>
             <Link href="/">
               <Home className="h-4 w-4" />
               Back to Home

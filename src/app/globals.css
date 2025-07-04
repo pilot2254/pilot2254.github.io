@@ -53,18 +53,23 @@
   * {
     @apply border-border;
   }
-  
+
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
   }
-  
+
   body {
     @apply bg-background text-foreground antialiased;
   }
 
   /* Improved Typography */
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply tracking-tight;
   }
 
@@ -85,7 +90,7 @@
   /* Container with better mobile handling */
   .container {
     @apply mx-auto px-4 sm:px-6 lg:px-8;
-    max-width: min(100% - 2rem, theme('maxWidth.7xl'));
+    max-width: min(100% - 2rem, theme("maxWidth.7xl"));
   }
 
   /* Section spacing */
@@ -110,7 +115,7 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
-  
+
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
