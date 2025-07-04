@@ -19,12 +19,13 @@ import {
   Trophy,
   Briefcase,
   GraduationCap,
-  Joystick,
+  Gamepad2,
   Server,
   Star,
   CheckCircle,
   Clock,
   Archive,
+  Heart,
 } from "lucide-react"
 
 // Import data
@@ -40,7 +41,7 @@ import { formatDate } from "@/lib/utils"
 // Icon mapping for services
 const iconMap = {
   Code2,
-  Joystick,
+  Gamepad2,
   Server,
 } as const
 
@@ -49,6 +50,14 @@ const statusIconMap = {
   completed: CheckCircle,
   "in-progress": Clock,
   archived: Archive,
+} as const
+
+// Social platform icon mapping
+const socialIconMap = {
+  GitHub: Github,
+  LinkedIn: Linkedin,
+  Twitter: Twitter,
+  Kofi: Heart,
 } as const
 
 export default function Home() {
@@ -82,8 +91,7 @@ export default function Home() {
             <div className="flex space-x-4">
               <TooltipProvider>
                 {siteConfig.social.map((social) => {
-                  const IconComponent =
-                    social.platform === "GitHub" ? Github : social.platform === "LinkedIn" ? Linkedin : Twitter
+                  const IconComponent = socialIconMap[social.platform as keyof typeof socialIconMap] || ExternalLink
                   return (
                     <Tooltip key={social.platform}>
                       <TooltipTrigger asChild>
@@ -144,7 +152,7 @@ export default function Home() {
                       <CardDescription>My journey in software development</CardDescription>
                     </CardHeader>
                     <CardContent>
-                      <ScrollArea className="scroll-area-sm pr-4">
+                      <ScrollArea className="h-[400px] pr-4">
                         <div className="space-y-8">
                           {experiences.map((exp) => (
                             <div key={exp.id} className="relative pl-6 border-l">
@@ -179,7 +187,7 @@ export default function Home() {
                       <CardDescription>Academic background and certifications</CardDescription>
                     </CardHeader>
                     <CardContent>
-                      <ScrollArea className="scroll-area-sm pr-4">
+                      <ScrollArea className="h-[400px] pr-4">
                         <div className="space-y-8">
                           {education.map((edu) => (
                             <div key={edu.id} className="relative pl-6 border-l">
@@ -211,7 +219,7 @@ export default function Home() {
                       <CardDescription>Awards and recognitions</CardDescription>
                     </CardHeader>
                     <CardContent>
-                      <ScrollArea className="scroll-area-sm pr-4">
+                      <ScrollArea className="h-[400px] pr-4">
                         <div className="space-y-8">
                           {achievements.map((ach) => (
                             <div key={ach.id} className="relative pl-6 border-l">
@@ -246,7 +254,7 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full mt-6">
               {services.map((service) => {
-                const IconComponent = iconMap[service.icon as keyof typeof iconMap]
+                const IconComponent = iconMap[service.icon as keyof typeof iconMap] || Code2
                 return (
                   <Card key={service.id} className="flex flex-col h-full">
                     <CardHeader className="p-4">
@@ -343,7 +351,7 @@ export default function Home() {
               <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl">Projects</h2>
               <div className="text-muted-foreground">Some of my recent work</div>
             </div>
-            <div className="w-full max-w-3xl mt-6">
+            <div className="w-full max-w-5xl mt-6 relative">
               <Carousel className="w-full">
                 <CarouselContent>
                   {projects.map((project) => {
@@ -423,10 +431,8 @@ export default function Home() {
                     )
                   })}
                 </CarouselContent>
-                <div className="hidden sm:flex">
-                  <CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12" />
-                  <CarouselNext className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12" />
-                </div>
+                <CarouselPrevious />
+                <CarouselNext />
               </Carousel>
             </div>
           </div>
@@ -517,8 +523,7 @@ export default function Home() {
                     </a>
                   </Button>
                   {siteConfig.social.map((social) => {
-                    const IconComponent =
-                      social.platform === "GitHub" ? Github : social.platform === "LinkedIn" ? Linkedin : Twitter
+                    const IconComponent = socialIconMap[social.platform as keyof typeof socialIconMap] || ExternalLink
                     return (
                       <Button key={social.platform} variant="outline" className="w-full" asChild>
                         <a
@@ -567,7 +572,7 @@ export default function Home() {
           <div className="flex gap-4">
             <TooltipProvider>
               {siteConfig.social.slice(0, 2).map((social) => {
-                const IconComponent = social.platform === "GitHub" ? Github : Twitter
+                const IconComponent = socialIconMap[social.platform as keyof typeof socialIconMap] || ExternalLink
                 return (
                   <Tooltip key={social.platform}>
                     <TooltipTrigger asChild>

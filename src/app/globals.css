@@ -24,6 +24,14 @@
     --input: 0 0% 89.8%;
     --ring: 0 0% 3.9%;
     --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
@@ -46,6 +54,14 @@
     --border: 0 0% 14.9%;
     --input: 0 0% 14.9%;
     --ring: 0 0% 83.1%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
@@ -53,18 +69,34 @@
   * {
     @apply border-border;
   }
-  
+
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
   }
-  
+
   body {
     @apply bg-background text-foreground antialiased;
   }
 
+  /* Custom text selection colors */
+  ::selection {
+    background-color: #06737b41;
+    color: #85d2fe;
+  }
+
+  ::-moz-selection {
+    background-color: #06737b41;
+    color: #85d2fe;
+  }
+
   /* Improved Typography */
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply tracking-tight;
   }
 
@@ -85,7 +117,7 @@
   /* Container with better mobile handling */
   .container {
     @apply mx-auto px-4 sm:px-6 lg:px-8;
-    max-width: min(100% - 2rem, theme('maxWidth.7xl'));
+    max-width: min(100% - 2rem, theme("maxWidth.7xl"));
   }
 
   /* Section spacing */
@@ -110,7 +142,7 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
-  
+
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
@@ -159,4 +191,13 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-muted-foreground/50;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }

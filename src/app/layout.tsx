@@ -44,7 +44,8 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "your-google-verification-code", // Add your verification code
+    // TODO: Replace with your actual Google verification code
+    google: "your-google-verification-code",
   },
 }
 

@@ -28,16 +28,19 @@ A sleek, responsive portfolio website built with Next.js 14, Tailwind CSS, and s
 ## 📦 Installation
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/RedFox-Studios/skyro-portfolio.git
 ```
 
 2. Navigate to the project directory:
+
 ```bash
 cd skyro-portfolio
 ```
 
 3. Install the dependencies:
+
 ```bash
 npm install
 # or
@@ -47,6 +50,7 @@ pnpm install
 ```
 
 4. Start the development server:
+
 ```bash
 npm run dev
 # or
@@ -106,6 +110,7 @@ The project includes several reusable components:
 ### Build
 
 To build your application run one of these commands:
+
 ```bash
 npm run dev
 # or
