@@ -5,19 +5,19 @@ A sleek, responsive portfolio website built with Next.js 14, Tailwind CSS, and s
 ![Portfolio Preview](/public/screenshot1.png)
 ![Portfolio Preview2](/public/screenshot2.png)
 
-## ✨ Features
+## Features
 
-- 🎨 Modern and clean design
-- 🌓 Dark mode support
-- 📱 Fully responsive layout
-- 🚀 Fast page loads with Next.js 14
-- 🎯 Smooth scrolling to sections
-- 💅 Styled with Tailwind CSS
-- 🧩 Reusable shadcn/ui components
-- 🎭 Custom 404 page
-- 🔍 SEO optimized
+- Modern and clean design
+- Dark mode support
+- Fully responsive layout
+- Fast page loads with Next.js 14
+- Smooth scrolling to sections
+- Styled with Tailwind CSS
+- Reusable shadcn/ui components
+- Custom 404 page
+- SEO optimized
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - [Next.js 14](https://nextjs.org/) - React framework
 - [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
@@ -25,18 +25,18 @@ A sleek, responsive portfolio website built with Next.js 14, Tailwind CSS, and s
 - [Lucide Icons](https://lucide.dev/) - Beautiful icons
 - [next-themes](https://github.com/pacocoursey/next-themes) - Dark mode support
 
-## 📦 Installation
+## Installation
 
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/RedFox-Studios/skyro-portfolio.git
+git clone https://github.com/pilot2254/pilot2254.github.io.git
 ```
 
 2. Navigate to the project directory:
 
 ```bash
-cd skyro-portfolio
+cd pilot2254.github.io
 ```
 
 3. Install the dependencies:
@@ -61,10 +61,10 @@ pnpm dev
 
 5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
-skyro-portfolio/
+pilot2254.github.io/
 ├── public/
 │   └── ...
 ├── README.md
@@ -96,7 +96,7 @@ skyro-portfolio/
 └── postcss.config.mjs
 ```
 
-## 📝 Usage
+## Usage
 
 ### Components
 
@@ -119,21 +119,21 @@ yarn dev
 pnpm dev
 ```
 
-## 🚀 Deployment
+## Deployment
 
 The easiest way to deploy your portfolio is to use the [Vercel Platform](https://vercel.com/new).
 
 Check out the [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🤝 Contributing
+## Contributing
 
-Contributions, issues, and feature requests are welcome! Feel free to check [issues page](https://github.com/yourusername/portfolio/issues).
+Contributions, issues, and feature requests are welcome! Feel free to check [issues page](https://github.com/pilot2254/pilot2254.github.ioissues).
 
-## 👏 Acknowledgments
+## Acknowledgments
 
 - [shadcn/ui](https://ui.shadcn.com/) for the beautiful components
 - [Lucide](https://lucide.dev/) for the icons
@@ -141,4 +141,4 @@ Contributions, issues, and feature requests are welcome! Feel free to check [iss
 
 ---
 
-Made with ❤️ by Michal Flaška & RedFox Studios
+Made by Michal Flaška
