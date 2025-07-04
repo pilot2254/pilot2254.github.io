@@ -39,7 +39,7 @@ export function Navbar() {
     <header
       className={cn(
         "sticky top-0 z-50 w-full transition-all duration-200",
-        isScrolled ? "bg-background/80 backdrop-blur-lg border-b" : "bg-background",
+        isScrolled ? "bg-background/80 backdrop-blur-lg border-b" : "bg-background"
       )}
     >
       <div className="container flex h-16 items-center justify-between">

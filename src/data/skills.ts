@@ -31,7 +31,7 @@ export const skills: Skill[] = [
     category: "Frontend",
     description: "Modern React component library built on Radix UI",
   },
-    {
+  {
     name: "Electron",
     level: 15,
     category: "Frontend",
