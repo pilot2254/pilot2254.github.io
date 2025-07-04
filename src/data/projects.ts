@@ -23,7 +23,7 @@ export const projects: Project[] = [
     description: "Fully functional discord bot with economy, gambling, and more",
     tags: ["Node.js", "Typescript", "Discord.js", "SQLite", "Slash Commands"],
     githubLink: "https://github.com/contrast-bot/contrast-bot",
-    image: "/placeholder.png?height=300&width=400",
+    image: "/placeholder.png",
     featured: true,
     status: "completed",
   },
@@ -33,7 +33,7 @@ export const projects: Project[] = [
     description: "Simple and heavily configurable calculator made in electron",
     tags: ["Electron", "JavaScript", "Customization", "Calculator"],
     githubLink: "https://github.com/pilot2254/calculator",
-    image: "/placeholder.png?height=300&width=400",
+    image: "/placeholder.png",
     status: "completed",
   },
   {
@@ -44,7 +44,7 @@ export const projects: Project[] = [
     tags: ["HTML", "CSS", "TailwindCSS", "JavaScript"],
     demoLink: "https://pilot2254.github.io/guitar-tone-finder/",
     githubLink: "https://github.com/pilot2254/guitar-tone-finder",
-    image: "/placeholder.png?height=300&width=400",
+    image: "/placeholder.png",
     status: "completed",
   },
   {
@@ -53,7 +53,7 @@ export const projects: Project[] = [
     description: "A simple Node.js application for farming playtime across multiple Steam games simultaneously.",
     tags: ["NodeJS", "JavaScript", "Steam API"],
     githubLink: "https://github.com/pilot2254/steam-playtime-farmer",
-    image: "/placeholder.png?height=300&width=400",
+    image: "/placeholder.png",
     status: "completed",
   },
   {
@@ -62,7 +62,7 @@ export const projects: Project[] = [
     description: "See more of my projects on GitHub",
     tags: ["See", "More", "Projects", "On", "My", "GitHub"],
     githubLink: "https://github.com/pilot2254?tab=repositories",
-    image: "/placeholder.png?height=300&width=400",
+    image: "/placeholder.png",
     status: "completed",
   },
 ]

@@ -343,7 +343,7 @@ export default function Home() {
               <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl">Projects</h2>
               <div className="text-muted-foreground">Some of my recent work</div>
             </div>
-            <div className="w-full max-w-3xl mt-6">
+            <div className="w-full max-w-5xl mt-6">
               <Carousel className="w-full">
                 <CarouselContent>
                   {projects.map((project) => {
@@ -423,10 +423,8 @@ export default function Home() {
                     )
                   })}
                 </CarouselContent>
-                <div className="hidden sm:flex">
-                  <CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12" />
-                  <CarouselNext className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12" />
-                </div>
+                <CarouselPrevious className="left-4" />
+                <CarouselNext className="right-4" />
               </Carousel>
             </div>
           </div>
