@@ -343,7 +343,7 @@ export default function Home() {
               <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl">Projects</h2>
               <div className="text-muted-foreground">Some of my recent work</div>
             </div>
-            <div className="w-full max-w-5xl mt-6">
+            <div className="w-full max-w-5xl mt-6 relative">
               <Carousel className="w-full">
                 <CarouselContent>
                   {projects.map((project) => {
@@ -423,8 +423,8 @@ export default function Home() {
                     )
                   })}
                 </CarouselContent>
-                <CarouselPrevious className="left-4" />
-                <CarouselNext className="right-4" />
+                <CarouselPrevious />
+                <CarouselNext />
               </Carousel>
             </div>
           </div>

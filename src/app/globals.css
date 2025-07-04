@@ -63,6 +63,17 @@
     @apply bg-background text-foreground antialiased;
   }
 
+  /* Custom text selection colors */
+  ::selection {
+    background-color: #06737b41;
+    color: #85d2fe;
+  }
+
+  ::-moz-selection {
+    background-color: #06737b41;
+    color: #85d2fe;
+  }
+
   /* Improved Typography */
   h1,
   h2,
