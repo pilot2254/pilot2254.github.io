@@ -7,7 +7,7 @@ import type { SiteConfig } from "@/types"
 
 export const siteConfig: SiteConfig = {
   name: "Michal Flaška Portfolio",
-  title: "Michal Flaška - Full Stack Developer & UI/UX Designer",
+  title: "Michal Flaška - App Developer & UI/UX Designer",
   description:
     "Portfolio of Michal Flaška, showcasing web development, mobile applications, and UI/UX design projects.",
   url: "https://pilot2254.github.io",
