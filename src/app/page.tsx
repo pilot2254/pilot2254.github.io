@@ -26,6 +26,7 @@ import {
   Clock,
   Archive,
   Heart,
+  Smartphone,
 } from "lucide-react"
 
 // Import data
