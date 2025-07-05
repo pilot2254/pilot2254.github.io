@@ -1,4 +1,3 @@
-import Image from "next/image"
 import { ExternalLink, Github } from "lucide-react"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -19,12 +18,11 @@ export function ProjectCard({ title, description, tags, image, demoLink, githubL
       </CardHeader>
       <CardContent className="flex-1">
         <div className="relative aspect-project mb-4 overflow-hidden rounded-md bg-muted">
-          <Image
+          <img
             src={image || "/placeholder.png"}
             alt={`${title} project screenshot`}
-            fill
-            className="object-cover transition-transform hover:scale-105"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-cover w-full h-full transition-transform hover:scale-105"
+            loading="lazy"
           />
         </div>
         <div className="flex flex-wrap gap-2">

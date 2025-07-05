@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
 
-  // Since your repo is pilot2254.github.io, no basePath is needed
+  // Since repo is pilot2254.github.io, no basePath is needed
   // The site will be served directly at pilot2254.github.io
 
   // Ensure trailing slashes are handled consistently
@@ -18,6 +18,19 @@ const nextConfig: NextConfig = {
   // Disable server-side features that don't work with static export
   eslint: {
     ignoreDuringBuilds: true,
+  },
+
+  // Optimize for static export
+  experimental: {
+    optimizePackageImports: ["lucide-react", "@radix-ui/react-icons"],
+  },
+
+  // Compress output
+  compress: true,
+
+  // Generate sitemap and robots.txt for better SEO
+  generateBuildId: async () => {
+    return "build"
   },
 }
 
