@@ -82,12 +82,12 @@
   /* Custom text selection colors */
   ::selection {
     background-color: hsla(179, 100%, 40%, 0.1);
-    color: 	hsl(179, 100%, 40%);
+    color: hsl(179, 100%, 40%);
   }
 
   ::-moz-selection {
     background-color: hsla(179, 100%, 40%, 0.1);
-    color: 	hsl(179, 100%, 40%);
+    color: hsl(179, 100%, 40%);
   }
 
   /* Improved Typography */

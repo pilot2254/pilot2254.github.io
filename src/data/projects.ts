@@ -53,7 +53,8 @@ export const projects: Project[] = [
   {
     id: "guitar-tone-finder",
     title: "Guitar Tone Finder",
-    description: "A clean and minimalist web application designed to help guitar students practice identifying tones on the fretboard.",
+    description:
+      "A clean and minimalist web application designed to help guitar students practice identifying tones on the fretboard.",
     tags: ["HTML", "CSS", "TailwindCSS", "JavaScript"],
     demoLink: "https://pilot2254.github.io/guitar-tone-finder/",
     githubLink: "https://github.com/pilot2254/guitar-tone-finder",
