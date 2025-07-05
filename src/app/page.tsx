@@ -62,9 +62,9 @@ const socialIconMap = {
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-background">
+    <div className="flex flex-col min-h-screen bg-zinc-950">
       {/* Hero Section */}
-      <section className="flex-1 flex items-center justify-center py-32 lg:py-40 bg-background">
+      <section className="flex-1 flex items-center justify-center py-32 lg:py-40 bg-zinc-950">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center space-y-6 text-center">
             <div className="space-y-4">
@@ -120,7 +120,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 lg:py-24 bg-background">
+      <section id="about" className="py-20 lg:py-24 bg-zinc-950">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center gap-4">
             <div className="text-center space-y-2">
@@ -166,10 +166,10 @@ export default function Home() {
                                   </Badge>
                                 )}
                               </div>
-                              <ul className="mt-2 space-y-1">
+                              <ul className="mt-2 space-y-1 list-disc list-inside">
                                 {exp.description.map((item, i) => (
                                   <li key={i} className="text-sm text-muted-foreground">
-                                    • {item}
+                                    {item}
                                   </li>
                                 ))}
                               </ul>
@@ -197,10 +197,10 @@ export default function Home() {
                                 {edu.institution} • {edu.period}
                               </div>
                               {edu.description && (
-                                <ul className="mt-2 space-y-1">
+                                <ul className="mt-2 space-y-1 list-disc list-inside">
                                   {edu.description.map((item, i) => (
                                     <li key={i} className="text-sm text-muted-foreground">
-                                      • {item}
+                                      {item}
                                     </li>
                                   ))}
                                 </ul>
@@ -245,7 +245,7 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-16 md:py-20 bg-background">
+      <section id="services" className="py-16 md:py-20 bg-zinc-950">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center gap-4">
             <div className="text-center space-y-2">
@@ -270,9 +270,9 @@ export default function Home() {
                       {service.features && service.features.length > 0 && (
                         <div>
                           <h4 className="text-sm font-medium mb-2">What's included:</h4>
-                          <ul className="space-y-1 ml-4">
+                          <ul className="space-y-1 list-disc list-inside">
                             {service.features.map((feature, index) => (
-                              <li key={index} className="text-xs text-muted-foreground list-disc">
+                              <li key={index} className="text-xs text-muted-foreground">
                                 {feature}
                               </li>
                             ))}
@@ -289,7 +289,7 @@ export default function Home() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-20 lg:py-24 bg-background">
+      <section id="skills" className="py-20 lg:py-24 bg-zinc-950">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center gap-4">
             <div className="text-center space-y-2">
@@ -344,7 +344,7 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-16 md:py-20 bg-background">
+      <section id="projects" className="py-16 md:py-20 bg-zinc-950">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center gap-4">
             <div className="text-center space-y-2">
@@ -441,7 +441,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section id="testimonials" className="py-20 lg:py-24 bg-background">
+      <section id="testimonials" className="py-20 lg:py-24 bg-zinc-950">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center gap-4">
             <div className="text-center space-y-2">
@@ -496,7 +496,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 lg:py-24 bg-background">
+      <section id="contact" className="py-20 lg:py-24 bg-zinc-950">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center gap-4">
             <div className="text-center space-y-2">
@@ -547,7 +547,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t py-6 md:py-0 bg-background">
+      <footer className="border-t py-6 md:py-0 bg-zinc-950">
         <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
           <div className="text-center text-sm leading-loose text-muted-foreground md:text-left">
             Built with{" "}
