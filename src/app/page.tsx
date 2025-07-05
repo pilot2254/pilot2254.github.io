@@ -64,10 +64,10 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="flex-1 flex items-center justify-center py-20 lg:py-24 bg-background">
+      <section className="flex-1 flex items-center justify-center py-32 lg:py-40 bg-background">
         <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center space-y-4 text-center">
-            <div className="space-y-2">
+          <div className="flex flex-col items-center space-y-6 text-center">
+            <div className="space-y-4">
               <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
                 Welcome to my portfolio
               </h1>
@@ -120,7 +120,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-16 lg:py-20 bg-background">
+      <section id="about" className="py-20 lg:py-24 bg-background">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center gap-4">
             <div className="text-center space-y-2">
@@ -245,7 +245,7 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-12 md:py-16 bg-background">
+      <section id="services" className="py-16 md:py-20 bg-background">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center gap-4">
             <div className="text-center space-y-2">
@@ -289,7 +289,7 @@ export default function Home() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-16 lg:py-20 bg-background">
+      <section id="skills" className="py-20 lg:py-24 bg-background">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center gap-4">
             <div className="text-center space-y-2">
@@ -344,7 +344,7 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-12 md:py-16 bg-background">
+      <section id="projects" className="py-16 md:py-20 bg-background">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center gap-4">
             <div className="text-center space-y-2">
@@ -441,7 +441,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section id="testimonials" className="py-16 lg:py-20 bg-background">
+      <section id="testimonials" className="py-20 lg:py-24 bg-background">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center gap-4">
             <div className="text-center space-y-2">
@@ -496,7 +496,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-16 lg:py-20 bg-background">
+      <section id="contact" className="py-20 lg:py-24 bg-background">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center gap-4">
             <div className="text-center space-y-2">
