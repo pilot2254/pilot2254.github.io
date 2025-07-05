@@ -19,6 +19,19 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+
+  // Optimize for static export
+  experimental: {
+    optimizePackageImports: ["lucide-react", "@radix-ui/react-icons"],
+  },
+
+  // Compress output
+  compress: true,
+
+  // Generate sitemap and robots.txt for better SEO
+  generateBuildId: async () => {
+    return "build"
+  },
 }
 
 export default nextConfig

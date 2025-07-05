@@ -62,9 +62,9 @@ const socialIconMap = {
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="flex-1 flex items-center justify-center py-20 lg:py-24">
+      <section className="flex-1 flex items-center justify-center py-20 lg:py-24 bg-background">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center space-y-4 text-center">
             <div className="space-y-2">
@@ -120,7 +120,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-16 lg:py-20">
+      <section id="about" className="py-16 lg:py-20 bg-background">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center gap-4">
             <div className="text-center space-y-2">
@@ -245,7 +245,7 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-12 md:py-16">
+      <section id="services" className="py-12 md:py-16 bg-background">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center gap-4">
             <div className="text-center space-y-2">
@@ -289,7 +289,7 @@ export default function Home() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-16 lg:py-20">
+      <section id="skills" className="py-16 lg:py-20 bg-background">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center gap-4">
             <div className="text-center space-y-2">
@@ -344,7 +344,7 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-12 md:py-16">
+      <section id="projects" className="py-12 md:py-16 bg-background">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center gap-4">
             <div className="text-center space-y-2">
@@ -388,6 +388,7 @@ export default function Home() {
                                 src={project.image || "/placeholder.svg"}
                                 alt={`${project.title} project screenshot`}
                                 className="object-cover w-full h-full"
+                                loading="lazy"
                               />
                             </div>
                             <div className="flex flex-wrap gap-2">
@@ -440,7 +441,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section id="testimonials" className="py-16 lg:py-20">
+      <section id="testimonials" className="py-16 lg:py-20 bg-background">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center gap-4">
             <div className="text-center space-y-2">
@@ -495,7 +496,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-16 lg:py-20">
+      <section id="contact" className="py-16 lg:py-20 bg-background">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center gap-4">
             <div className="text-center space-y-2">
@@ -546,7 +547,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t py-6 md:py-0">
+      <footer className="border-t py-6 md:py-0 bg-background">
         <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
           <div className="text-center text-sm leading-loose text-muted-foreground md:text-left">
             Built with{" "}
