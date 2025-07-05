@@ -81,13 +81,13 @@
 
   /* Custom text selection colors */
   ::selection {
-    background-color: hsl(240 3.7% 15.9% / 0.3);
-    color: hsl(0 0% 98%);
+    background-color: hsla(179, 100%, 40%, 0.1);
+    color: 	hsl(179, 100%, 40%);
   }
 
   ::-moz-selection {
-    background-color: hsl(240 3.7% 15.9% / 0.3);
-    color: hsl(0 0% 98%);
+    background-color: hsla(179, 100%, 40%, 0.1);
+    color: 	hsl(179, 100%, 40%);
   }
 
   /* Improved Typography */
