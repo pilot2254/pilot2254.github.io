@@ -89,6 +89,19 @@ export default function Home() {
                 </a>
               </Button>
             </div>
+            <div className="flex flex-col sm:flex-row gap-4 sm:space-x-4 sm:gap-0">
+              <Button size="lg" className="inline-flex items-center w-full sm:w-auto" asChild>
+                <a href="#contact" className="inline-flex items-center justify-center">
+                  <Mail className="mr-2 h-4 w-4" />
+                  Contact Me
+                </a>
+              </Button>
+              <Button variant="outline" size="lg" className="inline-flex items-center w-full sm:w-auto" asChild>
+                <a href="#projects" className="inline-flex items-center justify-center">
+                  View Projects
+                </a>
+              </Button>
+            </div>
             <div className="flex space-x-4">
               <TooltipProvider>
                 {siteConfig.social.map((social) => {
@@ -132,18 +145,21 @@ export default function Home() {
             </div>
             <div className="w-full max-w-4xl mt-8">
               <Tabs defaultValue="experience" className="w-full">
-                <TabsList className="grid w-full grid-cols-3">
+                <TabsList className="grid w-full grid-cols-3 h-auto p-1">
                   <TabsTrigger value="experience">
-                    <Briefcase className="mr-2 h-4 w-4" />
-                    Experience
+                    <Briefcase className="mr-1 sm:mr-2 h-4 w-4" />
+                    <span className="hidden sm:inline">Experience</span>
+                    <span className="sm:hidden text-xs">Exp</span>
                   </TabsTrigger>
                   <TabsTrigger value="education">
-                    <GraduationCap className="mr-2 h-4 w-4" />
-                    Education
+                    <GraduationCap className="mr-1 sm:mr-2 h-4 w-4" />
+                    <span className="hidden sm:inline">Education</span>
+                    <span className="sm:hidden text-xs">Edu</span>
                   </TabsTrigger>
                   <TabsTrigger value="achievements">
-                    <Trophy className="mr-2 h-4 w-4" />
-                    Achievements
+                    <Trophy className="mr-1 sm:mr-2 h-4 w-4" />
+                    <span className="hidden sm:inline">Achievements</span>
+                    <span className="sm:hidden text-xs">Awards</span>
                   </TabsTrigger>
                 </TabsList>
                 <TabsContent value="experience">
@@ -257,23 +273,23 @@ export default function Home() {
               {services.map((service) => {
                 const IconComponent = iconMap[service.icon as keyof typeof iconMap] || Code2
                 return (
-                  <Card key={service.id} className="flex flex-col h-full">
+                  <Card key={service.id} className="flex flex-col h-full hover:shadow-lg transition-shadow">
                     <CardHeader className="p-4">
                       <div className="flex items-center gap-2">
                         <div className="p-2 rounded-md bg-primary/10">
                           <IconComponent className="h-5 w-5" />
                         </div>
-                        <CardTitle className="text-lg">{service.title}</CardTitle>
+                        <CardTitle className="text-base sm:text-lg">{service.title}</CardTitle>
                       </div>
                     </CardHeader>
                     <CardContent className="p-4 pt-0 flex-1">
-                      <p className="text-sm text-muted-foreground mb-3">{service.description}</p>
+                      <p className="text-sm sm:text-base text-muted-foreground mb-3">{service.description}</p>
                       {service.features && service.features.length > 0 && (
                         <div>
-                          <h4 className="text-sm font-medium mb-2">What's included:</h4>
+                          <h4 className="text-sm sm:text-base font-medium mb-2">What's included:</h4>
                           <ul className="space-y-1 list-disc list-inside">
                             {service.features.map((feature, index) => (
-                              <li key={index} className="text-xs text-muted-foreground">
+                              <li key={index} className="text-xs sm:text-sm text-muted-foreground">
                                 {feature}
                               </li>
                             ))}
@@ -301,9 +317,9 @@ export default function Home() {
             </div>
             <div className="w-full max-w-4xl mt-8">
               <Tabs defaultValue="Frontend" className="w-full">
-                <TabsList className="grid w-full grid-cols-4">
+                <TabsList className="flex w-full overflow-x-auto scrollbar-hide p-1 h-auto">
                   {skillCategories.map((category) => (
-                    <TabsTrigger key={category} value={category}>
+                    <TabsTrigger key={category} value={category} className="flex-shrink-0 px-3 py-2 text-sm">
                       {category}
                     </TabsTrigger>
                   ))}
@@ -358,12 +374,12 @@ export default function Home() {
                   {projects.map((project) => {
                     const StatusIcon = project.status ? statusIconMap[project.status] : null
                     return (
-                      <CarouselItem key={project.id}>
+                      <CarouselItem key={project.id} className="md:basis-1/2 lg:basis-1/3">
                         <Card className={`border-0 ${project.featured ? "bg-accent/50" : ""}`}>
                           <CardHeader className="p-4">
                             <div className="flex items-start justify-between">
                               <div className="flex-1">
-                                <CardTitle className="text-lg flex items-center gap-2">
+                                <CardTitle className="text-base sm:text-lg flex items-center gap-2">
                                   {project.title}
                                   {project.featured && (
                                     <Badge variant="secondary" className="text-xs">
@@ -371,7 +387,7 @@ export default function Home() {
                                     </Badge>
                                   )}
                                 </CardTitle>
-                                <CardDescription className="text-sm">{project.description}</CardDescription>
+                                <CardDescription className="text-xs sm:text-sm">{project.description}</CardDescription>
                               </div>
                               {StatusIcon && project.status && (
                                 <div className="flex items-center gap-1 ml-2">
@@ -384,7 +400,7 @@ export default function Home() {
                             </div>
                           </CardHeader>
                           <CardContent className="p-4 pt-0">
-                            <div className="relative h-[150px] mb-4 rounded-md overflow-hidden bg-muted">
+                            <div className="relative h-[120px] sm:h-[150px] mb-4 rounded-md overflow-hidden bg-muted">
                               <img
                                 src={project.image || "/placeholder.svg"}
                                 alt={`${project.title} project screenshot`}
@@ -400,9 +416,9 @@ export default function Home() {
                               ))}
                             </div>
                           </CardContent>
-                          <CardFooter className="p-4 pt-0 gap-2">
+                          <CardFooter className="p-4 pt-0 gap-2 flex-col sm:flex-row">
                             {project.demoLink && (
-                              <Button variant="default" size="sm" className="flex-1" asChild>
+                              <Button variant="default" size="sm" className="w-full sm:flex-1" asChild>
                                 <a
                                   href={project.demoLink}
                                   target="_blank"
@@ -415,7 +431,7 @@ export default function Home() {
                                 </a>
                               </Button>
                             )}
-                            <Button variant="outline" size="sm" className="flex-1" asChild>
+                            <Button variant="outline" size="sm" className="w-full sm:flex-1" asChild>
                               <a
                                 href={project.githubLink}
                                 target="_blank"
@@ -433,8 +449,8 @@ export default function Home() {
                     )
                   })}
                 </CarouselContent>
-                <CarouselPrevious />
-                <CarouselNext />
+                <CarouselPrevious className="hidden sm:flex" />
+                <CarouselNext className="hidden sm:flex" />
               </Carousel>
             </div>
           </div>
@@ -453,7 +469,7 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 mt-8">
               {testimonials.map((testimonial) => (
-                <Card key={testimonial.id} className="relative">
+                <Card key={testimonial.id} className="relative hover:shadow-lg transition-shadow">
                   <CardHeader>
                     <div className="flex items-center gap-4">
                       <Avatar>
@@ -461,7 +477,7 @@ export default function Home() {
                         <AvatarFallback>{testimonial.name[0]}</AvatarFallback>
                       </Avatar>
                       <div className="flex-1">
-                        <CardTitle className="text-lg">{testimonial.name}</CardTitle>
+                        <CardTitle className="text-base sm:text-lg">{testimonial.name}</CardTitle>
                         <CardDescription>
                           {testimonial.role}
                           {testimonial.company && ` at ${testimonial.company}`}
@@ -473,7 +489,7 @@ export default function Home() {
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <div className="text-muted-foreground">{testimonial.content}</div>
+                    <div className="text-sm sm:text-base text-muted-foreground">{testimonial.content}</div>
                     {testimonial.rating && (
                       <div className="flex items-center gap-1 mt-3">
                         {Array.from({ length: 5 }).map((_, i) => (
@@ -548,9 +564,9 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t py-6 md:py-0 bg-background">
+      <footer className="border-t py-6 md:py-8 bg-background">
         <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
-          <div className="text-center text-sm leading-loose text-muted-foreground md:text-left">
+          <div className="text-center text-xs sm:text-sm leading-loose text-muted-foreground md:text-left">
             Built with{" "}
             <a
               href={EXTERNAL_LINKS.NEXTJS}

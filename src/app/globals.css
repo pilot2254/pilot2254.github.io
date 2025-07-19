@@ -158,6 +158,24 @@
   .aspect-project {
     aspect-ratio: 16/9;
   }
+
+  /* Mobile-specific improvements */
+  @media (max-width: 640px) {
+    .container {
+      @apply px-3;
+    }
+    
+    /* Better touch targets */
+    button, a {
+      @apply min-h-[44px];
+    }
+    
+    /* Improved text readability */
+    body {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+  }
 }
 
 /* Prevent layout shift on scroll */
