@@ -183,16 +183,6 @@
   }
   
   /* Extra small screens */
-  @media (max-width: 475px) {
-    .xs\:hidden {
-      display: none;
-    }
-    
-    .xs\:inline {
-      display: inline;
-    }
-  }
-  
   /* Line clamp utilities */
   .line-clamp-2 {
     display: -webkit-box;

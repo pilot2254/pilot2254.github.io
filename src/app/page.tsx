@@ -8,6 +8,7 @@ import { Progress } from "@/components/ui/progress"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card"
 import {
   Github,
   Mail,
@@ -135,21 +136,18 @@ export default function Home() {
                 <TabsList className="grid w-full grid-cols-3 h-auto p-1 text-xs sm:text-sm">
                   <TabsTrigger value="experience">
                     <Briefcase className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" />
-                    <span className="hidden xs:inline sm:hidden">Exp</span>
                     <span className="hidden sm:inline">Experience</span>
-                    <span className="xs:hidden">💼</span>
+                    <span className="sm:hidden">Exp</span>
                   </TabsTrigger>
                   <TabsTrigger value="education">
                     <GraduationCap className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" />
-                    <span className="hidden xs:inline sm:hidden">Edu</span>
                     <span className="hidden sm:inline">Education</span>
-                    <span className="xs:hidden">🎓</span>
+                    <span className="sm:hidden">Edu</span>
                   </TabsTrigger>
                   <TabsTrigger value="achievements">
                     <Trophy className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" />
-                    <span className="hidden xs:inline sm:hidden">Awards</span>
                     <span className="hidden sm:inline">Achievements</span>
-                    <span className="xs:hidden">🏆</span>
+                    <span className="sm:hidden">Awards</span>
                   </TabsTrigger>
                 </TabsList>
                 <TabsContent value="experience">
@@ -287,6 +285,19 @@ export default function Home() {
                         </div>
                       )}
                     </CardContent>
+                    <CardFooter className="p-4 pt-0">
+                      <Button variant="outline" size="sm" className="w-full" asChild>
+                        <a
+                          href="https://ko-fi.com/pilot2254/commissions"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-center gap-2"
+                        >
+                          <ExternalLink className="h-4 w-4" />
+                          Get This Service
+                        </a>
+                      </Button>
+                    </CardFooter>
                   </Card>
                 )
               })}
@@ -557,24 +568,50 @@ export default function Home() {
       <footer className="border-t py-6 md:py-8 bg-background">
         <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
           <div className="text-center text-xs sm:text-sm leading-loose text-muted-foreground md:text-left">
-            Built with{" "}
-            <a
-              href={EXTERNAL_LINKS.NEXTJS}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium underline underline-offset-4"
-            >
-              Next.js
-            </a>{" "}
-            and{" "}
-            <a
-              href={EXTERNAL_LINKS.SHADCN}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium underline underline-offset-4"
-            >
-              shadcn/ui
-            </a>
+            <HoverCard>
+              <HoverCardTrigger asChild>
+                <span className="font-medium underline underline-offset-4 cursor-pointer">
+                  Built with Next.js and shadcn/ui
+                </span>
+              </HoverCardTrigger>
+              <HoverCardContent className="w-80">
+                <div className="space-y-2">
+                  <h4 className="text-sm font-semibold">Tech Stack</h4>
+                  <div className="space-y-1 text-sm">
+                    <div className="flex items-center gap-2">
+                      <div className="w-2 h-2 rounded-full bg-blue-500" />
+                      <a
+                        href={EXTERNAL_LINKS.NEXTJS}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:underline"
+                      >
+                        Next.js 15 - React framework
+                      </a>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-2 h-2 rounded-full bg-purple-500" />
+                      <a
+                        href={EXTERNAL_LINKS.SHADCN}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:underline"
+                      >
+                        shadcn/ui - Component library
+                      </a>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-2 h-2 rounded-full bg-cyan-500" />
+                      <span>Tailwind CSS - Styling</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-2 h-2 rounded-full bg-orange-500" />
+                      <span>TypeScript - Type safety</span>
+                    </div>
+                  </div>
+                </div>
+              </HoverCardContent>
+            </HoverCard>
             . All rights reserved.
           </div>
           <div className="flex gap-4">
