@@ -82,12 +82,12 @@
   /* Custom text selection colors */
   ::selection {
     background-color: hsla(179, 100%, 40%, 0.1);
-    color: 	hsl(179, 100%, 40%);
+    color: hsl(179, 100%, 40%);
   }
 
   ::-moz-selection {
     background-color: hsla(179, 100%, 40%, 0.1);
-    color: 	hsl(179, 100%, 40%);
+    color: hsl(179, 100%, 40%);
   }
 
   /* Improved Typography */
@@ -157,6 +157,38 @@
   /* Aspect ratios for project images */
   .aspect-project {
     aspect-ratio: 16/9;
+  }
+
+  /* Mobile-specific improvements */
+  @media (max-width: 640px) {
+    .container {
+      @apply px-4;
+    }
+    
+    /* Better touch targets */
+    button, a {
+      @apply min-h-[44px];
+    }
+    
+    /* Improved text readability */
+    body {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    
+    /* Prevent horizontal scroll */
+    .overflow-x-hidden {
+      overflow-x: hidden;
+    }
+  }
+  
+  /* Extra small screens */
+  /* Line clamp utilities */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 }
 

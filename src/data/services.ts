@@ -17,13 +17,8 @@ export const services: Service[] = [
     id: "app-development",
     title: "App Development",
     description: "Creating cross-platform apps in Electron and NodeJS",
-    icon: "Gamepad2",
-    features: [
-      "Basic productivity tools",
-      "Windows, Linux and Mac support",
-      "Simple calculators and utilities",
-      "Development workflow tools",
-    ],
+    icon: "Smartphone",
+    features: ["Basic productivity tools", "Windows, Linux and Mac support", "Simple calculators and utilities", "Development workflow tools"],
   },
   {
     id: "discord-server-building",
