@@ -76,28 +76,15 @@ export default function Home() {
                 Front End Developer & UI/UX Designer
               </div>
             </div>
-            <div className="flex space-x-4">
+            <div className="flex flex-col sm:flex-row gap-4 sm:space-x-4 sm:gap-0">
               <Button size="lg" className="inline-flex items-center" asChild>
-                <a href="#contact" className="inline-flex items-center">
+                <a href="#contact" className="inline-flex items-center justify-center w-full sm:w-auto">
                   <Mail className="mr-2 h-4 w-4" />
                   Contact Me
                 </a>
               </Button>
               <Button variant="outline" size="lg" className="inline-flex items-center" asChild>
-                <a href="#projects" className="inline-flex items-center">
-                  View Projects
-                </a>
-              </Button>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-4 sm:space-x-4 sm:gap-0">
-              <Button size="lg" className="inline-flex items-center w-full sm:w-auto" asChild>
-                <a href="#contact" className="inline-flex items-center justify-center">
-                  <Mail className="mr-2 h-4 w-4" />
-                  Contact Me
-                </a>
-              </Button>
-              <Button variant="outline" size="lg" className="inline-flex items-center w-full sm:w-auto" asChild>
-                <a href="#projects" className="inline-flex items-center justify-center">
+                <a href="#projects" className="inline-flex items-center justify-center w-full sm:w-auto">
                   View Projects
                 </a>
               </Button>
@@ -145,21 +132,24 @@ export default function Home() {
             </div>
             <div className="w-full max-w-4xl mt-8">
               <Tabs defaultValue="experience" className="w-full">
-                <TabsList className="grid w-full grid-cols-3 h-auto p-1">
+                <TabsList className="grid w-full grid-cols-3 h-auto p-1 text-xs sm:text-sm">
                   <TabsTrigger value="experience">
-                    <Briefcase className="mr-1 sm:mr-2 h-4 w-4" />
+                    <Briefcase className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" />
+                    <span className="hidden xs:inline sm:hidden">Exp</span>
                     <span className="hidden sm:inline">Experience</span>
-                    <span className="sm:hidden text-xs">Exp</span>
+                    <span className="xs:hidden">💼</span>
                   </TabsTrigger>
                   <TabsTrigger value="education">
-                    <GraduationCap className="mr-1 sm:mr-2 h-4 w-4" />
+                    <GraduationCap className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" />
+                    <span className="hidden xs:inline sm:hidden">Edu</span>
                     <span className="hidden sm:inline">Education</span>
-                    <span className="sm:hidden text-xs">Edu</span>
+                    <span className="xs:hidden">🎓</span>
                   </TabsTrigger>
                   <TabsTrigger value="achievements">
-                    <Trophy className="mr-1 sm:mr-2 h-4 w-4" />
+                    <Trophy className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" />
+                    <span className="hidden xs:inline sm:hidden">Awards</span>
                     <span className="hidden sm:inline">Achievements</span>
-                    <span className="sm:hidden text-xs">Awards</span>
+                    <span className="xs:hidden">🏆</span>
                   </TabsTrigger>
                 </TabsList>
                 <TabsContent value="experience">
@@ -317,9 +307,9 @@ export default function Home() {
             </div>
             <div className="w-full max-w-4xl mt-8">
               <Tabs defaultValue="Frontend" className="w-full">
-                <TabsList className="flex w-full overflow-x-auto scrollbar-hide p-1 h-auto">
+                <TabsList className="flex w-full overflow-x-auto scrollbar-hide p-1 h-auto gap-1">
                   {skillCategories.map((category) => (
-                    <TabsTrigger key={category} value={category} className="flex-shrink-0 px-3 py-2 text-sm">
+                    <TabsTrigger key={category} value={category} className="flex-shrink-0 px-2 sm:px-3 py-2 text-xs sm:text-sm whitespace-nowrap">
                       {category}
                     </TabsTrigger>
                   ))}
@@ -374,12 +364,12 @@ export default function Home() {
                   {projects.map((project) => {
                     const StatusIcon = project.status ? statusIconMap[project.status] : null
                     return (
-                      <CarouselItem key={project.id} className="md:basis-1/2 lg:basis-1/3">
+                      <CarouselItem key={project.id} className="basis-full sm:basis-1/2 lg:basis-1/3 pl-2 sm:pl-4">
                         <Card className={`border-0 ${project.featured ? "bg-accent/50" : ""}`}>
-                          <CardHeader className="p-4">
+                          <CardHeader className="p-3 sm:p-4">
                             <div className="flex items-start justify-between">
                               <div className="flex-1">
-                                <CardTitle className="text-base sm:text-lg flex items-center gap-2">
+                                <CardTitle className="text-sm sm:text-base lg:text-lg flex items-center gap-2">
                                   {project.title}
                                   {project.featured && (
                                     <Badge variant="secondary" className="text-xs">
@@ -387,10 +377,10 @@ export default function Home() {
                                     </Badge>
                                   )}
                                 </CardTitle>
-                                <CardDescription className="text-xs sm:text-sm">{project.description}</CardDescription>
+                                <CardDescription className="text-xs sm:text-sm line-clamp-2">{project.description}</CardDescription>
                               </div>
                               {StatusIcon && project.status && (
-                                <div className="flex items-center gap-1 ml-2">
+                                <div className="hidden sm:flex items-center gap-1 ml-2">
                                   <StatusIcon className="h-4 w-4 text-muted-foreground" />
                                   <span className="text-xs text-muted-foreground capitalize">
                                     {project.status.replace("-", " ")}
@@ -399,8 +389,8 @@ export default function Home() {
                               )}
                             </div>
                           </CardHeader>
-                          <CardContent className="p-4 pt-0">
-                            <div className="relative h-[120px] sm:h-[150px] mb-4 rounded-md overflow-hidden bg-muted">
+                          <CardContent className="p-3 sm:p-4 pt-0">
+                            <div className="relative h-[100px] sm:h-[120px] lg:h-[150px] mb-3 sm:mb-4 rounded-md overflow-hidden bg-muted">
                               <img
                                 src={project.image || "/placeholder.svg"}
                                 alt={`${project.title} project screenshot`}
@@ -408,15 +398,15 @@ export default function Home() {
                                 loading="lazy"
                               />
                             </div>
-                            <div className="flex flex-wrap gap-2">
+                            <div className="flex flex-wrap gap-1 sm:gap-2">
                               {project.tags.map((tag) => (
-                                <Badge key={tag} variant="secondary" className="text-xs">
+                                <Badge key={tag} variant="secondary" className="text-xs px-1.5 py-0.5">
                                   {tag}
                                 </Badge>
                               ))}
                             </div>
                           </CardContent>
-                          <CardFooter className="p-4 pt-0 gap-2 flex-col sm:flex-row">
+                          <CardFooter className="p-3 sm:p-4 pt-0 gap-2 flex-col sm:flex-row">
                             {project.demoLink && (
                               <Button variant="default" size="sm" className="w-full sm:flex-1" asChild>
                                 <a
@@ -449,8 +439,8 @@ export default function Home() {
                     )
                   })}
                 </CarouselContent>
-                <CarouselPrevious className="hidden sm:flex" />
-                <CarouselNext className="hidden sm:flex" />
+                <CarouselPrevious className="hidden md:flex" />
+                <CarouselNext className="hidden md:flex" />
               </Carousel>
             </div>
           </div>
