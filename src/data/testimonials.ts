@@ -29,8 +29,8 @@ export const testimonials: Testimonial[] = [
     rating: 5,
   },
   {
-    id: "martin-weiss",
-    name: "Martin Weiss",
+    id: "martin-weis",
+    name: "Martin Weis",
     role: "Investor",
     content: "Amazing, high quality and fast work. A pleasure to work with.",
     avatar: "/user.svg?height=40&width=40",
