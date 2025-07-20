@@ -615,15 +615,18 @@ export default function Home() {
                 </div>
               </HoverCardContent>
             </HoverCard>
-            . All rights reserved. •{" "}
+            . All rights reserved.{" "}
+            <br />
+            This website is{" "}
             <a
               href="https://github.com/pilot2254/pilot2254.github.io"
               target="_blank"
               rel="noopener noreferrer"
               className="font-medium underline underline-offset-4 hover:text-primary transition-colors"
             >
-              Open Source
+              Open Sourced
             </a>
+            .
           </div>
           <div className="flex gap-4">
             <TooltipProvider>
