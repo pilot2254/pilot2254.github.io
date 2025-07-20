@@ -1,6 +1,6 @@
-# Michal Flaška Portfolio
+# My personal website
 
-A modern, responsive portfolio website built with Next.js 15, TypeScript, Tailwind CSS, and shadcn/ui components. Features a clean design with dark mode support, smooth scrolling navigation, and optimized performance.
+A modern, responsive portfolio website built with Next.js 15, TypeScript, Tailwind CSS, and shadcn/ui components. Features dark mode support, smooth scrolling navigation, high configurability and optimized performance.
 
 ## Features
 
@@ -64,29 +64,29 @@ A modern, responsive portfolio website built with Next.js 15, TypeScript, Tailwi
 ```
 src/
 ├── app/                    # Next.js App Router
-│   ├── globals.css        # Global styles and CSS variables
-│   ├── layout.tsx         # Root layout with providers
-│   ├── page.tsx          # Main portfolio page
-│   └── not-found.tsx     # Custom 404 page
-├── components/            # React components
-│   ├── ui/               # shadcn/ui components
-│   ├── navbar.tsx        # Navigation component
-│   ├── project-card.tsx  # Project showcase card
-│   └── theme-provider.tsx # Theme context provider
-├── config/               # Configuration files
-│   └── site.ts          # Site metadata and settings
-├── data/                # Static data
-│   ├── projects.ts      # Project information
-│   ├── skills.ts        # Skills and expertise
-│   ├── services.ts      # Services offered
-│   ├── testimonials.ts  # Client testimonials
-│   └── experience.ts    # Work experience and education
-├── hooks/               # Custom React hooks
-├── lib/                # Utility functions
-│   ├── utils.ts        # General utilities
-│   └── constants.ts    # App constants
-└── types/              # TypeScript type definitions
-    └── index.ts        # Shared interfaces
+│   ├── globals.css         # Global styles and CSS variables
+│   ├── layout.tsx          # Root layout with providers
+│   ├── page.tsx            # Main portfolio page
+│   └── not-found.tsx       # Custom 404 page
+├── components/             # React components
+│   ├── ui/                 # shadcn/ui components
+│   ├── navbar.tsx          # Navigation component
+│   ├── project-card.tsx    # Project showcase card
+│   └── theme-provider.tsx  # Theme context provider
+├── config/                 # Configuration files
+│   └── site.ts             # Site metadata and settings
+├── data/                   # Static data
+│   ├── projects.ts         # Project information
+│   ├── skills.ts           # Skills and expertise
+│   ├── services.ts         # Services offered
+│   ├── testimonials.ts     # Client testimonials
+│   └── experience.ts       # Work experience and education
+├── hooks/                  # Custom React hooks
+├── lib/                    # Utility functions
+│   ├── utils.ts            # General utilities
+│   └── constants.ts        # App constants
+└── types/                  # TypeScript type definitions
+    └── index.ts            # Shared interfaces
 ```
 
 ## Customization
@@ -112,7 +112,7 @@ Update your personal details in:
 
 ## Deployment
 
-The site is configured for GitHub Pages deployment with static export:
+The site is configured for [GitHub Pages deployment](./.github/workflows/deploy.yml) with static export:
 
 1. **Build the project**
    ```bash
