@@ -160,3 +160,5 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 - [Lucide](https://lucide.dev/) for the comprehensive icon set
 - [Next.js](https://nextjs.org/) team for the amazing React framework
 - [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS framework
+- My friend [Maty](https://github.com/maty7253) for help with Nextjs
+- AI assistents [Bolt](https://bolt.new/), [v0](https://v0.dev/) & [ChatGPT](https://chat.openai.com/) for fixing bugs and optimizing the website.
