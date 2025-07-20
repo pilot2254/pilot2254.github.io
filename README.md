@@ -2,7 +2,7 @@
 
 A modern, responsive portfolio website built with Next.js 15, TypeScript, Tailwind CSS, and shadcn/ui components. Features a clean design with dark mode support, smooth scrolling navigation, and optimized performance.
 
-## ✨ Features
+## Features
 
 - **Modern Design**: Clean and professional layout with attention to detail
 - **Dark Mode**: Seamless light/dark theme switching with system preference detection
@@ -13,7 +13,7 @@ A modern, responsive portfolio website built with Next.js 15, TypeScript, Tailwi
 - **SEO Optimized**: Proper meta tags, structured data, and semantic HTML
 - **Type Safe**: Full TypeScript implementation for better development experience
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Framework**: [Next.js 15](https://nextjs.org/) - React framework with App Router
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
@@ -23,7 +23,7 @@ A modern, responsive portfolio website built with Next.js 15, TypeScript, Tailwi
 - **Language**: [TypeScript](https://www.typescriptlang.org/) - Type-safe JavaScript
 - **Deployment**: [GitHub Pages](https://pages.github.com/) - Static site hosting
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -59,7 +59,7 @@ A modern, responsive portfolio website built with Next.js 15, TypeScript, Tailwi
 4. **Open in browser**
    Navigate to [http://localhost:3000](http://localhost:3000)
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 src/
@@ -89,7 +89,7 @@ src/
     └── index.ts        # Shared interfaces
 ```
 
-## 🎨 Customization
+## Customization
 
 ### Personal Information
 Update your personal details in:
@@ -110,7 +110,7 @@ Update your personal details in:
 - **Testimonials**: Client feedback and recommendations
 - **Contact**: Contact information and social links
 
-## 🚀 Deployment
+## Deployment
 
 The site is configured for GitHub Pages deployment with static export:
 
@@ -131,7 +131,7 @@ npm run build
 # Upload the 'out' directory to your hosting provider
 ```
 
-## 🔧 Development
+## Development
 
 ### Available Scripts
 - `npm run dev` - Start development server
@@ -146,23 +146,17 @@ npm run build
 - **Prettier**: Code formatting for consistency
 - **TypeScript**: Type checking for better code quality
 
-## 📄 License
+## License
 
 This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
 
-## 🤝 Contributing
+## Contributing
 
 Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/pilot2254/pilot2254.github.io/issues).
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - [shadcn/ui](https://ui.shadcn.com/) for the beautiful component library
 - [Lucide](https://lucide.dev/) for the comprehensive icon set
 - [Next.js](https://nextjs.org/) team for the amazing React framework
 - [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS framework
-
----
-
-**Built with ❤️ by [Michal Flaška](https://github.com/pilot2254)**
-
-*This website is open source and available on [GitHub](https://github.com/pilot2254/pilot2254.github.io)*
