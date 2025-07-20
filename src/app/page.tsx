@@ -285,22 +285,25 @@ export default function Home() {
                         </div>
                       )}
                     </CardContent>
-                    <CardFooter className="p-4 pt-0">
-                      <Button variant="outline" size="sm" className="w-full" asChild>
-                        <a
-                          href="https://ko-fi.com/pilot2254/commissions"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-center gap-2"
-                        >
-                          <ExternalLink className="h-4 w-4" />
-                          Get This Service
-                        </a>
-                      </Button>
-                    </CardFooter>
                   </Card>
                 )
               })}
+            </div>
+            <div className="mt-8 text-center">
+              <p className="text-muted-foreground mb-4">
+                Interested in my services? Check out more of my services and get in touch.
+              </p>
+              <Button variant="outline" asChild>
+                <a
+                  href="https://ko-fi.com/pilot2254/commissions"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2"
+                >
+                  <ExternalLink className="h-4 w-4" />
+                  View All Services
+                </a>
+              </Button>
             </div>
           </div>
         </div>
@@ -376,14 +379,14 @@ export default function Home() {
                     const StatusIcon = project.status ? statusIconMap[project.status] : null
                     return (
                       <CarouselItem key={project.id} className="basis-full sm:basis-1/2 lg:basis-1/3 pl-2 sm:pl-4">
-                        <Card className={`border-0 ${project.featured ? "bg-accent/50" : ""}`}>
+                        <Card className={`${project.featured ? "bg-accent/80 border-accent" : "bg-card border"}`}>
                           <CardHeader className="p-3 sm:p-4">
                             <div className="flex items-start justify-between">
                               <div className="flex-1">
                                 <CardTitle className="text-sm sm:text-base lg:text-lg flex items-center gap-2">
                                   {project.title}
                                   {project.featured && (
-                                    <Badge variant="secondary" className="text-xs">
+                                    <Badge variant="default" className="text-xs">
                                       Featured
                                     </Badge>
                                   )}
@@ -612,7 +615,15 @@ export default function Home() {
                 </div>
               </HoverCardContent>
             </HoverCard>
-            . All rights reserved.
+            . All rights reserved. •{" "}
+            <a
+              href="https://github.com/pilot2254/pilot2254.github.io"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium underline underline-offset-4 hover:text-primary transition-colors"
+            >
+              Open Source
+            </a>
           </div>
           <div className="flex gap-4">
             <TooltipProvider>
