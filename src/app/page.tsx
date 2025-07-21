@@ -573,7 +573,7 @@ export default function Home() {
           <div className="text-center text-xs sm:text-sm leading-loose text-muted-foreground md:text-left">
             <HoverCard>
               <HoverCardTrigger asChild>
-                <span className="font-medium underline underline-offset-4 cursor-pointer">
+                <span className="font-medium underline underline-offset-4 hover:text-primary transition-colors cursor-pointer">
                   Built with Next.js and shadcn/ui
                 </span>
               </HoverCardTrigger>
