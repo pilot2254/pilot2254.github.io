@@ -598,7 +598,6 @@ export default function Home() {
                         href={EXTERNAL_LINKS.SHADCN}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="hover:underline"
                       >
                         shadcn/ui - Component library
                       </a>
@@ -620,9 +619,8 @@ export default function Home() {
             This website is{" "}
             <a
               href="https://github.com/pilot2254/pilot2254.github.io"
-              target="_blank"
+              target="_blank" 
               rel="noopener noreferrer"
-              className="font-medium underline underline-offset-4 hover:text-primary transition-colors"
             >
               Open Sourced
             </a>
