@@ -13,7 +13,7 @@ export const siteConfig: SiteConfig = {
   url: "https://pilot2254.github.io",
   author: {
     name: "Michal Flaška",
-    email: "michal.flaska@redfox-studios.org",
+    email: "michal-flaska@redfox-studios.org",
     twitter: "@pilot2254",
     github: "pilot2254",
     linkedin: "pilot2254",
