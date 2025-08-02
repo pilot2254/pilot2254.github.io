@@ -1,7 +1,30 @@
 {
-  "name": "michal-flaska-portfolio",
-  "version": "0.1.0",
+  "name": "pilot2254.github.io",
+  "version": "0.8.0",
   "private": true,
+  "license": "Apache-2.0",
+  "description": "My personal website built with Next.js and Tailwind CSS.",
+  "keywords": [
+    "website",
+    "nextjs",
+    "tailwindcss",
+    "portfolio",
+    "react"
+  ],
+  "homepage": "https://pilot2254.github.io",
+  "bugs": {
+    "url": "https://github.com/pilot2254/pilot2254.github.io/issues",
+    "email": "michal-flaska@redfox-studios.org"
+  },
+  "author": {
+    "name": "Michal Flaška",
+    "email": "michal-flaska@redfox-studios.org",
+    "url": "https://pilot2254.github.io"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pilot2254/pilot2254.github.io.git"
+  },
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
@@ -10,7 +33,8 @@
     "export": "next build",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "update": "npm update"
+    "update": "npm update",
+    "shadcn-update": " npx shadcn@latest add -a --overwrite"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
