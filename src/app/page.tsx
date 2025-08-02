@@ -323,7 +323,11 @@ export default function Home() {
               <Tabs defaultValue="Frontend" className="w-full">
                 <TabsList className="flex w-full overflow-x-auto scrollbar-hide p-1 h-auto gap-1">
                   {skillCategories.map((category) => (
-                    <TabsTrigger key={category} value={category} className="flex-shrink-0 px-2 sm:px-3 py-2 text-xs sm:text-sm whitespace-nowrap">
+                    <TabsTrigger
+                      key={category}
+                      value={category}
+                      className="flex-shrink-0 px-2 sm:px-3 py-2 text-xs sm:text-sm whitespace-nowrap"
+                    >
                       {category}
                     </TabsTrigger>
                   ))}
@@ -391,7 +395,9 @@ export default function Home() {
                                     </Badge>
                                   )}
                                 </CardTitle>
-                                <CardDescription className="text-xs sm:text-sm line-clamp-2">{project.description}</CardDescription>
+                                <CardDescription className="text-xs sm:text-sm line-clamp-2">
+                                  {project.description}
+                                </CardDescription>
                               </div>
                               {StatusIcon && project.status && (
                                 <div className="hidden sm:flex items-center gap-1 ml-2">
@@ -615,8 +621,7 @@ export default function Home() {
                 </div>
               </HoverCardContent>
             </HoverCard>
-            . All rights reserved.{" "}
-            <br />
+            . All rights reserved. <br />
             This website is{" "}
             <a
               href="https://github.com/pilot2254/pilot2254.github.io"

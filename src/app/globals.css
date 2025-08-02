@@ -164,24 +164,25 @@
     .container {
       @apply px-4;
     }
-    
+
     /* Better touch targets */
-    button, a {
+    button,
+    a {
       @apply min-h-[44px];
     }
-    
+
     /* Improved text readability */
     body {
       font-size: 16px;
       line-height: 1.6;
     }
-    
+
     /* Prevent horizontal scroll */
     .overflow-x-hidden {
       overflow-x: hidden;
     }
   }
-  
+
   /* Extra small screens */
   /* Line clamp utilities */
   .line-clamp-2 {
@@ -224,8 +225,6 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-muted-foreground/50;
 }
-
-
 
 @layer base {
   * {

@@ -27,18 +27,20 @@ A modern, responsive portfolio website built with Next.js 15, TypeScript, Tailwi
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - npm, yarn, or pnpm
 
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/pilot2254/pilot2254.github.io.git
    cd pilot2254.github.io
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    # or
@@ -48,6 +50,7 @@ A modern, responsive portfolio website built with Next.js 15, TypeScript, Tailwi
    ```
 
 3. **Start development server**
+
    ```bash
    npm run dev
    # or
@@ -92,16 +95,20 @@ src/
 ## Customization
 
 ### Personal Information
+
 Update your personal details in:
+
 - `src/config/site.ts` - Site metadata, contact info, social links
 - `src/data/` - Projects, skills, experience, and testimonials
 
 ### Styling
+
 - `src/app/globals.css` - Global styles and CSS custom properties
 - `tailwind.config.ts` - Tailwind CSS configuration
 - Component-level styling using Tailwind classes
 
 ### Content Sections
+
 - **Hero**: Main landing section with introduction
 - **About**: Experience, education, and achievements tabs
 - **Services**: Professional services offered
@@ -115,6 +122,7 @@ Update your personal details in:
 The site is configured for [GitHub Pages deployment](./.github/workflows/deploy.yml) with static export:
 
 1. **Build the project**
+
    ```bash
    npm run build
    ```
@@ -125,7 +133,9 @@ The site is configured for [GitHub Pages deployment](./.github/workflows/deploy.
    - Site will be available at `https://pilot2254.github.io`
 
 ### Manual Deployment
+
 For other hosting providers:
+
 ```bash
 npm run build
 # Upload the 'out' directory to your hosting provider
@@ -134,6 +144,7 @@ npm run build
 ## Development
 
 ### Available Scripts
+
 - `npm run dev` - Start development server
 - `npm run build` - Build for production
 - `npm run start` - Start production server
@@ -142,6 +153,7 @@ npm run build
 - `npm run format:check` - Check code formatting
 
 ### Code Quality
+
 - **ESLint**: Code linting with Next.js recommended rules
 - **Prettier**: Code formatting for consistency
 - **TypeScript**: Type checking for better code quality
