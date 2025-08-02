@@ -2,7 +2,7 @@
   "name": "pilot2254.github.io",
   "version": "0.8.0",
   "private": true,
-  "license": "Apache-2.0",
+  "license": "MIT",
   "description": "My personal website built with Next.js and Tailwind CSS.",
   "keywords": [
     "website",
