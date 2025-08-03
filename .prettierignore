@@ -7,3 +7,4 @@ coverage
 *.log
 .env*
 public
+src/components/ui/
