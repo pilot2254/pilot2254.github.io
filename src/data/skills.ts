@@ -55,7 +55,7 @@ export const skills: Skill[] = [
   // Programming Languages
   {
     name: "HTML",
-    level: 75,
+    level: 65,
     category: "Languages",
     description: "Semantic markup language for web content structure",
   },
@@ -67,7 +67,7 @@ export const skills: Skill[] = [
   },
   {
     name: "JavaScript",
-    level: 35,
+    level: 30,
     category: "Languages",
     description: "Dynamic programming language for web development",
   },
@@ -77,25 +77,37 @@ export const skills: Skill[] = [
     category: "Languages",
     description: "Typed superset of JavaScript for better development experience",
   },
+  {
+    name: "C++",
+    level: 15,
+    category: "Languages",
+    description: "Typed superset of JavaScript for better development experience",
+  },
+  {
+    name: "Assembly",
+    level: 10,
+    category: "Languages",
+    description: "Low-level programming language for direct hardware manipulation",
+  },
 
   // Other Tools
   {
-    name: "nmap",
-    level: 20,
-    category: "Other",
-    description: "Network discovery and security auditing tool",
-  },
-  {
     name: "Cheat Engine",
-    level: 10,
+    level: 15,
     category: "Other",
     description: "Memory scanner and debugger for reverse engineering",
   },
   {
-    name: "Flipper Zero Dev",
-    level: 15,
+    name: "Linux",
+    level: 25,
     category: "Other",
-    description: "Hardware hacking and penetration testing device",
+    description: "Operator system kernel for servers and desktops. It is known for its stability and security.",
+  },
+  {
+    name: "Raspberry Pi",
+    level: 20,
+    category: "Other",
+    description: "Small, affordable computer for DIY projects and learning programming. I use it for hosting projects and learning Linux.",
   },
 ]
 
