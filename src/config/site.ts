@@ -37,7 +37,7 @@ export const siteConfig: SiteConfig = {
     },
   ],
   contact: {
-    email: "michal.flaska@redfox-studios.org",
+    email: "michal-flaska@redfox-studios.org",
     availability: "Available for freelance work",
   },
 }
