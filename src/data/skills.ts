@@ -81,7 +81,7 @@ export const skills: Skill[] = [
     name: "C++",
     level: 15,
     category: "Languages",
-    description: "Typed superset of JavaScript for better development experience",
+    description: "Object-oriented programming language giving a clear structure to programs and allowing code to be reused, lowering development costs.",
   },
   {
     name: "Assembly",
