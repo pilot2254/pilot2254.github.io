@@ -7,4 +7,6 @@ coverage
 *.log
 .env*
 public
+
+# shadcn UI:
 src/components/ui/
