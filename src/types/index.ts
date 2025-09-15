@@ -95,3 +95,25 @@ export interface SiteConfig {
   social: SocialLink[]
   contact: ContactInfo
 }
+
+export interface BlogPost {
+  slug: string
+  title: string
+  description: string
+  date: string
+  author: string
+  tags: string[]
+  content: string
+  readingTime?: number
+  featured?: boolean
+  published?: boolean
+}
+
+export interface BlogConfig {
+  postsPerPage: number
+  showReadingTime: boolean
+  showAuthor: boolean
+  showTags: boolean
+  dateFormat: string
+  featuredPostsCount: number
+}
