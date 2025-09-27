@@ -8,5 +8,5 @@ coverage
 .env*
 public
 
-# shadcn UI:
+# shadcn/ui:
 src/components/ui/

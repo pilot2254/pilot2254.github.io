@@ -47,6 +47,7 @@ export const navigationItems = [
   { href: "#services", label: "Services" },
   { href: "#skills", label: "Skills" },
   { href: "#projects", label: "Projects" },
+  { href: "/blog", label: "Blog" },
   { href: "#contact", label: "Contact" },
 ] as const
 

@@ -12,6 +12,7 @@ A modern, responsive portfolio website built with Next.js 15, TypeScript, Tailwi
 - **Component Library**: Built with shadcn/ui for consistent, accessible components
 - **SEO Optimized**: Proper meta tags, structured data, and semantic HTML
 - **Type Safe**: Full TypeScript implementation for better development experience
+- **Blog System**: Markdown-based blog with static generation and full configurability
 
 ## Tech Stack
 
@@ -62,36 +63,6 @@ A modern, responsive portfolio website built with Next.js 15, TypeScript, Tailwi
 4. **Open in browser**
    Navigate to [http://localhost:3000](http://localhost:3000)
 
-## Project Structure
-
-```
-src/
-├── app/                    # Next.js App Router
-│   ├── globals.css         # Global styles and CSS variables
-│   ├── layout.tsx          # Root layout with providers
-│   ├── page.tsx            # Main portfolio page
-│   └── not-found.tsx       # Custom 404 page
-├── components/             # React components
-│   ├── ui/                 # shadcn/ui components
-│   ├── navbar.tsx          # Navigation component
-│   ├── project-card.tsx    # Project showcase card
-│   └── theme-provider.tsx  # Theme context provider
-├── config/                 # Configuration files
-│   └── site.ts             # Site metadata and settings
-├── data/                   # Static data
-│   ├── projects.ts         # Project information
-│   ├── skills.ts           # Skills and expertise
-│   ├── services.ts         # Services offered
-│   ├── testimonials.ts     # Client testimonials
-│   └── experience.ts       # Work experience and education
-├── hooks/                  # Custom React hooks
-├── lib/                    # Utility functions
-│   ├── utils.ts            # General utilities
-│   └── constants.ts        # App constants
-└── types/                  # TypeScript type definitions
-    └── index.ts            # Shared interfaces
-```
-
 ## Customization
 
 ### Personal Information
@@ -114,8 +85,29 @@ Update your personal details in:
 - **Services**: Professional services offered
 - **Skills**: Technical skills organized by category
 - **Projects**: Portfolio projects with live demos and source code
+- **Blog**: Markdown-based blog posts with full configurability
 - **Testimonials**: Client feedback and recommendations
 - **Contact**: Contact information and social links
+
+### Blog Posts
+
+Create new blog posts by adding Markdown files to `src/data/blog/`:
+
+```markdown
+---
+title: "Your Post Title"
+description: "Brief description"
+date: "2024-01-30"
+author: "Your Name"
+tags: ["tag1", "tag2"]
+featured: true
+published: true
+---
+
+# Your Content Here
+
+Write your blog post content in Markdown...
+```
 
 ## Deployment
 

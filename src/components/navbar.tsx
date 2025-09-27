@@ -18,7 +18,12 @@ export function Navbar() {
   const handleNavClick = React.useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault()
     setIsOpen(false)
-    scrollToElement(href, APP_CONSTANTS.SCROLL_OFFSET)
+    // Handle external routes (like /blog) differently from anchor links
+    if (href.startsWith('/')) {
+      window.location.href = href
+    } else {
+      scrollToElement(href, APP_CONSTANTS.SCROLL_OFFSET)
+    }
   }, [])
 
   const toggleTheme = React.useCallback(() => {
