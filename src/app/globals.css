@@ -120,3 +120,9 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  .container {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+}
