@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Link from "next/link";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 export function generateStaticParams() {
   const posts = getAllPosts();
@@ -41,8 +43,35 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           </div>
         </header>
 
-        <div className="prose prose-zinc dark:prose-invert max-w-none prose-headings:font-semibold prose-a:text-foreground prose-a:no-underline hover:prose-a:text-muted-foreground prose-pre:bg-muted prose-code:text-foreground">
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+        <div className="prose prose-zinc dark:prose-invert max-w-none
+          prose-headings:font-semibold prose-headings:mt-8 prose-headings:mb-4
+          prose-h1:text-2xl prose-h2:text-xl prose-h3:text-lg
+          prose-p:leading-relaxed prose-p:mb-4
+          prose-a:text-foreground prose-a:underline hover:prose-a:text-muted-foreground
+          prose-ul:my-4 prose-ol:my-4 prose-li:my-1
+          prose-strong:font-semibold">
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
+            components={{
+              code({ node, inline, className, children, ...props }: any) {
+                const match = /language-(\w+)/.exec(className || '');
+                return !inline && match ? (
+                  <SyntaxHighlighter
+                    style={oneDark}
+                    language={match[1]}
+                    PreTag="div"
+                    {...props}
+                  >
+                    {String(children).replace(/\n$/, '')}
+                  </SyntaxHighlighter>
+                ) : (
+                  <code className={className} {...props}>
+                    {children}
+                  </code>
+                );
+              }
+            }}
+          >
             {post.content}
           </ReactMarkdown>
         </div>
