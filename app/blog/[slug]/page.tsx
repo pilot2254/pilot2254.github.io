@@ -2,6 +2,7 @@ import { getPostBySlug, getAllPosts } from "@/lib/markdown";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import remarkBreaks from "remark-breaks";
 import Link from "next/link";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
@@ -51,7 +52,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           prose-ul:my-4 prose-ol:my-4 prose-li:my-1
           prose-strong:font-semibold">
           <ReactMarkdown
-            remarkPlugins={[remarkGfm]}
+            remarkPlugins={[remarkGfm, remarkBreaks]}
             components={{
               code({ node, inline, className, children, ...props }: any) {
                 const match = /language-(\w+)/.exec(className || '');
