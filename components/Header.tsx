@@ -9,14 +9,14 @@ export default function Header() {
   const pathname = usePathname();
 
   const links = [
-    { href: "/", label: "Home" },
+    { href: "/", label: "About" },
     { href: "/blog", label: "Blog" },
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between">
-        <Link href="/" className="font-bold text-xl">
+    <header className="border-b">
+      <div className="max-w-2xl mx-auto px-4 py-4 flex items-center justify-between">
+        <Link href="/" className="font-semibold hover:text-muted-foreground transition-colors">
           {config.name}
         </Link>
 
@@ -25,10 +25,10 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className={`text-sm font-medium transition-colors hover:text-primary ${
+              className={`text-sm transition-colors ${
                 pathname === link.href
                   ? "text-foreground"
-                  : "text-muted-foreground"
+                  : "text-muted-foreground hover:text-foreground"
               }`}
             >
               {link.label}
