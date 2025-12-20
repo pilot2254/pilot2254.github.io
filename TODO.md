@@ -1,22 +1,44 @@
 Pages:
 - [ ] Home
-  - [ ] Sections: hero, about, experience, education, achievements
-  - [ ] Services/Commissions: 3 featured, then button to external site
-  - [ ] Skills: Categorized into Frontend, Backend, Languages, Other
+  - [ ] hero
+  - [ ] about me
+  - [ ] section with: experience, education, achievements
+  - [ ] section skills categorized into Frontend, Backend, Languages, Other
   - [ ] Projects
-  - [ ] Testimonials / what others say
   - [ ] Get in touch / contact (not a form)
+
+- [ ] Reviews
+  - [ ] what others say
 
 - [ ] Blog:
   - [ ] Blog list
   - [ ] Blog post
 
+- [ ] Store
+  - [ ] Section: Services
+  - [ ] Section: Products
+
+---
+
 Main components:
 - [ ] shadcn/ui
 - [ ] header
 - [ ] footer
+- [ ] lucide react icons
+- [ ] thinking about using [reactbits.dev](https://reactbits.dev/) too. But for now i wont use it
 
 Main features:
-- [x] deployment to github pages (static web hosting) via github workflow
+- [ ] deployment to github pages (static web hosting) via github workflow
 - [ ] dark/light theme
 - [ ] not a goofy ahh cringe website
+- [ ] performance, and not long loadings and stuff like that
+
+---
+
+Notes:
+- this is not an e-commerce. The store is just a showcase that will do things based on where you click to purchase:
+  - if you decide to purchase Services, it will redirect you to my kofi page
+  - if you decide to purchase products, it will show a popup (preferably the shadcn/ui alert dialog) telling you to contact me via discord (@michal.flaska)
+  - the product and service cards will be a carousel
+  - everything should be configurable, easy for maintenance and not hardcoded
+  - no comments, i know what the code means. use comments only when necessary
