@@ -1,0 +1,304 @@
+# https://github.com/redfox-studios/devkit/blob/main/.editorconfig
+#
+# This is our universal EditorConfig file
+# To use this .editorconfig file, you need to copy and paste it into your own project's root directory.
+#
+# EditorConfig helps maintain consistent coding styles between different editors and IDEs.
+# For more information about EditorConfig, please visit http://editorconfig.org
+
+# -----------------------------------------------------------------------------------------------------
+# --------------------------------------- START OF EDITORCONFIG ---------------------------------------
+# -----------------------------------------------------------------------------------------------------
+
+# EditorConfig is awesome: https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+# ------ Universal Defaults ------
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# ------ Web Development ------
+
+# TypeScript & JavaScript
+[*.{ts,tsx,js,jsx,mjs,cjs}]
+indent_style = space
+indent_size = 2
+max_line_length = 100
+
+# HTML
+[*.{html,htm}]
+indent_style = space
+indent_size = 2
+
+# CSS, SCSS, SASS, Less
+[*.{css,scss,sass,less}]
+indent_style = space
+indent_size = 2
+
+# Vue, Svelte
+[*.{vue,svelte}]
+indent_style = space
+indent_size = 2
+
+# JSON, JSONC
+[*.{json,jsonc}]
+indent_style = space
+indent_size = 2
+
+# ------ Systems Programming ------
+
+# C++
+[*.{cpp,cxx,cc,c,hpp,hxx,h,hh}]
+indent_style = tab
+indent_size = 8
+tab_width = 8
+max_line_length = 120
+
+# Rust
+[*.rs]
+indent_style = space
+indent_size = 4
+max_line_length = 100
+
+# Go
+[*.go]
+indent_style = tab
+indent_size = 8
+tab_width = 8
+max_line_length = 120
+
+# C#
+[*.cs]
+indent_style = space
+indent_size = 4
+max_line_length = 120
+
+# ------ Scripting & General Purpose ------
+
+# Python
+[*.py]
+indent_style = space
+indent_size = 4
+max_line_length = 88
+
+# Shell scripts
+[*.{sh,bash,zsh}]
+indent_style = tab
+indent_size = 8
+tab_width = 8
+
+# Ruby
+[*.rb]
+indent_style = space
+indent_size = 2
+
+# PHP
+[*.php]
+indent_style = space
+indent_size = 4
+
+# Lua
+[*.lua]
+indent_style = space
+indent_size = 2
+
+# ------ Configuration & Data ------
+
+# YAML
+[*.{yml,yaml}]
+indent_style = space
+indent_size = 2
+
+# TOML
+[*.toml]
+indent_style = space
+indent_size = 2
+
+# XML
+[*.xml]
+indent_style = space
+indent_size = 2
+
+# INI, CFG
+[*.{ini,cfg,conf}]
+indent_style = space
+indent_size = 4
+
+# Environment files
+[*.env,*.env.*,.env*]
+indent_style = space
+indent_size = 2
+
+# ------ Build & Project Files ------
+
+# CMake
+[CMakeLists.txt,*.cmake]
+indent_style = tab
+indent_size = 8
+tab_width = 8
+
+# Makefiles
+[{Makefile,*.mk,*.mak}]
+indent_style = tab
+indent_size = 8
+tab_width = 8
+
+# Cargo (Rust)
+[Cargo.toml,Cargo.lock]
+indent_style = space
+indent_size = 2
+
+# NPM/Yarn
+[package.json,package-lock.json,yarn.lock,pnpm-lock.yaml]
+indent_style = space
+indent_size = 2
+
+# MSBuild & Visual Studio
+[*.{csproj,vbproj,vcxproj,vcxproj.filters,proj,projitems,shproj,sln}]
+indent_style = tab
+indent_size = 8
+tab_width = 8
+end_of_line = crlf
+
+# Gradle
+[*.gradle,*.gradle.kts]
+indent_style = space
+indent_size = 4
+
+# Maven
+[pom.xml]
+indent_style = space
+indent_size = 4
+
+# ------ Game Development ------
+
+# Unity C# scripts
+[*.{unity,prefab,asset,mat,controller,anim}]
+indent_style = space
+indent_size = 4
+
+# Unreal Engine
+[*.{uproject,uplugin}]
+indent_style = tab
+indent_size = 4
+tab_width = 4
+
+# Godot
+[*.{gd,tscn,tres}]
+indent_style = tab
+indent_size = 4
+tab_width = 4
+
+# Shader files
+[*.{shader,glsl,hlsl,vert,frag,compute}]
+indent_style = space
+indent_size = 4
+
+# ------ Documentation ------
+
+# Markdown
+[*.md]
+indent_style = space
+indent_size = 2
+trim_trailing_whitespace = false
+
+# ReStructuredText
+[*.rst]
+indent_style = space
+indent_size = 3
+trim_trailing_whitespace = false
+
+# AsciiDoc
+[*.adoc]
+indent_style = space
+indent_size = 2
+
+# ------ Version Control & Git ------
+
+[.gitignore,.gitattributes,.gitmodules]
+indent_style = space
+indent_size = 2
+
+[COMMIT_EDITMSG]
+max_line_length = 72
+
+# ------ Linters & Formatters ------
+
+[.clang-format]
+indent_style = space
+indent_size = 2
+
+[.prettierrc,prettier.config.js]
+indent_style = space
+indent_size = 2
+
+[.eslintrc,.eslintrc.json,.eslintrc.js]
+indent_style = space
+indent_size = 2
+
+[.stylelintrc,.stylelintrc.json]
+indent_style = space
+indent_size = 2
+
+[rustfmt.toml,.rustfmt.toml]
+indent_style = space
+indent_size = 2
+
+# ------ Docker & Infrastructure ------
+
+[Dockerfile,*.dockerfile]
+indent_style = space
+indent_size = 2
+
+[docker-compose.yml,docker-compose.yaml,compose.yml,compose.yaml]
+indent_style = space
+indent_size = 2
+
+# Kubernetes
+[*.{k8s.yml,k8s.yaml}]
+indent_style = space
+indent_size = 2
+
+# Terraform
+[*.tf,*.tfvars]
+indent_style = space
+indent_size = 2
+
+# ------ Mobile Development ------
+
+# Swift
+[*.swift]
+indent_style = space
+indent_size = 4
+
+# Kotlin
+[*.kt,*.kts]
+indent_style = space
+indent_size = 4
+
+# Java
+[*.java]
+indent_style = space
+indent_size = 4
+max_line_length = 120
+
+# Dart (Flutter)
+[*.dart]
+indent_style = space
+indent_size = 2
+
+# React Native Metro config
+[metro.config.js]
+indent_style = space
+indent_size = 2
+
+
+# -----------------------------------------------------------------------------------------------------
+# ---------------------------------------- END OF EDITORCONFIG ----------------------------------------
+# -----------------------------------------------------------------------------------------------------
