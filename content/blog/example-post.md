@@ -12,16 +12,25 @@ This is a paragraph with some **bold text** and *italic text*. You can also add 
 
 Here's some code:
 ```javascript
-function hello() {
-  console.log("Hello world!")
+#include <iostream>
+
+int main(){
+
+  std::cout << "Hello World";
+
+  return 0;
 }
 ```
 
 ## Lists
 
-- Item 1
-- Item 2
-- Item 3
+- Unordered item 1
+- Unordered item 2
+- Unordered item 3
+
+1. Ordered item 1
+2. Ordered item 2
+3. Ordered item 3
 
 ## Tables
 
@@ -30,6 +39,12 @@ function hello() {
 | Data 1   | Data 2   | Data 3   |
 | Data 4   | Data 5   | Data 6   |
 
+And also a horizontal line
+
+---
+
 ## Images
 
-![Alt text](/images/blog/example.png)
+![Alt text](https://www.wondercide.com/cdn/shop/articles/Upside_down_gray_cat.png)
+
+> Meow

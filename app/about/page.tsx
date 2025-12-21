@@ -3,10 +3,11 @@ import { siteConfig } from "@/config/site"
 import {
   Twitter,
   Github,
-  Send,
+  MessageSquare,
   DollarSign,
   Gamepad2,
-  Coffee
+  Coffee,
+  MessageCircleMore
 } from "lucide-react"
 
 export default function AboutPage() {
@@ -19,12 +20,12 @@ export default function AboutPage() {
     {
       name: "Discord",
       href: `https://discord.com/users/${siteConfig.social.discord}`,
-      icon: Send
+      icon: MessageCircleMore
     },
     {
       name: "Reddit",
       href: siteConfig.social.reddit,
-      icon: Github
+      icon: MessageCircleMore
     },
     {
       name: "Steam",
@@ -45,26 +46,31 @@ export default function AboutPage() {
 
   return (
     <div className="space-y-8">
-      <h1 className="text-3xl font-bold text-white">About</h1>
+      <h1 className="text-3xl font-bold text-white">About Me</h1>
 
       <div className="flex flex-col md:flex-row gap-8">
         <div className="flex-1 space-y-4 text-zinc-300 leading-relaxed">
           <p>
-            Your bio here. Talk about yourself, your experience, what you do, etc.
+            Hi there, I'm Mike.<br />
+            16 years old developer based in Slovakia. I focus on game and app development, low-level research, and open-source tooling.
           </p>
 
           <p>
-            Another paragraph about your background, interests, or current work.
+            I currently study game development at Skyro.ai and spend my free time building projects that explore engine workflows, performance, and memory analysis. My work is research-oriented and aimed at understanding systems, debugging, and improving software resilience. Not to sell or abuse cheats.
           </p>
 
           <p>
-            More details about your journey, achievements, or what drives you.
+            Meaning that All projects presented on my github are research or educational in nature. I do not condone cheating in live multiplayer environments. Where my work touches game security, it is to study vulnerabilities, learn defensive techniques, and responsibly disclose findings.
+          </p>
+
+          <p>
+            I used to create websites, but now I focus solely on game development and reverse engineering. And I'm not planning to return to web development.
           </p>
         </div>
 
         <div className="flex-shrink-0">
           <Image
-            src="/images/profile/avatar.jpg"
+            src="https://avatars.githubusercontent.com/pilot2254"
             alt={siteConfig.name}
             width={200}
             height={200}

@@ -8,6 +8,12 @@ export default function NotFound() {
       <p className="text-sm text-zinc-500 max-w-md text-center">
         The page you're looking for doesn't exist or has been moved.
       </p>
+      <Link
+        href="/"
+        className="mt-4 text-white hover:text-zinc-400 transition-colors underline"
+      >
+        Go back home
+      </Link>
     </div>
   )
 }
