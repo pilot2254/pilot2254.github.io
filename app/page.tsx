@@ -22,28 +22,26 @@ export default async function Home() {
       {/* Vertical timeline */}
       <div className="absolute left-[3.25rem] top-0 bottom-0 w-px bg-zinc-800" />
 
-      <div className="space-y-12">
+      <div className="space-y-8">
         {years.map((year) => (
           <div key={year} className="relative">
-            {/* Year */}
-            <div className="flex items-center gap-4 mb-4">
-              <span className="text-zinc-600 text-sm font-mono tabular-nums w-12">
+            {/* First post with year */}
+            <div className="flex items-start gap-4">
+              <span className="text-zinc-600 text-sm font-mono tabular-nums w-12 pt-0.5">
                 {year}
               </span>
-            </div>
-
-            {/* Posts */}
-            <div className="space-y-2 pl-16">
-              {postsByYear[year].map((post) => (
-                <Link
-                  key={post.slug}
-                  href={`/blog/${post.slug}`}
-                  className="group flex items-center justify-between text-white hover:text-zinc-400 transition-colors"
-                >
-                  <span>{post.title}</span>
-                  <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
-                </Link>
-              ))}
+              <div className="flex-1 space-y-2">
+                {postsByYear[year].map((post) => (
+                  <Link
+                    key={post.slug}
+                    href={`/blog/${post.slug}`}
+                    className="group flex items-center justify-between text-white hover:text-zinc-400 transition-colors"
+                  >
+                    <span>{post.title}</span>
+                    <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         ))}
