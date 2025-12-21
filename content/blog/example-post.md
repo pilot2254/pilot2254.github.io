@@ -11,7 +11,6 @@ This is a paragraph with some **bold text** and *italic text*. You can also add 
 ## Code blocks
 
 Here's some code:
-
 ```javascript
 function hello() {
   console.log("Hello world!")
