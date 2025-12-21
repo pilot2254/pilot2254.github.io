@@ -1,24 +1,97 @@
-1. What vibe are you going for? -> minimal, the one on the picture. Thats also for the layout, color, etc.
+# Portfolio
 
-2. What sections do you need?:
+Minimal portfolio built with Next.js, optimized for GitHub Pages.
 
-- pages and their sections + URLs (deployment structure):
-	- about - https://example.com/about
-	- blog list - https://example.com/
-	- blog post - https://example.com/blog/... (or else)
-	- projects - https://example.com/projects
-	- reviews - https://example.com/reviews (planning to add this later, but dont forget about it)
+## Setup
 
-3. Any specific features?
-- in the projects page, there will be button in each project card (or whatever you want to call it) to see more details, opening a popup with descriptions, screenshots (preferably carousel), tech stack (badges), etc.
-- everything easily configurable, organized, no mess, easy for maintenance, performance and development. please dont break anything
-- optimized for github pages
-- docs will use markdown, (md, or mdx, or else. your choice)
+```bash
+npm install
+npm run dev
+```
 
-4. Color scheme preference? - dark, but not really dark. If we are going to use shadcn (which we probably are going to use), id like to use the zinc theme, and not really dark theme, but more gray (but still everything in ZINC) - i hope you understand
+## Configuration
 
-5. Do you have the images organized? - i dont even have anything done yet, but i would like to have them in public/images/
+### Site Settings
+Edit `config/site.ts`
 
-6. GitHub Pages deployment - you know Next.js needs static export for GitHub Pages, right? Just checking we're on the same page about that. - yes i do, but my arguments are that pure html, css and js would be absolute fucking pain. React itself has some things we dont want, etc, etc. And nextjs can have a static export. We just need to optimize and config lot of shit. BUT, if you have anything that can be better, we can do that.
+### Projects
+Edit `config/projects.ts` to add your projects
 
-any other questions?
+### About Page
+Edit `app/about/page.tsx` to update your bio.
+
+## Content
+
+### Blog Posts
+Create markdown files in `content/blog/`:
+
+```markdown
+---
+title: "Post Title"
+date: "2024-12-20"
+description: "Post description"
+---
+
+Your content here...
+```
+
+### Images
+- Profile: `public/images/profile/avatar.jpg`
+- Blog: `public/images/blog/`
+- Projects: `public/images/projects/`
+
+## Deployment
+
+### GitHub Pages
+
+1. Build:
+```bash
+npm run build
+```
+
+2. Push to GitHub:
+```bash
+git add .
+git commit -m "Deploy"
+git push
+```
+
+3. Enable GitHub Pages:
+   - Go to repo Settings > Pages
+   - Source: GitHub Actions
+   - The workflow will deploy automatically
+
+### Custom Domain (Optional)
+Add `CNAME` file to `public/` with your domain.
+
+## Project Structure
+
+```
+├── app/
+│   ├── about/          # About page
+│   ├── blog/[slug]/    # Blog post pages
+│   ├── projects/       # Projects page
+│   └── page.tsx        # Home (blog list)
+├── components/         # React components
+├── config/            
+│   ├── site.ts         # Site configuration
+│   └── projects.ts     # Projects data
+├── content/blog/       # Blog posts (.md files)
+├── lib/                # Utilities
+└── public/images/      # Static images
+```
+
+## Commands
+
+- `npm run dev` - Start dev server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+
+## Tech Stack
+
+- Next.js 15 (static export)
+- TypeScript
+- Tailwind CSS
+- shadcn/ui
+- Geist fonts
+- react-markdown
