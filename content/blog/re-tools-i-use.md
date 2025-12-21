@@ -16,13 +16,13 @@ This is where everyone has opinions. Here's mine.
 
 I tried **IDA**, **Ghidra**, **Cutter**, **x64dbg**, and more. Let me break it down:
 
-- **IDA:** Industry standard, sure. The free version is limited as hell. The Pro versions cost $1k-$9k. I'm not paying that to *learn* before I even have a job. My parents are already paying $6k a year for school. Pass.
+**IDA:** Industry standard, sure. The free version is limited as hell. The Pro versions cost $1k-$9k. I'm not paying that to *learn* before I even have a job. My parents are already paying $6k a year for school. Pass.
 
-- **Ghidra:** Really good. I like it. But I decided not to use it because of the Java setup shit. Maybe I'll return to it later.
+**Ghidra:** Really good. I like it. But I decided not to use it because of the Java setup shit. Maybe I'll return to it later.
 
-- **x64dbg:** Good for debugging. Not great for decompilation. I still use it sometimes to debug stuff tho,
+**x64dbg:** Good for debugging. Not great for decompilation. I still use it sometimes to debug stuff tho,
 
-- **Cutter:** My love. Fast, portable, open-source, and it **works**. Has a built-in Ghidra decompiler without the Java setup garbage. For now, it's the best option for me.
+**Cutter:** My love. Fast, portable, open-source, and it **works**. Has a built-in Ghidra decompiler without the Java setup garbage. For now, it's the best option for me.
 
 ## Memory Tools
 
