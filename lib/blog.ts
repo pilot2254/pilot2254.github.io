@@ -4,6 +4,11 @@ import matter from "gray-matter"
 
 const postsDirectory = path.join(process.cwd(), "content/blog")
 
+// Check if directory exists, if not create it
+if (!fs.existsSync(postsDirectory)) {
+  fs.mkdirSync(postsDirectory, { recursive: true })
+}
+
 export interface Post {
   slug: string
   title: string
@@ -14,6 +19,10 @@ export interface Post {
 }
 
 export async function getAllPosts(): Promise<Post[]> {
+  if (!fs.existsSync(postsDirectory)) {
+    return []
+  }
+
   const fileNames = fs.readdirSync(postsDirectory)
   const posts = fileNames
     .filter((fileName) => fileName.endsWith(".mdx") || fileName.endsWith(".md"))
