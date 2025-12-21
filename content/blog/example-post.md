@@ -1,6 +1,6 @@
 ---
 title: "Example Blog Post"
-date: "2024-12-20"
+date: "2025-12-20"
 description: "This is an example blog post to show how markdown works"
 ---
 
