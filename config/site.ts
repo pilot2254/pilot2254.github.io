@@ -14,6 +14,7 @@ export const siteConfig = {
     discord: "yourusername",
     reddit: "https://reddit.com/u/yourusername",
     steam: "https://steamcommunity.com/id/yourhandle",
+    github: "https://github.com/yourusername/portfolio",
     paypal: "https://paypal.me/yourhandle",
     kofi: "https://ko-fi.com/yourhandle",
     btc: "your-btc-address",

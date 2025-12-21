@@ -5,7 +5,6 @@ import {
   Github,
   Send,
   DollarSign,
-  Bitcoin,
   Gamepad2,
   Coffee
 } from "lucide-react"
@@ -97,7 +96,7 @@ export default function AboutPage() {
 
         <div className="space-y-2 pt-4">
           <div className="flex items-center gap-2 text-zinc-400">
-            <Bitcoin className="w-4 h-4" />
+            <span className="text-sm">BTC:</span>
             <span className="text-sm font-mono">{siteConfig.social.btc}</span>
           </div>
           <div className="flex items-center gap-2 text-zinc-400">

@@ -17,13 +17,14 @@ export function Footer() {
           </a>
         </div>
 
-        <Link
-          href="https://github.com/yourusername/portfolio"
+        <a
+          href={siteConfig.social.github}
           target="_blank"
+          rel="noopener noreferrer"
           className="hover:text-zinc-300 transition-colors"
         >
           Source
-        </Link>
+        </a>
       </div>
     </footer>
   )
