@@ -1,5 +1,17 @@
 import { ProjectCard } from "@/components/project-card"
 import { projects } from "@/config/projects"
+import { siteConfig } from "@/config/site"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: `Projects - ${siteConfig.name}`,
+  description: "Game development, reverse engineering tools, and open-source projects by Michal Flaška.",
+  openGraph: {
+    title: `Projects - ${siteConfig.name}`,
+    description: "Game development, reverse engineering tools, and open-source projects.",
+    url: `${siteConfig.url}/projects`,
+  },
+}
 
 export default function ProjectsPage() {
   // Group projects by year

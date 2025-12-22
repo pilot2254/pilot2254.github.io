@@ -2,6 +2,8 @@ import { getPostBySlug, getAllPosts } from "@/lib/blog"
 import { notFound } from "next/navigation"
 import Link from "next/link"
 import { MarkdownContent } from "@/components/markdown-content"
+import { siteConfig } from "@/config/site"
+import type { Metadata } from "next"
 
 export async function generateStaticParams() {
   const posts = await getAllPosts()
@@ -11,6 +13,39 @@ export async function generateStaticParams() {
 }
 
 export const dynamicParams = false
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}): Promise<Metadata> {
+  const { slug } = await params
+  const post = await getPostBySlug(slug)
+
+  if (!post) {
+    return {
+      title: "Post Not Found",
+      description: "The requested blog post could not be found.",
+    }
+  }
+
+  return {
+    title: `${post.title} - ${siteConfig.name}`,
+    description: post.description || post.title,
+    openGraph: {
+      title: post.title,
+      description: post.description || post.title,
+      type: "article",
+      publishedTime: post.date,
+      url: `${siteConfig.url}/blog/${slug}`,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.description || post.title,
+    },
+  }
+}
 
 export default async function BlogPost({
   params,

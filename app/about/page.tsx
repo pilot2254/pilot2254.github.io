@@ -9,6 +9,17 @@ import {
   Coffee,
   MessageCircleMore
 } from "lucide-react"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: `About - ${siteConfig.name}`,
+  description: "17 year old game developer and reverse engineer based in Slovakia. Learning Unity, Unreal, and low-level programming.",
+  openGraph: {
+    title: `About - ${siteConfig.name}`,
+    description: "17 year old game developer and reverse engineer based in Slovakia.",
+    url: `${siteConfig.url}/about`,
+  },
+}
 
 export default function AboutPage() {
   const socialLinks = [
