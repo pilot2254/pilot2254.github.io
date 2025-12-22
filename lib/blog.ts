@@ -16,6 +16,7 @@ export interface Post {
   year: number
   description?: string
   content: string
+  readTime: string
 }
 
 export async function getAllPosts(): Promise<Post[]> {
@@ -32,6 +33,10 @@ export async function getAllPosts(): Promise<Post[]> {
       const fileContents = fs.readFileSync(fullPath, "utf8")
       const { data, content } = matter(fileContents)
 
+      // Calculate reading time (avg 200 words/min)
+      const wordCount = content.split(/\s+/).length
+      const readTime = Math.ceil(wordCount / 200)
+
       return {
         slug,
         title: data.title,
@@ -39,6 +44,7 @@ export async function getAllPosts(): Promise<Post[]> {
         year: new Date(data.date).getFullYear(),
         description: data.description,
         content,
+        readTime: `${readTime} min read`,
       }
     })
     .sort((a, b) => (a.date > b.date ? -1 : 1))
@@ -60,6 +66,10 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
 
     const { data, content } = matter(fileContents)
 
+    // Calculate reading time
+    const wordCount = content.split(/\s+/).length
+    const readTime = Math.ceil(wordCount / 200)
+
     return {
       slug,
       title: data.title,
@@ -67,6 +77,7 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
       year: new Date(data.date).getFullYear(),
       description: data.description,
       content,
+      readTime: `${readTime} min read`,
     }
   } catch {
     return null

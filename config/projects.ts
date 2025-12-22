@@ -33,7 +33,7 @@ export const projects: Project[] = [
   {
     id: "contrast-bot",
     title: "Contrast Bot",
-    description: "Contrast Bot",
+    description: "Contrast is a simple, but powerful Discord Bot.",
     year: 2025,
     tags: ["Node.js", "Typescript", "Discord.js", "SQLite", "Slash Commands"],
     images: [],
