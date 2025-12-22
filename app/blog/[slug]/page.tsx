@@ -63,14 +63,14 @@ export default async function BlogPost({
     <article>
       <Link
         href="/"
-        className="text-zinc-500 hover:text-white transition-colors text-sm mb-8 inline-block"
+        className="text-muted-foreground hover:text-foreground transition-colors text-sm mb-8 inline-block"
       >
         ← Back
       </Link>
 
       <header className="mb-8">
-        <h1 className="text-3xl font-bold text-white mb-2">{post.title}</h1>
-        <div className="flex items-center gap-3 text-zinc-500 text-sm">
+        <h1 className="text-3xl font-bold text-foreground mb-2">{post.title}</h1>
+        <div className="flex items-center gap-3 text-muted-foreground text-sm">
           <time>{post.date}</time>
           <span>•</span>
           <span>{post.readTime}</span>

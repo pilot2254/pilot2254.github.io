@@ -13,10 +13,10 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: `About - ${siteConfig.name}`,
-  description: "Game developer and reverse engineer based in Slovakia. Learning Unity, Unreal, and low-level programming.",
+  description: "17 year old game developer and reverse engineer based in Slovakia. Learning Unity, Unreal, and low-level programming.",
   openGraph: {
     title: `About - ${siteConfig.name}`,
-    description: "Game developer and reverse engineer based in Slovakia.",
+    description: "17 year old game developer and reverse engineer based in Slovakia.",
     url: `${siteConfig.url}/about`,
   },
 }
@@ -57,13 +57,13 @@ export default function AboutPage() {
 
   return (
     <div className="space-y-8">
-      <h1 className="text-3xl font-bold text-white">About Me</h1>
+      <h1 className="text-3xl font-bold text-foreground">About Me</h1>
 
       <div className="flex flex-col md:flex-row gap-8">
-        <div className="flex-1 space-y-4 text-zinc-300 leading-relaxed">
+        <div className="flex-1 space-y-4 text-foreground leading-relaxed">
           <p>
             Hi there, I'm Mike.<br />
-            16 years old developer based in Slovakia. I focus on game and app development, low-level research, and open-source tooling.
+            17 years old developer based in Slovakia. I focus on game and app development, low-level research, and open-source tooling.
           </p>
 
           <p>
@@ -90,8 +90,8 @@ export default function AboutPage() {
         </div>
       </div>
 
-      <div className="space-y-4 pt-8 border-t border-zinc-800">
-        <h2 className="text-xl font-bold text-white">Connect</h2>
+      <div className="space-y-4 pt-8 border-t border-border">
+        <h2 className="text-xl font-bold text-foreground">Connect</h2>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {socialLinks.map((link) => {
@@ -102,7 +102,7 @@ export default function AboutPage() {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-zinc-400 hover:text-white transition-colors"
+                className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
               >
                 <Icon className="w-4 h-4" />
                 {link.name}
@@ -112,11 +112,11 @@ export default function AboutPage() {
         </div>
 
         <div className="space-y-2 pt-4">
-          <div className="flex items-center gap-2 text-zinc-400">
+          <div className="flex items-center gap-2 text-muted-foreground">
             <span className="text-sm">BTC:</span>
             <span className="text-sm font-mono">{siteConfig.social.btc}</span>
           </div>
-          <div className="flex items-center gap-2 text-zinc-400">
+          <div className="flex items-center gap-2 text-muted-foreground">
             <span className="text-sm">ETH:</span>
             <span className="text-sm font-mono">{siteConfig.social.eth}</span>
           </div>

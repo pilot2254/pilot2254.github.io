@@ -31,13 +31,13 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto bg-zinc-950 border-zinc-800">
+      <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto bg-card border-border">
         <DialogHeader>
-          <DialogTitle className="text-2xl text-white">{project.title}</DialogTitle>
+          <DialogTitle className="text-2xl text-foreground">{project.title}</DialogTitle>
         </DialogHeader>
 
         {project.images.length > 0 && (
-          <div className="relative aspect-video bg-zinc-900 rounded-lg overflow-hidden group">
+          <div className="relative aspect-video bg-muted rounded-lg overflow-hidden group">
             <Image
               src={project.images[currentImage]}
               alt={`${project.title} screenshot ${currentImage + 1}`}
@@ -49,14 +49,14 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
               <>
                 <button
                   onClick={prevImage}
-                  className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+                  className="absolute left-2 top-1/2 -translate-y-1/2 bg-background/50 hover:bg-background/70 text-foreground p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
                   aria-label="Previous image"
                 >
                   <ChevronLeft className="w-5 h-5" />
                 </button>
                 <button
                   onClick={nextImage}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 bg-background/50 hover:bg-background/70 text-foreground p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
                   aria-label="Next image"
                 >
                   <ChevronRight className="w-5 h-5" />
@@ -67,7 +67,7 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
                       key={i}
                       onClick={() => setCurrentImage(i)}
                       className={`w-2 h-2 rounded-full transition-colors ${
-                        i === currentImage ? "bg-white" : "bg-white/40"
+                        i === currentImage ? "bg-foreground" : "bg-foreground/40"
                       }`}
                       aria-label={`Go to image ${i + 1}`}
                     />
@@ -79,13 +79,13 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
         )}
 
         <div className="space-y-4">
-          <p className="text-zinc-300 leading-relaxed">{project.description}</p>
+          <p className="text-foreground leading-relaxed">{project.description}</p>
 
           <div>
-            <h4 className="text-white font-medium mb-2">Tech Stack</h4>
+            <h4 className="text-foreground font-medium mb-2">Tech Stack</h4>
             <div className="flex flex-wrap gap-2">
               {project.tags.map((tag) => (
-                <Badge key={tag} variant="secondary" className="bg-zinc-800 text-zinc-300 hover:bg-zinc-700">
+                <Badge key={tag} variant="secondary" className="bg-muted text-foreground hover:bg-muted/80">
                   {tag}
                 </Badge>
               ))}
@@ -98,7 +98,7 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm text-white hover:text-zinc-400 transition-colors"
+                className="inline-flex items-center gap-2 text-sm text-foreground hover:text-muted-foreground transition-colors"
               >
                 <ExternalLink className="w-4 h-4" />
                 View Project
@@ -109,7 +109,7 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm text-white hover:text-zinc-400 transition-colors"
+                className="inline-flex items-center gap-2 text-sm text-foreground hover:text-muted-foreground transition-colors"
               >
                 <Github className="w-4 h-4" />
                 View Code

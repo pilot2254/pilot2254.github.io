@@ -82,21 +82,27 @@
 }
 
 .dark {
+  /* Dark background: #0a0a0a equivalent */
   --background: oklch(0.141 0.005 285.823);
+  /* Text: white/light gray */
   --foreground: oklch(0.985 0 0);
+  /* Cards: slightly lighter than background */
   --card: oklch(0.21 0.006 285.885);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.21 0.006 285.885);
   --popover-foreground: oklch(0.985 0 0);
   --primary: oklch(0.92 0.004 286.32);
   --primary-foreground: oklch(0.21 0.006 285.885);
+  /* Muted elements: zinc-800-ish */
   --secondary: oklch(0.274 0.006 286.033);
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.274 0.006 286.033);
+  /* Muted text: zinc-400/500 */
   --muted-foreground: oklch(0.705 0.015 286.067);
   --accent: oklch(0.274 0.006 286.033);
   --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.704 0.191 22.216);
+  /* Border: subtle, semi-transparent white */
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.552 0.016 285.938);
@@ -129,34 +135,32 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: #0a0a0a00;
+    background: transparent;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #464646;
+    background: oklch(0.274 0.006 286.033);
     border-radius: 5px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #52525b;
+    background: oklch(0.34 0.006 286.033);
   }
 
   /* Firefox scrollbar */
   * {
     scrollbar-width: thin;
-    scrollbar-color: #464646 #0a0a0a00;
+    scrollbar-color: oklch(0.274 0.006 286.033) transparent;
   }
 
   /* Text selection */
   ::selection {
-    background: #383838;
-    color: #ffffff;
+    background: oklch(0.274 0.006 286.033);
+    color: oklch(0.985 0 0);
   }
 
   ::-moz-selection {
-    background: #383838;
-    color: #ffffff;
+    background: oklch(0.274 0.006 286.033);
+    color: oklch(0.985 0 0);
   }
 }
-
-/* TODO: use color themes instead of hardcoding colors for scrollbar and highlight */

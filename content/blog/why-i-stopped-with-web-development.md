@@ -10,7 +10,9 @@ I've been doing web development since 2020. That's 4 years of React, Next.js, Ta
 
 Web development is flooded. And I mean *flooded*. Every day there's another batch of people following tutorials, copying templates, and calling themselves developers. Don't get me wrong - I was one of them at some point. But the difference is I actually learned. Most of these people? They're just NPCs chasing trends.
 
-Same thing happened with ethical hacking and networking. I was learning both. Got pretty decent at it. Then I looked around and realized everyone and their mom was taking the same cybersecurity bootcamp, watching the same YouTube channels, and getting the same certifications. 
+Same thing happened with ethical hacking and networking. I was learning both. Got pretty decent at it. Then I looked around and realized everyone and their mom was taking the same cybersecurity bootcamp, watching the same YouTube channels, and getting the same certifications.
+
+Don't get me wrong - cybersecurity is complex as hell. The field itself is solid. But most people claiming to be "cybersecurity experts" after a 3-month bootcamp? They're full of shit. Only a small percentage actually know what they're doing. The problem isn't the field - it's the flood of people pretending they understand it.
 
 The writing's on the wall. In a few years, finding a job in web dev or cybersecurity is going to be impossible. Not because you're bad - but because there's thousands of other people with the same skills, same portfolio, same everything.
 
