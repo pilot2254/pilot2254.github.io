@@ -4,7 +4,7 @@ date: "2025-12-21"
 description: "Unity is overrated. Here's why I went with Unreal Engine instead."
 ---
 
-When I started high school in 2024, I had a choice: App Development or Game Development at [Skyro.ai](https://skyro.ai/). I picked game dev. If you want to know why, check out my previous blog [Why I Stopped with Web Development](/blog/why-i-stopped-web-dev).
+When I started high school in 2024, I had a choice: App Development or Game Development at [Skyro.ai](https://skyro.ai/). I picked game dev. If you want to know why, check out my previous blog [Why I Stopped with Web Development](/blog/why-i-stopped-with-web-development).
 
 I learned both Unity and Unreal at the start of school. I like both. But I prefer Unreal. Here's why.
 
