@@ -48,3 +48,7 @@ And also a horizontal line
 ![Alt text](https://www.wondercide.com/cdn/shop/articles/Upside_down_gray_cat.png)
 
 > Meow
+
+## Embeds
+
+<iframe width="auto" height="auto" src="https://www.youtube.com/embed/Uj8XYvYUpnQ?si=7SryXBppuw1IyxxK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
