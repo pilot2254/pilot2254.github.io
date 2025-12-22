@@ -4,6 +4,8 @@ date: "2025-12-22"
 description: "Don't ask me. Please ask gerald. Thank you"
 ---
 
+The full story of [Boiled Water the Third](https://steamcommunity.com/id/pilot2254/)
+
 ## Prologue: The Curse Begins
 
 It all started in 1347. My great-grandfather, whose name was actually "Baldwin Water" but nobody could read back then, was captured by illiterate peasants during a village raid. The execution order read "boil water for the lord's tea" but due to a catastrophic spelling error and general stupidity, it became "boil Baldwin Water."
