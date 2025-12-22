@@ -129,11 +129,11 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: #0a0a0a;
+    background: #0a0a0a00;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #3f3f46;
+    background: #464646;
     border-radius: 5px;
   }
 
@@ -144,17 +144,17 @@
   /* Firefox scrollbar */
   * {
     scrollbar-width: thin;
-    scrollbar-color: #3f3f46 #0a0a0a;
+    scrollbar-color: #464646 #0a0a0a00;
   }
 
   /* Text selection */
   ::selection {
-    background: #3f3f46;
+    background: #383838;
     color: #ffffff;
   }
 
   ::-moz-selection {
-    background: #3f3f46;
+    background: #383838;
     color: #ffffff;
   }
 }
