@@ -17,8 +17,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
-      <body className="bg-[#0a0a0a] text-zinc-300 font-sans">
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${GeistSans.variable} ${GeistMono.variable} bg-[#0a0a0a] text-zinc-300 font-sans`}>
         <Navigation />
         <main className="min-h-screen max-w-2xl mx-auto px-6 py-24">
           {children}
