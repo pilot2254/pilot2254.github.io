@@ -35,7 +35,11 @@ export default async function BlogPost({
 
       <header className="mb-8">
         <h1 className="text-3xl font-bold text-white mb-2">{post.title}</h1>
-        <time className="text-zinc-500 text-sm">{post.date}</time>
+        <div className="flex items-center gap-3 text-zinc-500 text-sm">
+          <time>{post.date}</time>
+          <span>•</span>
+          <span>{post.readTime}</span>
+        </div>
       </header>
 
       <MarkdownContent content={post.content} />

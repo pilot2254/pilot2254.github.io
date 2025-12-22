@@ -35,10 +35,15 @@ export default async function Home() {
                   <Link
                     key={post.slug}
                     href={`/blog/${post.slug}`}
-                    className="group flex items-center justify-between text-white hover:text-zinc-400 transition-colors"
+                    className="group block"
                   >
-                    <span>{post.title}</span>
-                    <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                    <div className="flex items-center justify-between text-white hover:text-zinc-400 transition-colors">
+                      <span>{post.title}</span>
+                      <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-zinc-500 text-sm mt-1">
+                      <span>{post.readTime}</span>
+                    </div>
                   </Link>
                 ))}
               </div>
