@@ -4,6 +4,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 export function Navigation() {
   const pathname = usePathname()
@@ -41,6 +42,7 @@ export function Navigation() {
               {link.label}
             </Link>
           ))}
+          <ThemeToggle />
         </div>
       </div>
     </nav>

@@ -4,6 +4,7 @@ import { GeistMono } from "geist/font/mono"
 import "./globals.css"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
+import { ThemeProvider } from "@/components/theme-provider"
 import { siteConfig } from "@/config/site"
 
 export const metadata: Metadata = {
@@ -19,11 +20,18 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${GeistSans.variable} ${GeistMono.variable} bg-background text-foreground font-sans`}>
-        <Navigation />
-        <main className="min-h-screen max-w-2xl mx-auto px-6 py-24">
-          {children}
-        </main>
-        <Footer />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Navigation />
+          <main className="min-h-screen max-w-2xl mx-auto px-6 py-24">
+            {children}
+          </main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   )
