@@ -14,10 +14,10 @@ export function ProjectCard({ project }: ProjectCardProps) {
   return (
     <>
       <div className="group cursor-pointer" onClick={() => setIsOpen(true)}>
-        <h3 className="text-white group-hover:text-zinc-400 transition-colors mb-2">
+        <h3 className="text-foreground group-hover:text-muted-foreground transition-colors mb-2">
           {project.title}
         </h3>
-        <p className="text-zinc-500 text-sm">
+        <p className="text-muted-foreground text-sm">
           {project.description.length > 120
             ? `${project.description.slice(0, 120)}...`
             : project.description}

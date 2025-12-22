@@ -15,13 +15,13 @@ export function Navigation() {
 
   return (
     <nav className={cn(
-      "w-full border-b border-zinc-800/50",
-      siteConfig.navigation.sticky && "sticky top-0 bg-[#0a0a0a]/80 backdrop-blur-sm z-50"
+      "w-full border-b border-border",
+      siteConfig.navigation.sticky && "sticky top-0 bg-background/80 backdrop-blur-sm z-50"
     )}>
       <div className="max-w-2xl mx-auto px-6 py-4 flex items-center justify-between">
         <Link
           href="/"
-          className="text-white font-medium hover:text-zinc-400 transition-colors"
+          className="text-foreground font-medium hover:text-muted-foreground transition-colors"
         >
           {siteConfig.name}
         </Link>
@@ -34,8 +34,8 @@ export function Navigation() {
               className={cn(
                 "text-sm transition-colors",
                 pathname === link.href
-                  ? "text-white"
-                  : "text-zinc-400 hover:text-white"
+                  ? "text-foreground"
+                  : "text-muted-foreground hover:text-foreground"
               )}
             >
               {link.label}

@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${GeistSans.variable} ${GeistMono.variable} bg-[#0a0a0a] text-zinc-300 font-sans`}>
+      <body className={`${GeistSans.variable} ${GeistMono.variable} bg-background text-foreground font-sans`}>
         <Navigation />
         <main className="min-h-screen max-w-2xl mx-auto px-6 py-24">
           {children}
