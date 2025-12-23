@@ -70,10 +70,6 @@ If you're choosing between Unity and Unreal, ask yourself what kind of games you
 
 Not the one that's trendy. Not the one everyone says you should use. The one that fits your goals.
 
-<br>
-
 ---
-
-<br><br>
 
 **TLDR:** Unity is overrated, charges too much, and tries too hard to copy Unreal. Unreal is free, built for realism, and has better documentation. But Unity is better for 2D and simple games. Pick what fits your project.

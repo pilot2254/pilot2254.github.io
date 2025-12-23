@@ -164,10 +164,6 @@ So yeah. Stop asking AI to do your work.
 
 I can't either.
 
-<br>
-
 ---
-
-<br><br>
 
 **TLDR:** Been using AI since ChatGPT launched. Used it for everything - school, projects, even texting girls. Realized in 2023 I was getting dumber while everyone else was actually learning. Can't brainstorm, can't solve problems alone, can't write without it. Tried to stop multiple times, failed every time. I'm addicted. My grades are good but I understand less. If AI disappeared, most of my projects wouldn't exist. I'm worse at programming because of AI, not better. And I'm writing this blog about my AI addiction with AI. I'm fucked and I know it.

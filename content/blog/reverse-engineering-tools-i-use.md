@@ -97,10 +97,6 @@ Start with free tools. Learn the basics. Once you're making money or working pro
 
 And if someone tells you that you *need* IDA Pro to learn RE, they're full of shit.
 
-<br>
-
 ---
-
-<br><br>
 
 **TLDR:** Cutter for disassembly/decompilation, Cheat Engine for memory, dnSpyEx for .NET, Python for automation. Free tools are enough. IDA is overpriced for beginners. Don't waste money until you're professional.

@@ -48,10 +48,6 @@ Web dev was fine while it lasted. But I'm done being replaceable.
 
 If you're thinking about what to learn next, ask yourself: Can an AI do this? Can an NPC learn this in a bootcamp? If the answer is yes to both, maybe pick something else.
 
-<br>
-
 ---
-
-<br><br>
 
 **TLDR:** Web dev is oversaturated. Game dev isn't (yet). Reverse engineering and game cheats are hard enough that NPCs and AI can't touch it. Do something that requires a brain.

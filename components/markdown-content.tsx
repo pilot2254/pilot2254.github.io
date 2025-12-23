@@ -29,6 +29,7 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
               <code className="font-mono text-sm text-foreground" {...props} />
             ),
           pre: ({ ...props }) => <pre className="bg-muted border border-border rounded-lg p-4 overflow-x-auto mb-4 font-mono text-sm" {...props} />,
+          hr: ({ ...props }) => <hr className="my-12 border-border" {...props} />,
           table: ({ ...props }) => (
             <div className="overflow-x-auto mb-4">
               <table className="w-full border-collapse border border-border" {...props} />
