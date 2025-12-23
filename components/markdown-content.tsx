@@ -3,9 +3,58 @@
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 import rehypeRaw from "rehype-raw"
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
+import { useState } from 'react'
+import { Check, Copy } from 'lucide-react'
 
 interface MarkdownContentProps {
   content: string
+}
+
+function CodeBlock({ language, value }: { language: string; value: string }) {
+  const [copied, setCopied] = useState(false)
+
+  const handleCopy = async () => {
+    await navigator.clipboard.writeText(value)
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2000)
+  }
+
+  return (
+    <div className="relative group">
+      <div className="flex items-center justify-between bg-muted border border-border rounded-t-lg px-4 py-2">
+        <span className="text-xs text-muted-foreground font-mono">{language || 'text'}</span>
+        <button
+          onClick={handleCopy}
+          className="text-muted-foreground hover:text-foreground transition-colors"
+          aria-label="Copy code"
+        >
+          {copied ? (
+            <Check className="w-4 h-4" />
+          ) : (
+            <Copy className="w-4 h-4" />
+          )}
+        </button>
+      </div>
+      <SyntaxHighlighter
+        language={language || 'text'}
+        style={oneDark}
+        customStyle={{
+          margin: 0,
+          borderTopLeftRadius: 0,
+          borderTopRightRadius: 0,
+          borderBottomLeftRadius: '0.5rem',
+          borderBottomRightRadius: '0.5rem',
+          background: 'var(--color-muted)',
+          border: '1px solid var(--color-border)',
+          borderTop: 'none',
+        }}
+      >
+        {value}
+      </SyntaxHighlighter>
+    </div>
+  )
 }
 
 export function MarkdownContent({ content }: MarkdownContentProps) {
@@ -33,14 +82,21 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
           },
           ul: ({ ...props }) => <ul className="list-disc list-inside text-foreground mb-4 space-y-2" {...props} />,
           ol: ({ ...props }) => <ol className="list-decimal list-inside text-foreground mb-4 space-y-2" {...props} />,
-          code: ({ inline, ...props }: { inline?: boolean } & React.HTMLAttributes<HTMLElement>) =>
-            inline ? (
-              <code className="bg-muted border border-border rounded px-1.5 py-0.5 font-mono text-sm text-foreground" {...props} />
+          code: ({ inline, className, children, ...props }: { inline?: boolean; className?: string; children?: React.ReactNode } & React.HTMLAttributes<HTMLElement>) => {
+            const match = /language-(\w+)/.exec(className || '')
+            const language = match ? match[1] : ''
+            const value = String(children).replace(/\n$/, '')
+
+            return !inline ? (
+              <CodeBlock language={language} value={value} />
             ) : (
-              <code className="font-mono text-sm text-foreground" {...props} />
-            ),
-          pre: ({ ...props }) => <pre className="bg-muted border border-border rounded-lg p-4 overflow-x-auto mb-4 font-mono text-sm" {...props} />,
-          hr: ({ ...props }) => <hr className="my-12 border-border" {...props} />,
+              <code className="bg-muted border border-border rounded px-1.5 py-0.5 font-mono text-sm text-foreground" {...props}>
+                {children}
+              </code>
+            )
+          },
+          pre: ({ ...props }) => <div className="mb-4" {...props} />,
+          hr: ({ ...props }) => <hr className="my-8 border-border" {...props} />,
           table: ({ ...props }) => (
             <div className="overflow-x-auto mb-4">
               <table className="w-full border-collapse border border-border" {...props} />
