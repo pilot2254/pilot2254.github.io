@@ -1,4 +1,4 @@
-import { getPostBySlug, getAllPosts } from "@/lib/blog"
+import { getPostBySlug, getAllPosts, getAllUnlistedPosts } from "@/lib/blog"
 import { notFound } from "next/navigation"
 import Link from "next/link"
 import { MarkdownContent } from "@/components/markdown-content"
@@ -6,8 +6,11 @@ import { siteConfig } from "@/config/site"
 import type { Metadata } from "next"
 
 export async function generateStaticParams() {
-  const posts = await getAllPosts()
-  return posts.map((post) => ({
+  const listedPosts = await getAllPosts()
+  const unlistedPosts = await getAllUnlistedPosts()
+  const allPosts = [...listedPosts, ...unlistedPosts]
+
+  return allPosts.map((post) => ({
     slug: post.slug,
   }))
 }
