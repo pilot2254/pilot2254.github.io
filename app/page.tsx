@@ -1,4 +1,4 @@
-import { getAllPosts } from "@/lib/blog"
+import { getAllPosts, Post } from "@/lib/blog"
 import Link from "next/link"
 
 export default async function Home() {
@@ -11,7 +11,7 @@ export default async function Home() {
     }
     acc[post.year].push(post)
     return acc
-  }, {} as Record<number, typeof posts>)
+  }, {} as Record<number, Post[]>)
 
   const years = Object.keys(postsByYear)
     .map(Number)
@@ -33,7 +33,7 @@ export default async function Home() {
                   {year}
                 </span>
                 <div className="flex-1 space-y-6">
-                  {postsByYear[year].map((post) => (
+                  {postsByYear[year].map((post: Post) => (
                     <Link
                       key={post.slug}
                       href={`/blog/${post.slug}`}
