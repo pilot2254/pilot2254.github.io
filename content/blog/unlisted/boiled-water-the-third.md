@@ -6,13 +6,11 @@ description: "Don't ask me. Please ask gerald. Thank you"
 
 The full story of [Boiled Water the Third](https://steamcommunity.com/id/pilot2254/)
 
-## Prologue: The Curse Begins
-
 It all started in 1347. My great-grandfather, whose name was actually "Baldwin Water" but nobody could read back then, was captured by illiterate peasants during a village raid. The execution order read "boil water for the lord's tea" but due to a catastrophic spelling error and general stupidity, it became "boil Baldwin Water."
 
 The peasants, unable to distinguish between instructions and proper nouns, threw my great-grandfather into a giant pot. His last words were "I AM NOT WATER, I AM A HUMAN PERSON" but the peasants thought he was just steam talking. They boiled him for forty minutes. When they realized their mistake, they tried to fix it by changing all the family records. They couldn't spell "boiled" correctly. Thus, the Bolied Water lineage was born.
 
-## Chapter 1: The Second Coming (and Going)
+## The Second Coming (and Going)
 
 My grandfather, Bolied Water the Second, grew up with this burden. Kids at the medieval school made fun of him. "Hey Bolied, why don't you evaporate?" they'd yell. He tried to be strong. He trained in swordsmanship. He learned to read (a rare skill in the family). He vowed to avenge his grandfather's death.
 
@@ -24,13 +22,13 @@ He fell backwards into a puddle. It was maybe three inches deep. He drowned anyw
 
 The statue is still there. I've never visited it.
 
-## Chapter 2: The Gap Years
+## The Gap Years
 
 Between my grandfather and my father, several Bolied Waters existed but did nothing interesting. Bolied Water the 2.5 became a tax collector and died of paperwork-related boredom. Bolied Water the 2.75 tried to change the family name to "Smith" but the paperwork got lost in a fire. He took this as a sign from God and gave up.
 
 My father, who should have been Bolied Water the Third but wasn't because I am, decided to abandon the naming tradition entirely. He called himself "Steve." This worked great until I was born and the curse reasserted itself.
 
-## Chapter 3: My Birth (The Mistake)
+## My Birth (The Mistake)
 
 I was born on a Tuesday. The doctor said "it's a healthy baby boy" and my mom said "let's name him Michael." My dad agreed. They wrote "Michael Water" on the birth certificate.
 
@@ -44,7 +42,7 @@ My mom cried. My dad said he was going to buy milk to cope with the stress.
 
 That was 2006. The milk never came. He never came back.
 
-## Chapter 4: The Olive Garden Incident
+## The Olive Garden Incident
 
 When I was 12, my mom took me to Olive Garden to cheer me up. She said "unlimited breadsticks will fix everything." She was wrong.
 
@@ -62,7 +60,7 @@ The cops showed up. They tried to arrest me. I offered them breadsticks. They de
 
 I'm banned for life. Mom hasn't taken me to any restaurant with "unlimited" in the menu since.
 
-## Chapter 5: Gerald
+## Gerald
 
 It started when I was 14. I was sleeping normally when suddenly I wasn't. I woke up at 3:47 AM to a voice.
 
@@ -82,7 +80,7 @@ Gerald comes back every Thursday at 3:47 AM. Sometimes he brings business propos
 
 He's still waiting on his money. I've offered him Steam trading cards. He called them "worthless digital serfdom." He's not wrong.
 
-## Chapter 6: The Pool That Wasn't There
+## The Pool That Wasn't There
 
 Summer 2019. Mom decided we needed a vacation. She said "let's go somewhere nice where you can't get banned from restaurants."
 
@@ -102,7 +100,7 @@ I went back to that resort last year. The pool is gone. The staff said "we never
 
 I don't know what that pool was. I don't know where it came from or where it went. I just know I was in it, and now I'm not sure if I ever was.
 
-## Chapter 7: The Visions
+## The Visions
 
 Around the same time Gerald showed up, I started having visions. Every Thursday at 3:47 AM (Gerald's visiting hours, not a coincidence), I see a giant kettle.
 
@@ -120,7 +118,7 @@ I asked if this means my dad is coming back.
 
 It didn't answer. Just kept boiling.
 
-## Chapter 8: The Clothes Incident
+## The Clothes Incident
 
 Sometimes I wake up and my clothes are on backwards. Shirt backwards. Pants backwards. Even my socks are inside out.
 
@@ -136,7 +134,7 @@ Last week I woke up with my clothes not just backwards, but also belonging to so
 
 I don't want to think about the implications.
 
-## Chapter 9: The Milk Saga - A Timeline
+## The Milk Saga - A Timeline
 
 **2006** - Dad leaves for milk. Says he'll be back in 20 minutes.
 
@@ -158,7 +156,7 @@ The kettle says he'll come back when the prophecy is fulfilled. Gerald says he k
 
 The debt runs deep in this family.
 
-## Chapter 10: Current Status
+## Current Status
 
 I am 17 now. I am Bolied Water the Third. I've accepted this.
 
