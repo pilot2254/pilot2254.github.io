@@ -38,27 +38,27 @@ function CodeBlock({ language, value }: { language: string; value: string }) {
         </button>
       </div>
       <SyntaxHighlighter
-  language={language || 'text'}
-  style={oneDark}
-  customStyle={{
-    margin: 0,
-    borderTopLeftRadius: 0,
-    borderTopRightRadius: 0,
-    borderBottomLeftRadius: '0.5rem',
-    borderBottomRightRadius: '0.5rem',
-    background: 'var(--color-muted)',
-    border: '1px solid var(--color-border)',
-    borderTop: 'none',
-  }}
-  codeTagProps={{
-    style: {
-      background: 'transparent',
-      fontSize: '0.875rem',
-    }
-  }}
->
-  {value}
-</SyntaxHighlighter>
+        language={language || 'text'}
+        style={oneDark}
+        customStyle={{
+          margin: 0,
+          borderTopLeftRadius: 0,
+          borderTopRightRadius: 0,
+          borderBottomLeftRadius: '0.5rem',
+          borderBottomRightRadius: '0.5rem',
+          background: 'var(--color-muted)',
+          border: '1px solid var(--color-border)',
+          borderTop: 'none',
+        }}
+        codeTagProps={{
+          style: {
+            background: 'transparent',
+            fontSize: '0.875rem',
+          }
+        }}
+      >
+        {value}
+    </SyntaxHighlighter>
     </div>
   )
 }

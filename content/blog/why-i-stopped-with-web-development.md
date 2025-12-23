@@ -50,4 +50,4 @@ If you're thinking about what to learn next, ask yourself: Can an AI do this? Ca
 
 ---
 
-**TLDR:** Web dev is oversaturated. Game dev isn't (yet). Reverse engineering and game cheats are hard enough that NPCs and AI can't touch it. Do something that requires a brain.
+**TLDR:** Web dev is oversaturated. Game dev isn't ([yet](https://youtu.be/anIiqC9sKiQ?t=97)). Reverse engineering and game cheats are hard enough that NPCs and AI can't touch it. Do something that requires a brain.
