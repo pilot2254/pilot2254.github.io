@@ -2,8 +2,6 @@ import Image from "next/image"
 import { siteConfig } from "@/config/site"
 import {
   Twitter,
-  Github,
-  MessageSquare,
   DollarSign,
   Gamepad2,
   Coffee,

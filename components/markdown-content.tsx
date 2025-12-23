@@ -15,29 +15,29 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
         remarkPlugins={[remarkGfm]}
         rehypePlugins={[rehypeRaw]}
         components={{
-          h1: ({ node, ...props }) => <h1 className="text-3xl font-bold text-foreground mt-8 mb-4" {...props} />,
-          h2: ({ node, ...props }) => <h2 className="text-2xl font-bold text-foreground mt-8 mb-4" {...props} />,
-          h3: ({ node, ...props }) => <h3 className="text-xl font-bold text-foreground mt-6 mb-3" {...props} />,
-          p: ({ node, ...props }) => <p className="text-foreground leading-7 mb-4" {...props} />,
-          a: ({ node, ...props }) => <a className="text-foreground hover:text-muted-foreground underline transition-colors" {...props} />,
-          ul: ({ node, ...props }) => <ul className="list-disc list-inside text-foreground mb-4 space-y-2" {...props} />,
-          ol: ({ node, ...props }) => <ol className="list-decimal list-inside text-foreground mb-4 space-y-2" {...props} />,
-          code: ({ node, inline, ...props }: any) =>
+          h1: ({ ...props }) => <h1 className="text-3xl font-bold text-foreground mt-8 mb-4" {...props} />,
+          h2: ({ ...props }) => <h2 className="text-2xl font-bold text-foreground mt-8 mb-4" {...props} />,
+          h3: ({ ...props }) => <h3 className="text-xl font-bold text-foreground mt-6 mb-3" {...props} />,
+          p: ({ ...props }) => <p className="text-foreground leading-7 mb-4" {...props} />,
+          a: ({ ...props }) => <a className="text-foreground hover:text-muted-foreground underline transition-colors" {...props} />,
+          ul: ({ ...props }) => <ul className="list-disc list-inside text-foreground mb-4 space-y-2" {...props} />,
+          ol: ({ ...props }) => <ol className="list-decimal list-inside text-foreground mb-4 space-y-2" {...props} />,
+          code: ({ inline, ...props }: { inline?: boolean } & React.HTMLAttributes<HTMLElement>) =>
             inline ? (
               <code className="bg-muted border border-border rounded px-1.5 py-0.5 font-mono text-sm text-foreground" {...props} />
             ) : (
               <code className="font-mono text-sm text-foreground" {...props} />
             ),
-          pre: ({ node, ...props }) => <pre className="bg-muted border border-border rounded-lg p-4 overflow-x-auto mb-4 font-mono text-sm" {...props} />,
-          table: ({ node, ...props }) => (
+          pre: ({ ...props }) => <pre className="bg-muted border border-border rounded-lg p-4 overflow-x-auto mb-4 font-mono text-sm" {...props} />,
+          table: ({ ...props }) => (
             <div className="overflow-x-auto mb-4">
               <table className="w-full border-collapse border border-border" {...props} />
             </div>
           ),
-          th: ({ node, ...props }) => <th className="border border-border bg-muted px-4 py-2 text-left font-medium text-foreground" {...props} />,
-          td: ({ node, ...props }) => <td className="border border-border px-4 py-2 text-foreground" {...props} />,
-          blockquote: ({ node, ...props }) => <blockquote className="border-l-4 border-muted-foreground pl-4 italic text-muted-foreground my-4" {...props} />,
-          img: ({ node, ...props }) => <img className="rounded-lg my-4 max-w-full" {...props} alt={props.alt || ""} />,
+          th: ({ ...props }) => <th className="border border-border bg-muted px-4 py-2 text-left font-medium text-foreground" {...props} />,
+          td: ({ ...props }) => <td className="border border-border px-4 py-2 text-foreground" {...props} />,
+          blockquote: ({ ...props }) => <blockquote className="border-l-4 border-muted-foreground pl-4 italic text-muted-foreground my-4" {...props} />,
+          img: ({ ...props }) => <img className="rounded-lg my-4 max-w-full" {...props} alt={props.alt || ""} />,
         }}
       >
         {content}
