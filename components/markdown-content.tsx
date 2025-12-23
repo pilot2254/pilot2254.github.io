@@ -101,7 +101,7 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
               </code>
             )
           },
-          pre: ({ ...props }) => <div className="mb-4" {...props} />,
+          // pre: ({ ...props }) => <div className="mb-4" {...props} />,
           hr: ({ ...props }) => <hr className="my-8 border-border" {...props} />,
           table: ({ ...props }) => (
             <div className="overflow-x-auto mb-4">
