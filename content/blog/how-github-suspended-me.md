@@ -23,7 +23,7 @@ I submitted a support ticket (#3871213). My dad submitted another one. Then I wa
 GitHub support didn't respond. Just an automated confirmation email.
 
 I tried everything:
-- Tweeted at @GitHubSupport
+- Tweeted at @GitHub
 - DMed @github on Instagram (they saw it, then ghosted me)
 - Posted on Reddit (mods auto-deleted it)
 - Emailed from my school account (auto-declined)

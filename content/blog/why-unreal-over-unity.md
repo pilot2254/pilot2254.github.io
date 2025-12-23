@@ -30,9 +30,9 @@ Unreal is optimized for realism out of the box. Yes, it's laggy on your grandmot
 
 ## Blueprints, C++, and Performance
 
-I like Blueprints. I like that I have the option to use C++ when I need it. Yes, Unity has visual scripting and C# (and even C++ support), but Unreal just feels better.
+I like Blueprints. I like that I have the option to use C++ when I need it. Yes, Unity has [visual scripting](https://docs.unity3d.com/Packages/com.unity.visualscripting@1.8/manual/index.html) and C# (and even C++ support), but Unreal just feels better.
 
-Performance? Unity games can perform well, but Unreal handles heavy scenes better when you know what you're doing.
+Performance? Unity games can perform well, but Unreal handles heavy scenes better **when you know what you're doing**.
 
 ## What I Hate About Unreal
 
@@ -46,7 +46,7 @@ And yeah, optimization in Unreal games is often trash. But that's not the engine
 
 The biggest pain point in Unreal is learning the programming logic. If you're coming from web dev or something simple, it's a jump.
 
-For advanced stuff? **Animations.** That's where things get complicated.
+For advanced stuff? **Animations**. That's where things get complicated.
 
 ## Community and Resources
 
@@ -70,10 +70,6 @@ If you're choosing between Unity and Unreal, ask yourself what kind of games you
 
 Not the one that's trendy. Not the one everyone says you should use. The one that fits your goals.
 
-<br>
-
 ---
-
-<br><br>
 
 **TLDR:** Unity is overrated, charges too much, and tries too hard to copy Unreal. Unreal is free, built for realism, and has better documentation. But Unity is better for 2D and simple games. Pick what fits your project.

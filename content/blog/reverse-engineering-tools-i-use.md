@@ -8,7 +8,7 @@ I've been doing reverse engineering actively since November 2024. Still in the e
 
 ## How I Got Here
 
-I started with Cheat Engine for games. Simple stuff. Then in July 2025 I got my heart broken by some random ass girl who was playing with my mind and absolutely destroyed my summer holidays. I started hating myself more, and in August I shifted to solving crackmes and actual reverse engineering work. Not just goofy games anymore.
+I started with [Cheat Engine](https://github.com/cheat-engine/cheat-engine) for games. Simple stuff. Then in July 2025 I got my heart broken by some random ass girl who was playing with my mind and absolutely destroyed my summer holidays. I started hating myself more, and in August I shifted to solving [crackmes](https://crackmes.one/) and actual reverse engineering work. Not just goofy games anymore.
 
 ## The Disassembler/Debugger Situation
 
@@ -30,15 +30,15 @@ I tried **IDA**, **Ghidra**, **Cutter**, **x64dbg**, and more. Let me break it d
 
 ## Decompilers
 
-For native code and crackmes, I use **Ghidra in Cutter**.
+For native code and crackmes, I use [Ghidra in Cutter](https://cutter.re/docs/user-docs/features.html#decompiler).
 
-For Unity games (especially .NET), I use **dnSpyEx** - not the original dnSpy, but the fork that's still maintained. When Unity games are built with il2cpp, that's a different mess (more on that below).
+For Unity games (especially .NET), I use [dnSpyEx](https://github.com/dnspyex) - not the original dnSpy, but the fork that's still maintained. When Unity games are built with [il2cpp](https://docs.unity3d.com/530/Documentation/Manual/IL2CPP), that's a different mess (more on that below).
 
 ## Scripting and Automation
 
 I write automation scripts in **Python** (mostly I ask AI to do this stuff for me). 
 
-Example: I was making cheats for GTFO (Unity game, il2cpp build). I used **il2cpp-dumper**, but it spit out almost **1 million lines** of code. So I wrote a Python script to extract only the important offsets and structures.
+Example: I was making cheats for GTFO (Unity game, il2cpp build). I used [il2cpp-dumper](https://github.com/Perfare/Il2CppDumper), but it spit out almost **1 million lines** of code. So I wrote a Python script to extract only the important offsets and structures.
 
 Sorry but if you're doing RE and not automating repetitive tasks, you're wasting time.
 
@@ -58,7 +58,7 @@ No paid courses. Just grinding through free resources and trial and error.
 
 ## Tools I Tried and Hate
 
-**IDA.** I already explained why. It's good, but not worth the price when you're learning. People act like you *need* IDA to do RE. You don't.
+**IDA.** I already explained why. It's good, but not worth the price when you're learning. People act like you *need* IDA to do RE. **You don't**.
 
 If you can afford it and you're working professionally, sure. But if you're a student or just starting out, there are better free options.
 
@@ -97,10 +97,6 @@ Start with free tools. Learn the basics. Once you're making money or working pro
 
 And if someone tells you that you *need* IDA Pro to learn RE, they're full of shit.
 
-<br>
-
 ---
 
-<br><br>
-
-**TLDR:** Cutter for disassembly/decompilation, Cheat Engine for memory, dnSpyEx for .NET, Python for automation. Free tools are enough. IDA is overpriced for beginners. Don't waste money until you're professional.
+**TLDR:** Cutter for disassembly/decompilation, [Cheat Engine](https://www.cheatengine.org/) for memory, [dnSpyEx](https://github.com/dnspyex) for .NET, Python for automation. Free tools are enough. IDA is overpriced for beginners. Don't waste money until you're professional.

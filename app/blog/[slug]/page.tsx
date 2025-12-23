@@ -4,6 +4,7 @@ import Link from "next/link"
 import { MarkdownContent } from "@/components/markdown-content"
 import { siteConfig } from "@/config/site"
 import type { Metadata } from "next"
+import { ScrollToTop } from "@/components/scroll-to-top"
 
 export async function generateStaticParams() {
   const listedPosts = await getAllPosts()
@@ -63,24 +64,27 @@ export default async function BlogPost({
   }
 
   return (
-    <article>
-      <Link
-        href="/"
-        className="text-muted-foreground hover:text-foreground transition-colors text-sm mb-8 inline-block"
-      >
-        ← Back
-      </Link>
+    <>
+      <article>
+        <Link
+          href="/"
+          className="text-muted-foreground hover:text-foreground transition-colors text-sm mb-8 inline-block"
+        >
+          ← Back
+        </Link>
 
-      <header className="mb-8">
-        <h1 className="text-3xl font-bold text-foreground mb-2">{post.title}</h1>
-        <div className="flex items-center gap-3 text-muted-foreground text-sm">
-          <time>{post.date}</time>
-          <span>•</span>
-          <span>{post.readTime}</span>
-        </div>
-      </header>
+        <header className="mb-8">
+          <h1 className="text-3xl font-bold text-foreground mb-2">{post.title}</h1>
+          <div className="flex items-center gap-3 text-muted-foreground text-sm">
+            <time>{post.date}</time>
+            <span>•</span>
+            <span>{post.readTime}</span>
+          </div>
+        </header>
 
-      <MarkdownContent content={post.content} />
-    </article>
+        <MarkdownContent content={post.content} />
+      </article>
+      <ScrollToTop />
+    </>
   )
 }
