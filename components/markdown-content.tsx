@@ -19,7 +19,18 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
           h2: ({ ...props }) => <h2 className="text-2xl font-bold text-foreground mt-8 mb-4" {...props} />,
           h3: ({ ...props }) => <h3 className="text-xl font-bold text-foreground mt-6 mb-3" {...props} />,
           p: ({ ...props }) => <p className="text-foreground leading-7 mb-4" {...props} />,
-          a: ({ ...props }) => <a className="text-foreground hover:text-muted-foreground underline transition-colors" {...props} />,
+          a: ({ href, ...props }) => {
+            const isExternal = href?.startsWith('http') && !href.includes('pilot2254.github.io')
+            return (
+              <a
+                className="text-foreground hover:text-muted-foreground underline transition-colors"
+                href={href}
+                target={isExternal ? "_blank" : undefined}
+                rel={isExternal ? "noopener noreferrer" : undefined}
+                {...props}
+              />
+            )
+          },
           ul: ({ ...props }) => <ul className="list-disc list-inside text-foreground mb-4 space-y-2" {...props} />,
           ol: ({ ...props }) => <ol className="list-decimal list-inside text-foreground mb-4 space-y-2" {...props} />,
           code: ({ inline, ...props }: { inline?: boolean } & React.HTMLAttributes<HTMLElement>) =>
