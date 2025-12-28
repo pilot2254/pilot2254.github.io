@@ -139,28 +139,26 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background: oklch(0.274 0.006 286.033);
+    @apply bg-muted;
     border-radius: 5px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: oklch(0.34 0.006 286.033);
+    @apply bg-muted/80;
   }
 
   /* Firefox scrollbar */
   * {
     scrollbar-width: thin;
-    scrollbar-color: oklch(0.274 0.006 286.033) transparent;
+    scrollbar-color: var(--muted) transparent;
   }
 
   /* Text selection */
   ::selection {
-    background: oklch(0.274 0.006 286.033);
-    color: oklch(0.985 0 0);
+    @apply bg-muted text-foreground;
   }
 
   ::-moz-selection {
-    background: oklch(0.274 0.006 286.033);
-    color: oklch(0.985 0 0);
+    @apply bg-muted text-foreground;
   }
 }

@@ -7,6 +7,7 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import { useState } from 'react'
 import { Check, Copy } from 'lucide-react'
+import { ImageModal } from './image-modal'
 
 interface MarkdownContentProps {
   content: string
@@ -93,10 +94,15 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
             const language = match ? match[1] : ''
             const value = String(children).replace(/\n$/, '')
 
-            return !inline ? (
-              <CodeBlock language={language} value={value} />
+            // Force inline rendering if there's no language class and content is short
+            const forceInline = !className && value.length < 50 && !value.includes('\n')
+
+            return (!inline && !forceInline) ? (
+              <div className="my-4 font-light">
+                <CodeBlock language={language} value={value} />
+              </div>
             ) : (
-              <code className="bg-muted border border-border rounded px-1.5 py-0.5 font-mono text-sm text-foreground" {...props}>
+              <code className="bg-muted rounded px-1.5 py-0.5 font-mono text-sm text-foreground font-light" {...props}>
                 {children}
               </code>
             )
@@ -110,8 +116,11 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
           ),
           th: ({ ...props }) => <th className="border border-border bg-muted px-4 py-2 text-left font-medium text-foreground" {...props} />,
           td: ({ ...props }) => <td className="border border-border px-4 py-2 text-foreground" {...props} />,
-          blockquote: ({ ...props }) => <blockquote className="border-l-4 border-muted-foreground pl-4 italic text-muted-foreground my-4" {...props} />,
-          img: ({ ...props }) => <img className="rounded-lg my-4 max-w-full" {...props} alt={props.alt || ""} />,
+          blockquote: ({ ...props }) => <blockquote className="border-l-4 border-muted-foreground pl-4 italic text-muted-foreground [&_*]:text-muted-foreground my-4" {...props} />,
+          // img: ({ ...props }) => <img className="rounded-lg my-4 max-w-full" {...props} alt={props.alt || ""} />,
+          img: ({ src, alt, ...props }) => (
+            <ImageModal src={String(src || "")} alt={String(alt || "")} />
+          ),
         }}
       >
         {content}
