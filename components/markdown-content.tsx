@@ -93,10 +93,13 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
             const language = match ? match[1] : ''
             const value = String(children).replace(/\n$/, '')
 
-            return !inline ? (
+            // Force inline rendering if there's no language class and content is short
+            const forceInline = !className && value.length < 50 && !value.includes('\n')
+
+            return (!inline && !forceInline) ? (
               <CodeBlock language={language} value={value} />
             ) : (
-              <code className="bg-muted border border-border rounded px-1.5 py-0.5 font-mono text-sm text-foreground" {...props}>
+              <code className="bg-muted rounded px-1.5 py-0.5 font-mono text-sm text-foreground" {...props}>
                 {children}
               </code>
             )
