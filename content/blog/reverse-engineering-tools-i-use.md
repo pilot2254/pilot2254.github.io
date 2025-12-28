@@ -1,6 +1,6 @@
 ---
 title: "Tools I Actually Use for Reverse Engineering"
-date: "2025-01-20"
+date: "2025-12-23"
 description: "My actual RE toolkit - no bullshit, just what works."
 ---
 
