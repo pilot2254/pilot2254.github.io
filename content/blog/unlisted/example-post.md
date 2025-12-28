@@ -22,6 +22,10 @@ int main(){
 }
 ```
 
+## Inline code
+
+Here's some inline code `printf("Hello World!");`
+
 ## Lists
 
 - Unordered item 1

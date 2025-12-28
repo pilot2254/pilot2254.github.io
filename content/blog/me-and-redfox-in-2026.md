@@ -14,9 +14,9 @@ For those who don't know the full story, RedFox started back in 2022 as Team Red
 
 In 2023, we evolved into RFDP (RedFox Development Project) - a community of developers working on stuff together. Then in 2024, RedFox Studios was born. We kept the community aspect but decided to turn it into an actual company making websites, games, and apps for clients and ourselves.
 
-Team RedFox still exists alongside RedFox Studios, but RFDP and other old projects got discontinued when RFS launched. The good news? Those old projects are now open-sourced on our [GitHub org](https://github.com/redfox-studios) if anyone wants to check them out.
+Team RedFox still exists alongside RedFox Studios, but RFDP and other old projects got discontinued when RFS launched. The good news? Those old projects are now open-sourced [here](https://github.com/redfox-studios/redfox-studios-old/tree/main/projects/p) if anyone wants to check them out.
 
-And here's something important - in the near future, we're stopping web development services. I've talked about this before in [another post](I WILL FILL THIS WHEN I GET HOME), but yeah, I'm done with web dev. I'll finish the RFS and Team RedFox websites, and then we're moving on.
+And here's something important - in the near future, we're stopping web development services. I've talked about this before in [another post](/blog/why-i-stopped-with-web-development), but yeah, I'm done with web dev. I'll finish the RFS and Team RedFox websites, and then we're moving on.
 
 ## The Apology
 
@@ -31,6 +31,8 @@ Here's the truth - I have a *lot* of work. School, personal projects, game jams,
 But that's not an excuse. I could've done more. I *should've* done more. Instead of spending so much time playing Valorant and CS2, I could've actually pushed RFS forward. My lazy ass just didn't prioritize it, and that's on me.
 
 So I'm sorry. To the community, to the team members who joined for fun (my classmates), to potential clients who believed in what we were building, and honestly, to myself. I let this slip, and I hate that.
+
+Fun fact: the only client I had was [my friend](https://github.com/l3f1sh3) and he wanted my services because he wanted to support me and also have fun with the things I built.
 
 ## What's Happening in 2026?
 
@@ -66,13 +68,4 @@ Feedback is always welcome. If you have thoughts, ideas, or just want to chat ab
 
 Let's see what 2026 brings. I'm not making any wild promises this time, but I'm going to try my best to make RedFox Studios something we can all be proud of.
 
-Here's to not fucking it up this time.
-
-— Mike
-
----
-
-TODO IN THIS POST:
-- fill the blank link to my other post
-- mention that my only client was my friend and he only did that to support me and have fun
-- 
+Lets' not fuck it up this time.

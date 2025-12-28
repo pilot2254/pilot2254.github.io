@@ -8,31 +8,31 @@ I've been doing reverse engineering actively since November 2024. Still in the e
 
 ## How I Got Here
 
-I started with [Cheat Engine](https://github.com/cheat-engine/cheat-engine) for games. Simple stuff. Then in July 2025 I got my heart broken by some random ass girl who was playing with my mind and absolutely destroyed my summer holidays. I started hating myself more, and in August I shifted to solving [crackmes](https://crackmes.one/) and actual reverse engineering work. Not just goofy games anymore.
+I started with [Cheat Engine](https://www.cheatengine.org/) for games. Simple stuff. Then in July 2025 I got my heart broken by some random ass girl who was playing with my mind and absolutely destroyed my summer holidays. I started hating myself more, and in August I shifted to solving [crackmes](https://crackmes.one/) and actual reverse engineering work. Not just goofy games anymore.
 
 ## The Disassembler/Debugger Situation
 
 This is where everyone has opinions. Here's mine.
 
-I tried **IDA**, **Ghidra**, **Cutter**, **x64dbg**, and more. Let me break it down:
+I tried **[IDA](https://hex-rays.com/ida-free)**, **[Ghidra](https://github.com/NationalSecurityAgency/ghidra)**, **[Cutter](https://cutter.re/)**, **[x64dbg](https://x64dbg.com/)**, and more. Let me break it down:
 
-**IDA:** Industry standard, sure. The free version is limited as hell. The Pro versions cost $1k-$9k. I'm not paying that to *learn* before I even have a job. My parents are already paying $6k a year for school. Pass.
+**[IDA](https://hex-rays.com/ida-free):** Industry standard, sure. The free version is limited as hell. The Pro versions cost $1k-$9k. I'm not paying that to *learn* before I even have a job. My parents are already paying $6k a year for school. Pass.
 
-**Ghidra:** Really good. I like it. But I decided not to use it because of the Java setup shit. Maybe I'll return to it later.
+**[Ghidra](https://github.com/NationalSecurityAgency/ghidra):** Really good. I like it. But I decided not to use it because of the Java setup shit. Maybe I'll return to it later.
 
-**x64dbg:** Good for debugging. Not great for decompilation. I still use it sometimes to debug stuff tho,
+**[x64dbg](https://x64dbg.com/):** Good for debugging. Not great for decompilation. I still use it sometimes to debug stuff tho,
 
-**Cutter:** My love. Fast, portable, open-source, and it **works**. Has a built-in Ghidra decompiler without the Java setup garbage. For now, it's the best option for me.
+**[Cutter](https://cutter.re/):** My love. Fast, portable, open-source, and it **works**. Has a built-in Ghidra decompiler without the Java setup garbage. For now, it's the best option for me.
 
 ## Memory Tools
 
-**Cheat Engine.** Still. It's simple, it works, and it does what I need.
+**[Cheat Engine](https://www.cheatengine.org/).** Still. It's simple, it works, and it does what I need.
 
 ## Decompilers
 
 For native code and crackmes, I use [Ghidra in Cutter](https://cutter.re/docs/user-docs/features.html#decompiler).
 
-For Unity games (especially .NET), I use [dnSpyEx](https://github.com/dnspyex) - not the original dnSpy, but the fork that's still maintained. When Unity games are built with [il2cpp](https://docs.unity3d.com/530/Documentation/Manual/IL2CPP), that's a different mess (more on that below).
+For Unity games (especially .NET), I use [dnSpyEx](https://github.com/dnspyex) - not the [original dnSpy](https://github.com/dnSpy/dnSpy), but the fork that's still maintained. When Unity games are built with [il2cpp](https://docs.unity3d.com/530/Documentation/Manual/IL2CPP), that's a different mess (more on that below).
 
 ## Scripting and Automation
 

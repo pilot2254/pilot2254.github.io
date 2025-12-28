@@ -4,7 +4,7 @@ date: "2025-12-28"
 description: "This blog post is my attempt to give you a roadmap - the one I wish I had when I started. I'm not an expert, I'm still learning, but that's exactly why this might help. I remember what confused me, what I wish someone had explained better, and what actually worked."
 ---
 
-Look, I'm not gonna sugarcoat this - reverse engineering is hard as fuck. But if you're the type of person who sees a locked door and immediately wants to know what's behind it, or you've ever wondered "how the hell does this program actually work under the hood," then this might be for you.
+Reverse engineering is hard as fuck. But if you're the type of person who sees a locked door and immediately wants to know what's behind it, or you've ever wondered "how the hell does this program actually work under the hood," then this might be for you.
 
 I started getting into RE a few months ago because game development and web dev felt too... surface level. I wanted to understand how things *really* work. Not just write code that compiles, but understand what happens when it compiles. What the CPU actually does with your code. How programs protect themselves. How to break those protections.
 
@@ -113,14 +113,14 @@ You don't need to master assembly before starting RE. Learn the basics, then lea
 
 ## Tools you'll need
 
-I already wrote a blog post about [the tools I use for reverse engineering](link-to-your-previous-blog). Go read that first if you haven't.
+I already wrote a blog post about [the tools I use for reverse engineering](/blog/reverse-engineering-tools-i-use). Go read that first if you haven't.
 
 **TL;DR of that post:**
 - **Cutter** - my main RE tool (free, open source, has decompiler)
 - **x64dbg** - debugger (better debugging than Cutter, but no decompiler)
 - **Cheat Engine** - for game hacking specifically
 
-For beginners, I recommend **Cutter**. It has a decompiler that tries to show you C-like code alongside the assembly. This helps you understand what the assembly is doing.
+For beginners, I recommend [Cutter](https://cutter.re/). It has a decompiler that tries to show you C-like code alongside the assembly. This helps you understand what the assembly is doing.
 
 x64dbg has a better debugger (step through code, set breakpoints, modify memory in real-time), but only shows assembly, no decompilation. Once you're comfortable with assembly, x64dbg becomes more useful.
 
@@ -131,28 +131,28 @@ x64dbg has a better debugger (step through code, set breakpoints, modify memory 
 - They're small and focused (unlike real applications)
 - They increase in difficulty gradually
 
-Go to [crackmes.one](https://crackmes.one/) and create an account.
+Go to [crackmes.one](https://crackmes.one/) and then go to the search page.
 
-**My recommended filters for beginners:**
+### My recommended filters for beginners:
 - **Difficulty:** Level 1
 - **Quality:** 3.0 to 6.0 (filters out garbage)
 - **Language:** C/C++ (but honestly, pick whatever interests you - I started with C/C++ and still don't know if that was the best choice)
 - **Architecture:** Whatever your current system is (probably x86-64)
 - **OS:** Whatever you're running (Windows/Linux/macOS)
 
-**Important: Read the FAQ on crackmes.one.** All the crackme files are in password-protected zips. The password is in the FAQ. Don't waste time trying to crack the zip encryption - that's not the challenge.
+Please make sure to read the [FAQ on crackmes.one](https://crackmes.one/faq). All the crackme files are in password-protected zips. The password is in the FAQ. Don't waste time trying to crack the zip encryption - that's not the challenge.
 
 When you download a crackme, it's usually an executable that asks for a password or serial key. Your job is to find the correct input, or bypass the check entirely, or understand how the validation works.
 
 ## Learning Cutter
 
 Don't just install Cutter and stare at it confused. Watch this tutorial first:
-[Cutter Tutorial by stacksmashing](https://youtu.be/zrXA3AC_658?si=qv6ebylT5F0bwll6)
+[Cutter Tutorial by RazviOverflow](https://youtu.be/zrXA3AC_658?si=qv6ebylT5F0bwll6)
 
 It's 20 minutes and covers the interface, basic navigation, how to find interesting functions, how to read the decompiler output.
 
 If you want to use x64dbg instead:
-[x64dbg Tutorial by OALabs](https://youtu.be/7jtJ34Rc7jk?si=BOgvhCE68zqYOLkU)
+[x64dbg Tutorial by aXXo](https://youtu.be/7jtJ34Rc7jk?si=BOgvhCE68zqYOLkU)
 
 But again, I recommend starting with Cutter because seeing decompiled code alongside assembly helps you learn faster.
 
@@ -239,4 +239,4 @@ Good luck. And if you solve some interesting crackmes, let me know. I'm always l
 ---
 
 **Related posts:**
-- [Tools I use for reverse engineering](link-to-your-previous-blog)
+- [Tools I use for reverse engineering](/blog/reverse-engineering-tools-i-use)
