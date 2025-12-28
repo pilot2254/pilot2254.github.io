@@ -145,7 +145,7 @@ export const projects: Project[] = [
     description: "I found a funny bug in Satisfactory v1.1. It's not bhopping, I just called it that because why not. But this program does this bhopping for you, allowing you to go faster.",
     year: 2025,
     tags: ["C++", "Windows", "CLI", "Hotkeys"],
-    images: [],
+    images: ["/images/satisfactory-bhop-cheat/1.png", "/images/satisfactory-bhop-cheat/2.png"],
     link: "",
     github: "https://github.com/michal-flaska/satisfactory-external-bhop-cheat",
   },
