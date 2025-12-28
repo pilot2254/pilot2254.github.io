@@ -140,7 +140,7 @@ export const projects: Project[] = [
     github: "https://github.com/michal-flaska/autoclicker",
   },
   {
-    id: "satisfactory-external-bhop-cheat",
+    id: "satisfactory-bhop-cheat",
     title: "Satisfactory BHOP Cheat",
     description: "I found a funny bug in Satisfactory v1.1. It's not bhopping, I just called it that because why not. But this program does this bhopping for you, allowing you to go faster.",
     year: 2025,
@@ -165,7 +165,7 @@ export const projects: Project[] = [
     description: "A collection of small C++ Projects I created when I was learning C++",
     year: 2025,
     tags: ["C++"],
-    images: ["/images/projects/cpp_projects/1.png"],
+    images: ["/images/cpp_projects/1.png"],
     link: "",
     github: "https://github.com/michal-flaska/cpp_projects",
   },

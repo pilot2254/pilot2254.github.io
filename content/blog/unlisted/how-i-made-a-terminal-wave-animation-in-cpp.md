@@ -95,7 +95,7 @@ The characters go from dim to bright: space is darkest, `@` is brightest. Simple
 
 ## Result
 
-![Image goes here](/images/projects/cpp_projects/1.png)
+![Image goes here](/images/cpp_projects/1.png)
 
 The interference patterns from the three waves create this cool ripple effect that moves across the screen. It's not much code but looks pretty decent.
 
