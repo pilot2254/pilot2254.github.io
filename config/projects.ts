@@ -4,12 +4,19 @@ export interface Project {
   description: string
   year: number
   tags: string[]
-  images: string[]
+  images?: string[] // List of filenames (e.g., ["1.png", "2.gif"])
   link?: string
   github?: string
 }
 
+// Helper to generate image paths
+function getProjectImages(id: string, images?: string[]): string[] {
+  if (!images || images.length === 0) return []
+  return images.map(img => `/images/${id}/${img}`)
+}
+
 export const projects: Project[] = [
+
 
   /* ------------------------------------------------------------------------------------------------------ */
   /* ------------------------------------------------ 2026 ------------------------------------------------ */
@@ -145,7 +152,7 @@ export const projects: Project[] = [
     description: "I found a funny bug in Satisfactory v1.1. It's not bhopping, I just called it that because why not. But this program does this bhopping for you, allowing you to go faster.",
     year: 2025,
     tags: ["C++", "Windows", "CLI", "Hotkeys"],
-    images: ["/images/satisfactory-bhop-cheat/1.png", "/images/satisfactory-bhop-cheat/2.png"],
+    images: ["1.png", "2.png"],
     link: "",
     github: "https://github.com/michal-flaska/satisfactory-external-bhop-cheat",
   },
@@ -165,7 +172,7 @@ export const projects: Project[] = [
     description: "A collection of small C++ Projects I created when I was learning C++",
     year: 2025,
     tags: ["C++"],
-    images: ["/images/cpp_projects/1.png"],
+    images: ["1.png"],
     link: "",
     github: "https://github.com/michal-flaska/cpp_projects",
   },
@@ -234,4 +241,11 @@ export const projects: Project[] = [
     github: "",
   },
   */
+
 ]
+
+// Export with images array generated
+export const projectsWithImages = projects.map(p => ({
+  ...p,
+  images: getProjectImages(p.id, p.images)
+}))
