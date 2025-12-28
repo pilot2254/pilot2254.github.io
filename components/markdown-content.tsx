@@ -119,7 +119,7 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
           blockquote: ({ ...props }) => <blockquote className="border-l-4 border-muted-foreground pl-4 italic text-muted-foreground [&_*]:text-muted-foreground my-4" {...props} />,
           // img: ({ ...props }) => <img className="rounded-lg my-4 max-w-full" {...props} alt={props.alt || ""} />,
           img: ({ src, alt, ...props }) => (
-            <ImageModal src={src || ""} alt={alt || ""} />
+            <ImageModal src={String(src || "")} alt={String(alt || "")} />
           ),
         }}
       >
