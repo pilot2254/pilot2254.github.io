@@ -97,7 +97,9 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
             const forceInline = !className && value.length < 50 && !value.includes('\n')
 
             return (!inline && !forceInline) ? (
-              <CodeBlock language={language} value={value} />
+              <div className="my-4">
+                <CodeBlock language={language} value={value} />
+              </div>
             ) : (
               <code className="bg-muted rounded px-1.5 py-0.5 font-mono text-sm text-foreground" {...props}>
                 {children}
