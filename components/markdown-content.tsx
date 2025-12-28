@@ -116,7 +116,7 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
           ),
           th: ({ ...props }) => <th className="border border-border bg-muted px-4 py-2 text-left font-medium text-foreground" {...props} />,
           td: ({ ...props }) => <td className="border border-border px-4 py-2 text-foreground" {...props} />,
-          blockquote: ({ ...props }) => <blockquote className="border-l-4 border-muted-foreground pl-4 italic text-muted-foreground my-4" {...props} />,
+          blockquote: ({ ...props }) => <blockquote className="border-l-4 border-muted-foreground pl-4 italic text-muted-foreground [&_*]:text-muted-foreground my-4" {...props} />,
           // img: ({ ...props }) => <img className="rounded-lg my-4 max-w-full" {...props} alt={props.alt || ""} />,
           img: ({ src, alt, ...props }) => (
             <ImageModal src={src || ""} alt={alt || ""} />

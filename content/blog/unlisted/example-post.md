@@ -43,7 +43,7 @@ Here's some inline code `printf("Hello World!");`
 | Data 1   | Data 2   | Data 3   |
 | Data 4   | Data 5   | Data 6   |
 
-And also a horizontal line
+And also a horizontal line:
 
 ---
 
@@ -51,7 +51,7 @@ And also a horizontal line
 
 ![Alt text](https://www.wondercide.com/cdn/shop/articles/Upside_down_gray_cat.png)
 
-> Meow
+> meow, i'm a cat
 
 ## Embeds
 
