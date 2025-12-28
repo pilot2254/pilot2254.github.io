@@ -190,6 +190,16 @@ export const projects: Project[] = [
     link: "",
     github: "https://github.com/redfox-studios/dagoose",
   },
+  {
+    id: "cpp_projects",
+    title: "C++ Projects",
+    description: "A collection of small C++ Projects I created when I was learning C++",
+    year: 2025,
+    tags: ["C++"],
+    images: ["/images/projects/cpp_projects/1.png"],
+    link: "",
+    github: "https://github.com/michal-flaska/cpp_projects",
+  },
   /*
   {
     id: "",
