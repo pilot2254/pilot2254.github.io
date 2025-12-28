@@ -1,10 +1,10 @@
 ---
 title: "Me and RedFox Studios in 2026"
-date: "2025-12-27"
+date: "2025-12-28"
 description: "It's almost 2026. And honestly, I need to talk about where I'm at - both personally and with RedFox Studios."
 ---
 
-It's almost 2026. Five days left until we close out another year, and honestly, I need to talk about where I'm at - both personally and with RedFox Studios.
+It's almost 2026. Four days left until we close out another year, and honestly, I need to talk about where I'm at - both personally and with RedFox Studios.
 
 If you've been following RFS or you're part of the community, you've probably noticed things have been... quiet. Too quiet. And I owe you all an explanation and an apology.
 
