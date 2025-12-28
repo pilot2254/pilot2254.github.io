@@ -7,6 +7,7 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import { useState } from 'react'
 import { Check, Copy } from 'lucide-react'
+import { ImageModal } from './image-modal'
 
 interface MarkdownContentProps {
   content: string
@@ -116,7 +117,10 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
           th: ({ ...props }) => <th className="border border-border bg-muted px-4 py-2 text-left font-medium text-foreground" {...props} />,
           td: ({ ...props }) => <td className="border border-border px-4 py-2 text-foreground" {...props} />,
           blockquote: ({ ...props }) => <blockquote className="border-l-4 border-muted-foreground pl-4 italic text-muted-foreground my-4" {...props} />,
-          img: ({ ...props }) => <img className="rounded-lg my-4 max-w-full" {...props} alt={props.alt || ""} />,
+          // img: ({ ...props }) => <img className="rounded-lg my-4 max-w-full" {...props} alt={props.alt || ""} />,
+          img: ({ src, alt, ...props }) => (
+            <ImageModal src={src || ""} alt={alt || ""} />
+          ),
         }}
       >
         {content}
