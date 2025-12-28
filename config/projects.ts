@@ -10,26 +10,15 @@ export interface Project {
 }
 
 export const projects: Project[] = [
-  {
-    id: "steam-playtime-farmer",
-    title: "Steam Playtime Farmer",
-    description: "A simple Node.js application for farming playtime across multiple Steam games simultaneously.",
-    year: 2024,
-    tags: ["Next.js", "TypeScript", "Tailwind"],
-    images: [],
-    link: "",
-    github: "https://github.com/pilot2254/steam-playtime-farmer",
-  },
-  {
-    id: "redfox-studios",
-    title: "RedFox Studios",
-    description: "A team of developers and creatives focused on bringing innovative and exciting ideas to life, from game development to web solutions. Our mission is to create projects that are not only fun and functional but also have a lasting impact.",
-    year: 2023,
-    tags: ["Company", "Game Development"],
-    images: [],
-    link: "https://github.com/redfox-studios",
-    github: "",
-  },
+
+  /* ------------------------------------------------------------------------------------------------------ */
+  /* ------------------------------------------------ 2026 ------------------------------------------------ */
+  /* ------------------------------------------------------------------------------------------------------ */
+
+  /* ------------------------------------------------------------------------------------------------------ */
+  /* ------------------------------------------------ 2025 ------------------------------------------------ */
+  /* ------------------------------------------------------------------------------------------------------ */
+
   {
     id: "contrast-bot",
     title: "Contrast Bot",
@@ -51,16 +40,6 @@ export const projects: Project[] = [
     github: "https://github.com/pilot2254/calculator",
   },
   {
-    id: "guitar-tone-finder",
-    title: "Guitar Tone Finder",
-    description: "A clean and minimalist web application designed to help guitar students practice identifying tones on the fretboard.",
-    year: 2024,
-    tags: ["HTML", "CSS", "TailwindCSS", "JavaScript"],
-    images: [],
-    link: "https://pilot2254.github.io/guitar-tone-finder/",
-    github: "https://github.com/pilot2254/guitar-tone-finder",
-  },
-  {
     id: "raspi5-web",
     title: "Raspi5 Web",
     description: "Public template for people who want to host websites locally on raspberry pi",
@@ -69,16 +48,6 @@ export const projects: Project[] = [
     images: [],
     link: "",
     github: "https://github.com/pilot2254/raspi5-web",
-  },
-  {
-    id: "reusable-unity-scripts",
-    title: "Reusable Unity Scripts",
-    description: "A collection of reusable C# scripts for both 2D and 3D game development in Unity 6.",
-    year: 2024,
-    tags: ["Unity", "C#", "Scripts", "Reusable"],
-    images: [],
-    link: "https://pilot2254.github.io/reusable-unity-scripts/",
-    github: "https://github.com/pilot2254/reusable-unity-scripts",
   },
   {
     id: "flux-archive",
@@ -200,6 +169,59 @@ export const projects: Project[] = [
     link: "",
     github: "https://github.com/michal-flaska/cpp_projects",
   },
+
+  /* ------------------------------------------------------------------------------------------------------ */
+  /* ------------------------------------------------ 2024 ------------------------------------------------ */
+  /* ------------------------------------------------------------------------------------------------------ */
+
+  {
+    id: "steam-playtime-farmer",
+    title: "Steam Playtime Farmer",
+    description: "A simple Node.js application for farming playtime across multiple Steam games simultaneously.",
+    year: 2024,
+    tags: ["Next.js", "TypeScript", "Tailwind"],
+    images: [],
+    link: "",
+    github: "https://github.com/pilot2254/steam-playtime-farmer",
+  },
+  {
+    id: "guitar-tone-finder",
+    title: "Guitar Tone Finder",
+    description: "A clean and minimalist web application designed to help guitar students practice identifying tones on the fretboard.",
+    year: 2024,
+    tags: ["HTML", "CSS", "TailwindCSS", "JavaScript"],
+    images: [],
+    link: "https://pilot2254.github.io/guitar-tone-finder/",
+    github: "https://github.com/pilot2254/guitar-tone-finder",
+  },
+  {
+    id: "reusable-unity-scripts",
+    title: "Reusable Unity Scripts",
+    description: "A collection of reusable C# scripts for both 2D and 3D game development in Unity 6.",
+    year: 2024,
+    tags: ["Unity", "C#", "Scripts", "Reusable"],
+    images: [],
+    link: "https://pilot2254.github.io/reusable-unity-scripts/",
+    github: "https://github.com/pilot2254/reusable-unity-scripts",
+  },
+
+  /* ------------------------------------------------------------------------------------------------------ */
+  /* ------------------------------------------------ 2023 ------------------------------------------------ */
+  /* ------------------------------------------------------------------------------------------------------ */
+
+  {
+    id: "redfox-studios",
+    title: "RedFox Studios",
+    description: "A team of developers and creatives focused on bringing innovative and exciting ideas to life, from game development to web solutions. Our mission is to create projects that are not only fun and functional but also have a lasting impact.",
+    year: 2023,
+    tags: ["Company", "Game Development"],
+    images: [],
+    link: "https://github.com/redfox-studios",
+    github: "",
+  },
+
+  /* ------------------------------------------------ .... ------------------------------------------------ */
+
   /*
   {
     id: "",
