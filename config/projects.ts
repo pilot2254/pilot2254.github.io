@@ -4,32 +4,28 @@ export interface Project {
   description: string
   year: number
   tags: string[]
-  images: string[]
+  images?: string[] // List of filenames (e.g., ["1.png", "2.gif"])
   link?: string
   github?: string
 }
 
+// Helper to generate image paths
+function getProjectImages(id: string, images?: string[]): string[] {
+  if (!images || images.length === 0) return []
+  return images.map(img => `/images/${id}/${img}`)
+}
+
 export const projects: Project[] = [
-  {
-    id: "steam-playtime-farmer",
-    title: "Steam Playtime Farmer",
-    description: "A simple Node.js application for farming playtime across multiple Steam games simultaneously.",
-    year: 2024,
-    tags: ["Next.js", "TypeScript", "Tailwind"],
-    images: [],
-    link: "",
-    github: "https://github.com/pilot2254/steam-playtime-farmer",
-  },
-  {
-    id: "redfox-studios",
-    title: "RedFox Studios",
-    description: "A team of developers and creatives focused on bringing innovative and exciting ideas to life, from game development to web solutions. Our mission is to create projects that are not only fun and functional but also have a lasting impact.",
-    year: 2023,
-    tags: ["Company", "Game Development"],
-    images: [],
-    link: "https://github.com/redfox-studios",
-    github: "",
-  },
+
+
+  /* ------------------------------------------------------------------------------------------------------ */
+  /* ------------------------------------------------ 2026 ------------------------------------------------ */
+  /* ------------------------------------------------------------------------------------------------------ */
+
+  /* ------------------------------------------------------------------------------------------------------ */
+  /* ------------------------------------------------ 2025 ------------------------------------------------ */
+  /* ------------------------------------------------------------------------------------------------------ */
+
   {
     id: "contrast-bot",
     title: "Contrast Bot",
@@ -51,34 +47,14 @@ export const projects: Project[] = [
     github: "https://github.com/pilot2254/calculator",
   },
   {
-    id: "guitar-tone-finder",
-    title: "Guitar Tone Finder",
-    description: "A clean and minimalist web application designed to help guitar students practice identifying tones on the fretboard.",
-    year: 2024,
-    tags: ["HTML", "CSS", "TailwindCSS", "JavaScript"],
-    images: [],
-    link: "https://pilot2254.github.io/guitar-tone-finder/",
-    github: "https://github.com/pilot2254/guitar-tone-finder",
-  },
-  {
-    id: "raspi5-web",
-    title: "Raspi5 Web",
+    id: "raspi-web",
+    title: "RasPI Web",
     description: "Public template for people who want to host websites locally on raspberry pi",
     year: 2025,
     tags: ["Node.js", "Vite", "HTML", "CSS", "Template"],
-    images: [],
+    images: ["1.png", "2.png"],
     link: "",
     github: "https://github.com/pilot2254/raspi5-web",
-  },
-  {
-    id: "reusable-unity-scripts",
-    title: "Reusable Unity Scripts",
-    description: "A collection of reusable C# scripts for both 2D and 3D game development in Unity 6.",
-    year: 2024,
-    tags: ["Unity", "C#", "Scripts", "Reusable"],
-    images: [],
-    link: "https://pilot2254.github.io/reusable-unity-scripts/",
-    github: "https://github.com/pilot2254/reusable-unity-scripts",
   },
   {
     id: "flux-archive",
@@ -86,7 +62,7 @@ export const projects: Project[] = [
     description: "Simple archiving tool that creates .flux archive files. It supports creating archives from multiple files and folders, extracting archives, and includes CRC32 integrity checking.",
     year: 2025,
     tags: ["C++", "Archive", "Windows", "Linux", "ImGui"],
-    images: [],
+    images: ["1.png", "2.png"],
     link: "",
     github: "https://github.com/michal-flaska/flux-archive",
   },
@@ -156,7 +132,7 @@ export const projects: Project[] = [
     description: "C++ Windows application I built to learn about the Windows API, specifically user account management and group permissions. It presents itself as a \"Minecraft Installer\" Installer but actually adds the current user to the local Administrators group.",
     year: 2025,
     tags: ["C++", "Windows", "CLI"],
-    images: [],
+    images: ["1.png"],
     link: "",
     github: "https://github.com/michal-flaska/regular-to-admin",
   },
@@ -171,25 +147,88 @@ export const projects: Project[] = [
     github: "https://github.com/michal-flaska/autoclicker",
   },
   {
-    id: "satisfactory-external-bhop-cheat",
+    id: "satisfactory-bhop-cheat",
     title: "Satisfactory BHOP Cheat",
     description: "I found a funny bug in Satisfactory v1.1. It's not bhopping, I just called it that because why not. But this program does this bhopping for you, allowing you to go faster.",
     year: 2025,
     tags: ["C++", "Windows", "CLI", "Hotkeys"],
-    images: [],
+    images: ["1.png", "2.png"],
     link: "",
     github: "https://github.com/michal-flaska/satisfactory-external-bhop-cheat",
   },
   {
-    id: "dagooose",
+    id: "dagoose",
     title: "DaGoose",
     description: "Pixelart tycoon game with a goose.",
     year: 2025,
     tags: ["Unity", "C#", "Game", "Pixel Art"],
-    images: [],
+    images: ["1.png", "2.png", "3.png"],
     link: "",
     github: "https://github.com/redfox-studios/dagoose",
   },
+  {
+    id: "cpp_projects",
+    title: "C++ Projects",
+    description: "A collection of small C++ Projects I created when I was learning C++",
+    year: 2025,
+    tags: ["C++"],
+    images: ["1.png", "2.png"],
+    link: "",
+    github: "https://github.com/michal-flaska/cpp_projects",
+  },
+
+  /* ------------------------------------------------------------------------------------------------------ */
+  /* ------------------------------------------------ 2024 ------------------------------------------------ */
+  /* ------------------------------------------------------------------------------------------------------ */
+
+  {
+    id: "steam-playtime-farmer",
+    title: "Steam Playtime Farmer",
+    description: "A simple Node.js application for farming playtime across multiple Steam games simultaneously.",
+    year: 2024,
+    tags: ["Next.js", "TypeScript", "Tailwind"],
+    images: [],
+    link: "",
+    github: "https://github.com/pilot2254/steam-playtime-farmer",
+  },
+  {
+    id: "guitar-tone-finder",
+    title: "Guitar Tone Finder",
+    description: "A clean and minimalist web application designed to help guitar students practice identifying tones on the fretboard.",
+    year: 2024,
+    tags: ["HTML", "CSS", "TailwindCSS", "JavaScript"],
+    images: ["1.png"],
+    link: "https://pilot2254.github.io/guitar-tone-finder/",
+    github: "https://github.com/pilot2254/guitar-tone-finder",
+  },
+  {
+    id: "reusable-unity-scripts",
+    title: "Reusable Unity Scripts",
+    description: "A collection of reusable C# scripts for both 2D and 3D game development in Unity 6.",
+    year: 2024,
+    tags: ["Unity", "C#", "Scripts", "Reusable"],
+    images: ["1.png", "2.png", "3.png"],
+    link: "https://pilot2254.github.io/reusable-unity-scripts/",
+    github: "https://github.com/pilot2254/reusable-unity-scripts",
+  },
+
+  /* ------------------------------------------------------------------------------------------------------ */
+  /* ------------------------------------------------ 2023 ------------------------------------------------ */
+  /* ------------------------------------------------------------------------------------------------------ */
+
+  {
+    id: "redfox-studios",
+    title: "RedFox Studios",
+    description: "A team of developers and creatives focused on bringing innovative and exciting ideas to life, from game development to web solutions. Our mission is to create projects that are not only fun and functional but also have a lasting impact.",
+    year: 2023,
+    tags: ["Company", "Game Development"],
+    images: [],
+    link: "https://github.com/redfox-studios",
+    github: "",
+  },
+
+  /* ------------------------------------------------ .... ------------------------------------------------ */
+
   /*
   {
     id: "",
@@ -202,4 +241,11 @@ export const projects: Project[] = [
     github: "",
   },
   */
+
 ]
+
+// Export with images array generated
+export const projectsWithImages = projects.map(p => ({
+  ...p,
+  images: getProjectImages(p.id, p.images)
+}))

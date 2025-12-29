@@ -1,3 +1,5 @@
+@import "katex/dist/katex.min.css";
+
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -155,10 +157,19 @@
 
   /* Text selection */
   ::selection {
-    @apply bg-muted text-foreground;
+    @apply bg-foreground/75 text-background; /* previously was `bg-muted text-foreground` */
   }
 
   ::-moz-selection {
-    @apply bg-muted text-foreground;
+    @apply bg-foreground/75 text-background;
   }
+}
+
+/* KaTeX styles */
+.katex {
+  font-weight: 300;
+}
+
+.katex-display {
+  font-weight: 300;
 }

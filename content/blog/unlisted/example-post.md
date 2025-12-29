@@ -79,3 +79,85 @@ And also a horizontal line:
 ## Embeds
 
 <iframe width="auto" height="auto" src="https://www.youtube.com/embed/Uj8XYvYUpnQ?si=7SryXBppuw1IyxxK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+## KaTeX Math
+
+### Inline Math
+
+Einstein's famous equation: $E = mc^2$
+
+The quadratic formula: $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$
+
+---
+
+### Block Math
+
+
+$$
+\begin{array}{rcl}
+A & = & B \\
+ & = & C \\
+ & = & D
+\end{array}
+$$
+
+---
+
+$$
+\sum_{\substack{
+0 < i < m \\
+0 < j < n\\
+}} P(i,j)
+$$
+
+---
+
+$$
+\prod_{\substack{
+p \leq x \\
+\text{p prime}
+}} \left( 1 - \dfrac{1}{p} \right)
+$$
+
+---
+
+$$
+f:\begin{array}{rcl}
+I & \longrightarrow & J  \\
+x & \longrightarrow & f(x)
+\end{array}
+$$
+
+---
+
+$$
+|x| = \left\{ \begin{array}{cl}
+x & : \ x \geq 0 \\
+-x & : \ x < 0
+\end{array} \right.
+$$
+
+---
+
+$$
+\begin{matrix}
+R^n & \overset{A}{\longrightarrow} & R^m \\
+\cong &  & \cong \\
+R^n & \overset{B}{\longrightarrow} & R^m \\
+\end{matrix}
+$$
+
+---
+
+$$
+\underbrace{
+\overbrace{a+b}^6 \cdot \overbrace{c+d}^7
+}_\text{example of text} = 42
+$$
+
+---
+
+more info:
+- https://katex.org/docs/supported.html
+- https://latex.codecogs.com/eqneditor/editor.php
+- https://latexeditor.lagrida.com/

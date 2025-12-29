@@ -6,7 +6,7 @@ description: "This blog post is my attempt to give you a roadmap - the one I wis
 
 Reverse engineering is hard as fuck. But if you're the type of person who sees a locked door and immediately wants to know what's behind it, or you've ever wondered "how the hell does this program actually work under the hood," then this might be for you.
 
-I started getting into RE a few months ago because game development and web dev felt too... surface level. I wanted to understand how things *really* work. Not just write code that compiles, but understand what happens when it compiles. What the CPU actually does with your code. How programs protect themselves. How to break those protections.
+I got serious about reverse engineering in mid-2025. Game development and web dev felt too... surface level. I wanted to understand how things *really* work. Not just write code that compiles, but understand what happens when it compiles. What the CPU actually does with your code. How programs protect themselves. How to break those protections.
 
 This blog post is my attempt to give you a roadmap - the one I wish I had when I started. I'm not an expert, I'm still learning, but that's exactly why this might help. I remember what confused me, what I wish someone had explained better, and what actually worked.
 
@@ -20,13 +20,17 @@ Seriously. If you don't have programming experience, stop reading and go learn t
 
 **You should know C or C++.** Not Python. Not JavaScript. Not Java. Here's why:
 
+**You should know C or C++.** Not Python. Not JavaScript. Not Java. Here's why:
+
 Python and JavaScript are high-level interpreted languages. They hide everything interesting from you. When you write `x = 5`, you don't allocate memory, you don't manage types, the language does it for you. That's great for productivity, terrible for understanding what's actually happening.
 
 C/C++ forces you to think about memory. When you declare `int x = 5;`, you're allocating 4 bytes on the stack. When you use pointers (`int* ptr = &x;`), you're directly manipulating memory addresses. When your program crashes with a segfault, you fucked up memory management. This pain teaches you how computers actually work.
 
 When you reverse engineer a program, you're looking at assembly code that was generated from something like C/C++. The closer your mental model is to how the compiler thinks, the easier RE becomes. If you only know Python, you'll be completely lost when you see `mov eax, [ebp-4]` because you've never thought about registers or stack frames.
 
-Also, if you're the type of person who needs help installing programs, this post isn't for you. I'm assuming you can download an executable, run it, and figure out basic software installation. You're not a grandma touching a PC for the first time.
+I recommend starting with C/C++ crackmes because most native programs you'll reverse are written in these languages. The patterns you learn will directly apply to real-world RE work.
+
+Also, if you're the type of person who needs help installing programs, this post isn't for you. I'm assuming you can download an executable, run it, and figure out basic software installation. If not, then this blog post is not for you.
 
 ## How computers actually work
 
@@ -142,6 +146,8 @@ Go to [crackmes.one](https://crackmes.one/) and then go to the search page.
 
 Please make sure to read the [FAQ on crackmes.one](https://crackmes.one/faq). All the crackme files are in password-protected zips. The password is in the FAQ. Don't waste time trying to crack the zip encryption - that's not the challenge.
 
+Crackmes.one and crackmes.de are generally safe - creators must disclose if there's malware. But always check the comments and description first. If something looks sketchy or explicitly mentions malware/viruses, run it in a VM. For normal Level 1-3 crackmes with good ratings, you're fine running them directly.
+
 When you download a crackme, it's usually an executable that asks for a password or serial key. Your job is to find the correct input, or bypass the check entirely, or understand how the validation works.
 
 ## Learning Cutter
@@ -169,6 +175,16 @@ Here's how I approach a crackme:
 7. Either find the correct input, or patch the binary to bypass the check
 
 I'll be making a video showing exactly how I solve a crackme step-by-step. I'll update this post with the link once it's up. **[UPDATE: Video here - link-to-your-video-when-ready]**
+
+## If you're into game hacking
+
+This post focuses on native code and crackmes, but if you're interested in game hacking specifically, Unity games are a different beast.
+
+**.NET/Mono Unity games** use managed code. You reverse these with dnSpyEx (not the original dnSpy - use the maintained fork). You're reading C# instead of assembly, which is way easier.
+
+**IL2CPP Unity games** are compiled to native code. These require the same RE skills you're learning here - assembly, disassemblers, debuggers. They're harder but more interesting.
+
+I cover my full game hacking setup in [my tools post](/blog/reverse-engineering-tools-i-use). If games are your main interest, read that after you get comfortable with basic crackmes.
 
 ## Practice: Reverse your own code
 
@@ -222,7 +238,7 @@ But here are topics you'll eventually need to learn more about:
 - **Dynamic analysis** (running the program and watching it in a debugger)
 - **Static analysis** (analyzing the code without running it)
 
-I'll probably write more detailed posts about some of these later. For now, just start solving crackmes and you'll naturally encounter these concepts.
+You'll naturally learn these by solving harder crackmes and reading documentation when you get stuck. Don't try to master everything before starting - that's a trap. Just start solving crackmes and learn as you go.
 
 ## Final thoughts
 
