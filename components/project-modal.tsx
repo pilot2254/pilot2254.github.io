@@ -20,13 +20,14 @@ interface ProjectModalProps {
 
 export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
   const [currentImage, setCurrentImage] = useState(0)
+  const images = project.images || [] // Add default empty array
 
   const nextImage = () => {
-    setCurrentImage((prev) => (prev + 1) % project.images.length)
+    setCurrentImage((prev) => (prev + 1) % images.length)
   }
 
   const prevImage = () => {
-    setCurrentImage((prev) => (prev - 1 + project.images.length) % project.images.length)
+    setCurrentImage((prev) => (prev - 1 + images.length) % images.length)
   }
 
   return (
@@ -36,16 +37,16 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
           <DialogTitle className="text-2xl text-foreground">{project.title}</DialogTitle>
         </DialogHeader>
 
-        {project.images.length > 0 && (
+        {images.length > 0 && (
           <div className="relative aspect-video bg-muted rounded-lg overflow-hidden group">
             <Image
-              src={project.images[currentImage]}
+              src={images[currentImage]}
               alt={`${project.title} screenshot ${currentImage + 1}`}
               fill
               className="object-cover"
             />
 
-            {project.images.length > 1 && (
+            {images.length > 1 && (
               <>
                 <button
                   onClick={prevImage}
@@ -62,7 +63,7 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
                   <ChevronRight className="w-5 h-5" />
                 </button>
                 <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1">
-                  {project.images.map((_, i) => (
+                  {images.map((_, i) => (
                     <button
                       key={i}
                       onClick={() => setCurrentImage(i)}
