@@ -88,6 +88,9 @@ Einstein's famous equation: $E = mc^2$
 
 The quadratic formula: $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$
 
+Note that if you need to write a literal dollar sign (like \$4), put a backslash before it: `... it costs \$4 dollars ...`. This prevents KaTeX from treating it as math notation.
+
+
 ---
 
 ### Block Math
