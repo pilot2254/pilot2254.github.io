@@ -18,7 +18,7 @@ Unity is trying too hard to be Unreal. Stop it.
 
 ## The Licensing is Bullshit
 
-Unity charges $4k per seat (per developer). Unreal? **Free.** You only pay 5% after your game hits $1M in earnings. That's solid.
+Unity charges \$4k per seat (per developer). Unreal? **Free.** You only pay 5% after your game hits \$1M in earnings. That's solid.
 
 Why would I pay thousands upfront when I'm just learning? Unreal's model makes way more sense.
 
