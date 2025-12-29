@@ -1,5 +1,5 @@
 import { ProjectCard } from "@/components/project-card"
-import { projects } from "@/config/projects"
+// import { projects } from "@/config/projects"
 import { siteConfig } from "@/config/site"
 import type { Metadata } from "next"
 import { projectsWithImages as projects } from "@/config/projects"
