@@ -157,11 +157,11 @@
 
   /* Text selection */
   ::selection {
-    @apply bg-foreground/75 text-background; /* previously was `bg-muted text-foreground` */
+    @apply bg-muted text-foreground; /* previously was `bg-muted text-foreground` */
   }
 
   ::-moz-selection {
-    @apply bg-foreground/75 text-background;
+    @apply bg-muted text-foreground;
   }
 }
 
