@@ -92,63 +92,72 @@ The quadratic formula: $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$
 
 ### Block Math
 
-**Gaussian Integral:**
+
 $$
-\int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}
+\begin{array}{rcl}
+A & = & B \\
+ & = & C \\
+ & = & D
+\end{array}
 $$
 
-**Fourier Transform:**
+---
+
 $$
-\hat{f}(\xi) = \int_{-\infty}^{\infty} f(x) e^{-2\pi i x \xi} dx
+\sum_{\substack{
+0 < i < m \\
+0 < j < n\\
+}} P(i,j)
 $$
 
-**Matrix:**
+---
+
 $$
-\begin{bmatrix}
-a & b \\
-c & d
-\end{bmatrix}
-\begin{bmatrix}
-x \\
-y
-\end{bmatrix}
-=
-\begin{bmatrix}
-ax + by \\
-cx + dy
-\end{bmatrix}
+\prod_{\substack{
+p \leq x \\
+\text{p prime}
+}} \left( 1 - \dfrac{1}{p} \right)
 $$
 
-**Summation:**
+---
+
 $$
-\sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}
+f:\begin{array}{rcl}
+I & \longrightarrow & J  \\
+x & \longrightarrow & f(x)
+\end{array}
 $$
 
-**Taylor Series:**
+---
+
 $$
-e^x = \sum_{n=0}^{\infty} \frac{x^n}{n!} = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots
+|x| = \left\{ \begin{array}{cl}
+x & : \ x \geq 0 \\
+-x & : \ x < 0
+\end{array} \right.
 $$
 
-**Limits:**
+---
+
 $$
-\lim_{x \to \infty} \left(1 + \frac{1}{x}\right)^x = e
+\begin{matrix}
+R^n & \overset{A}{\longrightarrow} & R^m \\
+\cong &  & \cong \\
+R^n & \overset{B}{\longrightarrow} & R^m \\
+\end{matrix}
 $$
 
-**Derivatives:**
+---
+
 $$
-\frac{d}{dx}\left(\sin x\right) = \cos x
+\underbrace{
+\overbrace{a+b}^6 \cdot \overbrace{c+d}^7
+}_\text{example of text} = 42
 $$
 
-**Integrals with bounds:**
-$$
-\int_0^{\pi} \sin x \, dx = 2
-$$
-
-**Greek letters and symbols:**
-$$
-\alpha, \beta, \gamma, \Delta, \Sigma, \Omega, \nabla, \partial, \infty
-$$
+---
 
 more info:
 - https://katex.org/docs/supported.html
 - https://latex.codecogs.com/eqneditor/editor.php
+- https://latexeditor.lagrida.com/
