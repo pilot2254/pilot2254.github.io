@@ -6,13 +6,13 @@ description: "eh"
 
 Reverse engineering is hard as fuck. But if you're the type of person who sees a locked door and immediately wants to know what's behind it, or you've ever wondered "how the hell does this program actually work under the hood," then this might be for you.
 
-I got serious about reverse engineering in mid-2025. Game development and web dev felt too surface level. I wanted to understand how things *really* work. Not just write code that compiles, but understand what happens when it compiles. What the CPU actually does with your code. How programs protect themselves. How to break those protections.
+I got serious about reverse engineering in mid-2025. Game development and web dev felt too surface level. I wanted to understand how things really work. Not just write code that compiles, but understand what happens when it compiles. What the CPU actually does with your code. How programs protect themselves. How to break those protections.
 
 This blog post is my attempt to give you a roadmap - the one I wish I had when I started. I'm not an expert, I'm still learning, but that's exactly why this might help. I remember what confused me, what I wish someone had explained better, and what actually worked.
 
 ## Before you start: Do you even qualify?
 
-Seriously. If you don't have programming experience, stop reading and go learn that first. You need to understand:
+Honestly, if you don't have any programming experience, please stop reading and go learn that first. You need to understand:
 - Variables, data types, functions, loops, conditionals
 - Pointers and memory (crucial)
 - How programs are structured
@@ -29,6 +29,9 @@ When you reverse engineer a program, you're looking at assembly code that was ge
 I recommend starting with C/C++ crackmes because most native programs you'll reverse are written in these languages. The patterns you learn will directly apply to real-world RE work.
 
 Also, if you're the type of person who needs help installing programs, this post isn't for you. I'm assuming you can download an executable, run it, and figure out basic software installation. If not, then this blog post is not for you.
+
+- [C++ full beginner tutorial (best one, has 6hrs)](https://www.youtube.com/watch?v=-TkoO8Z07hI)
+- [How to learn C++](https://youtu.be/kr8Hb9idWqo)
 
 ## How computers actually work
 
@@ -81,7 +84,7 @@ When you write C++ code and compile it, multiple things happen:
 3. **Assembly** - converts assembly to machine code (binary)
 4. **Linking** - combines your code with libraries, creates final executable
 
-The compiler also *optimizes* your code. Your original source might have `x = 5; y = x + 3;` but the compiler might just do `y = 8` because it's smarter than you. This is why reversed code often looks nothing like the original.
+The compiler also optimizes your code. Your original source might have `x = 5; y = x + 3;` but the compiler might just do `y = 8` because it's smarter than you. This is why reversed code often looks nothing like the original.
 
 Different **architectures** produce different assembly:
 - x86 (32-bit Intel/AMD)
@@ -91,7 +94,7 @@ Different **architectures** produce different assembly:
 
 A program compiled for x86-64 on Windows won't run on ARM. The machine code is completely different. When you reverse engineer, you need to know what architecture you're dealing with.
 
-- [how gcc compiles C program](https://youtu.be/XJC5WB2Bwrc?t=227)
+- [How GCC compiles C program](https://youtu.be/XJC5WB2Bwrc?t=227)
 - [How the C++ Compiler Works](https://youtu.be/3tIqpEmWMLI)
 
 **Different compilers** (GCC, Clang, MSVC) generate different assembly even from the same source code. They have different optimization strategies. Keep this in mind - there's no "one true way" code compiles.
@@ -181,7 +184,7 @@ Here's how I approach a crackme:
 
 Or I just search for string names like "password" and then when I find something like "wrong password" or "bad boy" (this text shows if password is incorrect) and when I scroll up, I can see the password definined there. But this works only for the simple crackmes
 
-I'll be making a video showing exactly how I solve a crackme step-by-step. I'll update this post with the link once it's up. **[UPDATE: Video here - link-to-my-video-when-ready]**
+I'll be making a video showing exactly how I solve a crackme step-by-step. I'll update this post with the link once it's up.
 
 ## If you're into game hacking
 
@@ -198,20 +201,21 @@ I cover my full game hacking setup in [my tools post](/blog/reverse-engineering-
 This is underrated advice. Write a simple C++ program:
 ```cpp
 #include <iostream>
+#include <string>
 
 int main() {
-    std::string password = 12345;
-    int input;
-    
+    std::string password = "secret_12345";
+    std::string input;
+
     std::cout << "Enter password: ";
     std::cin >> input;
-    
+
     if (input == password) {
-        std::cout << "Correct!" << '\';
+        std::cout << "Correct!\n";
     } else {
-        std::cout << "Wrong!" << '\';
+        std::cout << "Wrong!\n";
     }
-    
+
     return 0;
 }
 ```
@@ -221,7 +225,7 @@ Compile it with GCC (or MSVC, Clang, whatever):
 g++ -o test test.cpp
 ```
 
-Now reverse it in Cutter. You have the source code, so you can compare what you wrote versus what the assembly looks like. This is *incredibly* useful for understanding how high-level code translates to low-level instructions.
+Now reverse it in Cutter. You have the source code, so you can compare what you wrote versus what the assembly looks like. This is incredibly useful for understanding how high-level code translates to low-level instructions.
 
 Try different things:
 - Add more variables
