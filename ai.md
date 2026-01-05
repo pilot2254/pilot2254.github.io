@@ -1,7 +1,6 @@
-ai learned my writing style from data of thousands of my DMs,
-so when correcting my spelling mistakes in blog and it wont rewrite the whole blog to look like its AI generated.
+i trained claude ai from data of thousands of my DMs, to match my writing style. Why? because i use it to enhance, expand and fix spelling mistakes in my blogs. and without it knowing my writing style, it will rewrite the blog completely, ending up with ai looking text
 
-just paste this before sending the blog to AI for review:
+to fix it, i just paste this before sending the blog to AI for review:
 
 ```
 **WRITING STYLE GUIDE - Mike's Voice**
