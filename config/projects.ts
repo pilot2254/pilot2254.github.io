@@ -61,7 +61,7 @@ export const projects: Project[] = [
     title: "Flux Archive",
     description: "Simple archiving tool that creates .flux archive files. It supports creating archives from multiple files and folders, extracting archives, and includes CRC32 integrity checking.",
     year: 2025,
-    tags: ["C++", "Archive", "Windows", "Linux", "ImGui"],
+    tags: ["C++", "Archive", "Windows", "ImGui"],
     images: ["1.png", "2.png"],
     link: "",
     github: "https://github.com/michal-flaska/flux-archive",

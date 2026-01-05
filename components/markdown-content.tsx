@@ -89,8 +89,8 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
               />
             )
           },
-          ul: ({ ...props }) => <ul className="list-disc list-inside text-foreground mb-4 space-y-2" {...props} />,
-          ol: ({ ...props }) => <ol className="list-decimal list-inside text-foreground mb-4 space-y-2" {...props} />,
+          ul: ({ ...props }) => <ul className="list-disc list-outside ml-6 text-foreground mb-4 space-y-2" {...props} />,
+          ol: ({ ...props }) => <ol className="list-decimal list-outside ml-6 text-foreground mb-4 space-y-2" {...props} />,
           code: ({ inline, className, children, ...props }: { inline?: boolean; className?: string; children?: React.ReactNode } & React.HTMLAttributes<HTMLElement>) => {
             const match = /language-(\w+)/.exec(className || '')
             const language = match ? match[1] : ''
@@ -118,7 +118,7 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
           ),
           th: ({ ...props }) => <th className="border border-border bg-muted px-4 py-2 text-left font-medium text-foreground" {...props} />,
           td: ({ ...props }) => <td className="border border-border px-4 py-2 text-foreground" {...props} />,
-          blockquote: ({ ...props }) => <blockquote className="border-l-4 border-muted-foreground pl-4 italic text-muted-foreground [&_*]:text-muted-foreground my-4" {...props} />,
+          blockquote: ({ ...props }) => <blockquote className="border-l-3 border-muted pl-4 italic text-muted-foreground [&_*]:text-muted-foreground my-4" {...props} />,
           // img: ({ ...props }) => <img className="rounded-lg my-4 max-w-full" {...props} alt={props.alt || ""} />,
           img: ({ src, alt, ...props }) => (
             <ImageModal src={String(src || "")} alt={String(alt || "")} />
