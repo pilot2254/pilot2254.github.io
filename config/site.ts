@@ -7,7 +7,7 @@ export const siteConfig = {
     twitter: "@pilot2254",
   },
   navigation: {
-    sticky: false, // Toggle sticky nav here
+    sticky: false, // toggle sticky nav here
   },
   social: {
     twitter: "https://twitter.com/pilot2254",
@@ -17,7 +17,7 @@ export const siteConfig = {
     github: "https://github.com/pilot2254/pilot2254.github.io",
     paypal: "https://paypal.me/pilot2254",
     kofi: "https://ko-fi.com/pilot2254",
-    btc: "bc1qr8x3k39mn7sz2l9kyk8j8293xf5spm2wsxymh9",
-    eth: "0x4281F208799E24531CBE21D4d263C08E7CB68d86",
+    btc: "bc1qr8x3k39mn7sz2l9kyk8j8293xf5spm2wsxymh9", // my actual btc address
+    eth: "0x4281F208799E24531CBE21D4d263C08E7CB68d86", // my actual eth address
   },
 }
