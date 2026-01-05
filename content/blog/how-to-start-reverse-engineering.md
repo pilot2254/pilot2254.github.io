@@ -1,7 +1,7 @@
 ---
 title: "How to start Reverse Engineering"
-date: "0000-00-00" # yy mm dd
-description: "eh"
+date: "2026-01-05" # yy mm dd
+description: "If you're the type of person who sees a locked door and immediately wants to know what's behind it, or you've ever wondered 'how the hell does this program actually work under the hood,' then this might be for you."
 ---
 
 Reverse engineering is hard as fuck. But if you're the type of person who sees a locked door and immediately wants to know what's behind it, or you've ever wondered "how the hell does this program actually work under the hood," then this might be for you.
@@ -10,9 +10,9 @@ I got serious about reverse engineering in mid-2025. Game development and web de
 
 This blog post is my attempt to give you a roadmap - the one I wish I had when I started. I'm not an expert, I'm still learning, but that's exactly why this might help. I remember what confused me, what I wish someone had explained better, and what actually worked.
 
-## Before you start: Do you even qualify?
+## Before you start
 
-Honestly, if you don't have any programming experience, please stop reading and go learn that first. You need to understand:
+If you don't have any programming experience, please stop reading and go learn that first. Why? Because you need to understand:
 - Variables, data types, functions, loops, conditionals
 - Pointers and memory (crucial)
 - How programs are structured
@@ -30,8 +30,8 @@ I recommend starting with C/C++ crackmes because most native programs you'll rev
 
 Also, if you're the type of person who needs help installing programs, this post isn't for you. I'm assuming you can download an executable, run it, and figure out basic software installation. If not, then this blog post is not for you.
 
-- [C++ full beginner tutorial (best one, has 6hrs)](https://www.youtube.com/watch?v=-TkoO8Z07hI)
-- [How to learn C++](https://youtu.be/kr8Hb9idWqo)
+- [C++ full beginner tutorial (best one yet, has 6hrs)](https://www.youtube.com/watch?v=-TkoO8Z07hI)
+- [How to learn C++ the Correct Way](https://youtu.be/kr8Hb9idWqo)
 
 ## How computers actually work
 
@@ -48,7 +48,8 @@ Your CPU executes instructions. That's it. It reads an instruction from memory, 
 - `rbp` - base pointer (points to bottom of current stack frame)
 - `rip` - instruction pointer (points to next instruction to execute)
 
-On 32-bit (x86), these are `eax`, `ebx`, etc. On 16-bit, `ax`, `bx`, etc. The pattern: `r` prefix = 64-bit, `e` prefix = 32-bit, no prefix = 16-bit. Simple, right?
+On 32-bit (x86), these are `eax`, `ebx`, etc. On 16-bit, `ax`, `bx`, etc.<br />
+The pattern: `r` prefix = 64-bit, `e` prefix = 32-bit, no prefix = 16-bit.
 
 **Memory** is slower but much larger. Your program's code, variables, heap allocations - everything lives in memory. The CPU loads data from memory into registers, does operations on registers, then stores results back to memory.
 
@@ -94,8 +95,9 @@ Different **architectures** produce different assembly:
 
 A program compiled for x86-64 on Windows won't run on ARM. The machine code is completely different. When you reverse engineer, you need to know what architecture you're dealing with.
 
-- [How GCC compiles C program](https://youtu.be/XJC5WB2Bwrc?t=227)
-- [How the C++ Compiler Works](https://youtu.be/3tIqpEmWMLI)
+- [How GCC compiles C program](https://youtu.be/XJC5WB2Bwrc?t=227) - Core Dumped
+- [How the C++ Compiler Works](https://youtu.be/3tIqpEmWMLI) - TheCherno
+- [How does a compiler work?](https://youtu.be/Fj90r4l5rds) - Nathan Baggs
 
 **Different compilers** (GCC, Clang, MSVC) generate different assembly even from the same source code. They have different optimization strategies. Keep this in mind - there's no "one true way" code compiles.
 
@@ -103,7 +105,7 @@ A program compiled for x86-64 on Windows won't run on ARM. The machine code is c
 
 There's no way around this. You can use decompilers (tools that try to convert assembly back to C-like code), but they're not perfect. You'll need to read raw assembly eventually.
 
-Assembly looks scary at first:
+Assembly looks frustrating at first:
 ```asm
 push rbp
 mov rbp, rsp
@@ -250,17 +252,17 @@ But here are topics you'll eventually need to learn more about:
 
 You'll naturally learn these by solving harder crackmes and reading documentation when you get stuck. Don't try to master everything before starting - that's a trap. Just start solving crackmes and learn as you go.
 
-## Final thoughts
+## Final words
 
 Reverse engineering is frustrating. You'll spend hours on a crackme that's supposedly "easy" and feel like an idiot. You'll see assembly that makes no sense. You'll think "how the fuck does anyone understand this?"
 
 That's normal. I've been there. I'm still there sometimes.
 
-But when you finally crack a challenge, when you understand what the program is doing, when you bypass a protection or extract a hidden flag - that feeling is worth it.
+But when you finally crack a challenge, when you understand what the program is doing, when you bypass a protection or extract a hidden flag - that feeling is worth it.For example, I felt so good when I finally reverse engineered my first crackme, and even better when I completed another CrackMe in just 12 seconds.
 
-If you want to give it a try, go download a Level 1 crackme right now. Don't overthink it. Just load it in Cutter and start poking around. You won't understand everything immediately. That's fine. You learn by struggling.
+If you want to give it a try, go download a Level 1 crackme right now. Don't overthink it. Just load it in Cutter and start goofing around. You won't understand everything immediately. That's fine. You learn by struggling.
 
-Good luck. And if you solve some interesting crackmes, let me know. I'm always looking for recommendations.
+Good luck. And if you solve some interesting crackmes, let me know. I'm always looking for recommendations :D
 
 ---
 
