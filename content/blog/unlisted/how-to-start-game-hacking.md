@@ -58,7 +58,13 @@ Here's what I actually use:
 
 **[UEDumper](https://github.com/Spuckwaffel/UEDumper)**, **[UE4Dumper](https://github.com/guttir14/UnrealDumper-4.25)** or **[Dumper-7](https://github.com/Encryqed/Dumper-7)** - For Unreal Engine games. Dumps SDK, offsets, classes. More on this later.
 
-You don't need all of these right away. Start with Cheat Engine.
+**Alternatives worth knowing:**
+- **[ReClass.NET](https://github.com/ReClassNET/ReClass.NET)** - For analyzing and editing memory structures. Useful when you're working with complex classes.
+- **x64dbg's memory view** - Built-in memory editor/viewer. Some people prefer it over CE's memory viewer.
+
+For a full breakdown of tools, check my [reverse engineering tools blog](/blog/reverse-engineering-tools-i-use).
+
+**You don't need all of these right away. Start with Cheat Engine.**
 
 ## Start With Cheat Engine
 
@@ -85,6 +91,20 @@ Cheat Engine has a pointer scanner. Use it. Learn how it works.
 
 [Here's a tutorial on pointers in CE by Swashed](https://youtu.be/DWd1ltJXaRk)<br />
 [Here's a tutorial on pointers in CE by Intigriti](https://youtu.be/CVDi-oIOxSo) - recommended
+
+### Memory Sections and Base Addresses
+
+Games (like all programs) are divided into different memory sections:
+- `.text` - Executable code (your game's instructions)
+- `.data` - Initialized global/static variables
+- `.rdata` - Read-only data (strings, constants)
+- `.bss` - Uninitialized data
+
+Each time you launch a game, these sections load at different memory addresses (thanks to ASLR - Address Space Layout Randomization). That's why when you find your health at `0x12345678`, restart the game, and it's now at `0x87654321`.
+
+**This is why you need pointers.** The game's base address changes, but the offset from the base stays the same. So instead of hardcoding `0x12345678`, you use `[GameBase + 0x123456] + 0x78`, which works every time.
+
+When you scan for values in Cheat Engine and restart the game (or load a different level), all your addresses break. That's normal. That's exactly why we use pointer chains - they adapt to the new base address automatically.
 
 ### Cheat Tables (.CT Files)
 
@@ -146,13 +166,15 @@ You don't need to understand all of this right now. Just know that AOB scripts a
 [Here's a tutorial on CE scripting by Swashed](https://youtu.be/DWd1ltJXaRk).<br />
 [Here's a tutorial on CE scripting by Intigriti](https://youtu.be/Qfts3aGaBk4) - recommended
 
+**Critical warning for Unreal games:** When creating AOB/Code Injection scripts in Cheat Engine, you'll often see instructions from `vcruntime` (Visual C++ runtime) when viewing the disassembly. **DO NOT inject code there.** Injecting into vcruntime will crash the game instantly because you're hooking shared runtime functions used by the entire engine. Always make sure you're injecting into game-specific code, not engine/runtime code.
+
 ## Types of Cheats
 
 There are multiple ways to build cheats. Here are the main types:
 
 **External Cheats** - Run as a separate process. Read/write memory from outside the game using [Windows API](https://learn.microsoft.com/en-us/windows/win32/) (`ReadProcessMemory`, `WriteProcessMemory`). Easier to develop, easier to detect.
 
-**Internal Cheats** - Injected directly into the game process ([DLL injection](https://en.wikipedia.org/wiki/DLL_injection)). Can hook game functions, access internal structures directly. Harder to develop, harder to detect.
+**Internal Cheats** - **Internal Cheats** - Injected directly into the game process (DLL injection). Can hook game functions, access internal structures directly. Harder to develop, harder to detect. DLL injection means loading your own DLL (dynamic link library) into the game's process memory. Common methods include LoadLibrary injection and Manual Map injection. Once injected, your code runs inside the game's process and has full access to everything. Search "DLL injection tutorial" or "Manual Map injection" to learn more about the technical details.
 
 **Kernel Cheats** - Run in kernel mode ([Ring 0](https://en.wikipedia.org/wiki/Protection_ring)). Can bypass most anti-cheats. Requires driver development knowledge. This is advanced and extremely complex - don't start here.
 
@@ -345,6 +367,28 @@ Here's what you should do:
 Once you've done that, you understand the basics.
 
 Then move to actual reverse engineering of Unity .NET games (easiest), then IL2CPP games (harder), then native games (hardest), and eventually Unreal if you're feeling ambitious.
+
+## Moving Beyond Cheat Engine
+
+Once you're comfortable with CE - you can make complex tables with scripts, pointers, and AOBs - it's time to level up.
+
+**Start with external cheats in C++.** These are easier than internals because:
+- No injection required (just ReadProcessMemory/WriteProcessMemory)
+- Crashes won't affect the game
+- Easier to debug
+
+**Then move to internal cheats (DLL injection).** These give you more power:
+- Direct memory access (faster)
+- Ability to hook game functions
+- Can draw overlays (ESP, aimbot circles, etc.)
+
+Some people prefer externals, some prefer internals. It's personal preference. Both are valid.
+
+**Resources for C++ cheats:**
+- [Cazz's YouTube](https://www.youtube.com/@cazz) - CS2 internal/external tutorials
+- [CarlG's YouTube](https://www.youtube.com/@carlgwastaken) - Also CS2 focused, great explanations
+
+Don't jump to kernel cheats until you've mastered externals and internals. Kernel development is a different beast entirely.
 
 ## Final Thoughts
 
