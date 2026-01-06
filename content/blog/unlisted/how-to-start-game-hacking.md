@@ -4,7 +4,7 @@ date: "2026-01-06" # yy mm dd
 description: "Continuation of my older post about reverse engineering"
 ---
 
-This is a continuation of my [reverse engineering guide](/blog/how-to-start-reverse-engineering). If you haven't read that yet, go read it first. You need to understand the basics of assembly, memory, and how programs work before jumping into game hacking.
+This is a continuation of my [reverse engineering guide](/blog/how-to-start-reverse-engineering). If you haven't read that yet, go read it first, so you will be able to understand more in this blog.
 
 ## Why a Separate Blog?
 
@@ -16,7 +16,7 @@ So if you're here specifically for game hacking, this is for you.
 
 ## How I Started
 
-I was studying app development at home and game development at school (Skyro.ai). At some point I thought - how can I combine these two things to learn something new?
+I was studying app development at home and game development at school ([skyro.ai](https://skyro.ai/)). At some point I thought "how can I combine these two things to learn something new?"
 
 I searched for tutorials online and found Cheat Engine. Started with the basics, then moved to dnSpy for Unity games, and now I'm combining everything with C++ for more advanced stuff.
 
@@ -32,13 +32,15 @@ If you skipped my RE guide, here's what you need to know before starting:
 
 If any of that sounds confusing, [go read the RE guide first](/blog/how-to-start-reverse-engineering).
 
-## Legal Disclaimer (So I Don't Get Fucked)
+## Legal Disclaimer
 
 I recommend practicing on single-player games or games you own. Most online games have Terms of Service that ban cheating, and I'm not responsible if you get banned or face legal consequences.
 
 This guide is for educational purposes. Learn the skills, understand how games work, but don't be a dickhead in ranked matches.
 
 Now that's out of the way, let's get started.
+
+(Saying this because I don't want my website or accounts nuked because of this blog.)
 
 ## Tools You'll Need
 
@@ -50,11 +52,11 @@ Here's what I actually use:
 
 **[il2cpp-dumper](https://github.com/Perfare/Il2CppDumper)** - For Unity games built with IL2CPP. Dumps assemblies so you can see class structures and offsets.
 
-**[Cutter](https://cutter.re/) or [IDA](https://hex-rays.com/ida-free)** - For disassembly/decompilation. I use Cutter, but IDA's F5 pseudocode feature is beginner-friendly. Personal preference.
+**[Cutter](https://cutter.re/), [Ghidra](https://github.com/NationalSecurityAgency/ghidra/releases) or [IDA Free](https://hex-rays.com/ida-free)** - For disassembly/decompilation. I use Cutter, but IDA's F5 pseudocode feature is beginner-friendly. Personal preference.
 
 **[x64dbg](https://x64dbg.com/)** - For debugging native code. Better debugger than Cutter, no decompiler.
 
-**[UE4Dumper/UEDumper](https://github.com/guttir14/UnrealDumper-4.25)** - For Unreal Engine games. Dumps SDK, offsets, classes. More on this later.
+**[UEDumper](https://github.com/Spuckwaffel/UEDumper)**, **[UE4Dumper](https://github.com/guttir14/UnrealDumper-4.25)** or **[Dumper-7](https://github.com/Encryqed/Dumper-7)** - For Unreal Engine games. Dumps SDK, offsets, classes. More on this later.
 
 You don't need all of these right away. Start with Cheat Engine.
 
@@ -69,7 +71,7 @@ Download it, install it, and **do the tutorial**. Seriously. CE comes with a bui
 - Code injection
 - Pointers
 
-[Here's a video walkthrough of the CE tutorial](LINK) if you get stuck.
+[Here's couple of video walkthroughs of the CE tutorial](https://www.youtube.com/playlist?list=PLmqenIp2RQcg0x2mDAyL2MC23DAGcCR9b) if you get stuck.
 
 Once you finish the tutorial, pick a simple single-player game and try to make a basic cheat. Change your health, infinite ammo, speed hacks - whatever. Just get comfortable with scanning memory and modifying values.
 
@@ -79,7 +81,10 @@ Pointers are essential. When you restart a game, memory addresses change. A poin
 
 Example: Your health might be at address `0x12345678` right now. But when you restart the game, it's at `0x87654321`. A pointer chain like `[Base + 0x10] + 0x20` will always find your health, no matter where it moves.
 
-Cheat Engine has a pointer scanner. Use it. Learn how it works. [Here's a tutorial on pointers in CE](LINK).
+Cheat Engine has a pointer scanner. Use it. Learn how it works.
+
+[Here's a tutorial on pointers in CE by Swashed](https://youtu.be/DWd1ltJXaRk)<br />
+[Here's a tutorial on pointers in CE by Intigriti](https://youtu.be/CVDi-oIOxSo) - recommended
 
 ### Cheat Tables (.CT Files)
 
@@ -107,44 +112,51 @@ Example AOB script structure:
 
 ```asm
 [ENABLE]
-aobscanmodule(DecreaseHealth,game.exe,89 87 A0 00 00 00) // Find pattern
-alloc(newmem,$1000)
+
+aobscan(INJECT,89 46 44 48 8B 46 38) // should be unique
+alloc(newmem,$1000,INJECT)
+
 label(code)
 label(return)
 
 newmem:
-  // Your custom code here
-  jmp return
 
 code:
-  // Original instruction
-  mov [rdi+000000A0],eax
+  nop
+  mov rax,[rsi+38]
   jmp return
 
-DecreaseHealth:
+INJECT:
   jmp newmem
+  nop 2
+return:
+registersymbol(INJECT)
 
 [DISABLE]
-DecreaseHealth:
-  mov [rdi+000000A0],eax
+
+INJECT:
+  db 89 46 44 48 8B 46 38
+
+unregistersymbol(INJECT)
 dealloc(newmem)
 ```
 
 You don't need to understand all of this right now. Just know that AOB scripts are more stable than hardcoded addresses.
 
-[Here's a tutorial on CE scripting](LINK).
+[Here's a tutorial on CE scripting by Swashed](https://youtu.be/DWd1ltJXaRk).<br />
+[Here's a tutorial on CE scripting by Intigriti](https://youtu.be/Qfts3aGaBk4) - recommended
 
 ## Types of Cheats
 
 There are multiple ways to build cheats. Here are the main types:
 
-**External Cheats** - Run as a separate process. Read/write memory from outside the game using Windows API (`ReadProcessMemory`, `WriteProcessMemory`). Easier to develop, easier to detect.
+**External Cheats** - Run as a separate process. Read/write memory from outside the game using [Windows API](https://learn.microsoft.com/en-us/windows/win32/) (`ReadProcessMemory`, `WriteProcessMemory`). Easier to develop, easier to detect.
 
-**Internal Cheats** - Injected directly into the game process (DLL injection). Can hook game functions, access internal structures directly. Harder to develop, harder to detect.
+**Internal Cheats** - Injected directly into the game process ([DLL injection](https://en.wikipedia.org/wiki/DLL_injection)). Can hook game functions, access internal structures directly. Harder to develop, harder to detect.
 
-**Kernel Cheats** - Run in kernel mode (Ring 0). Can bypass most anti-cheats. Requires driver development knowledge. This is advanced - don't start here.
+**Kernel Cheats** - Run in kernel mode ([Ring 0](https://en.wikipedia.org/wiki/Protection_ring)). Can bypass most anti-cheats. Requires driver development knowledge. This is advanced and extremely complex - don't start here.
 
-**DMA Cheats** - Use hardware (DMA card) to read memory without triggering anti-cheat. Expensive, complicated setup. Mostly used for competitive games with strong anti-cheats.
+**DMA Cheats** - Use hardware ([DMA card](https://en.wikipedia.org/wiki/Direct_memory_access)) to read memory without triggering anti-cheat. Expensive, complicated setup. Mostly used for competitive games with strong anti-cheats.
 
 For learning, start with **Cheat Engine** (which is external). Once you're comfortable, move to **internal cheats** (C++ DLL injection).
 
@@ -156,15 +168,15 @@ Unity is everywhere. Mobile games, indie games, even some AAA titles. There are 
 
 ### .NET (Mono) Unity Games
 
-These are compiled to C# bytecode and run on the Mono runtime. They're the easiest to reverse.
+These are compiled to C# bytecode and run on the [Mono runtime](https://en.wikipedia.org/wiki/Mono_(software)). They're the easiest to reverse.
 
 **How to identify:** Look in the game folder. If you see `Assembly-CSharp.dll`, it's a .NET build.
 
-**Tool:** [dnSpyEx](https://github.com/dnspyex/dnSpy) (not the original dnSpy - that project is dead, use the Ex fork).
+**Tool:** [dnSpyEx](https://github.com/dnspyex/dnSpy) (not the original [dnSpy](https://github.com/dnSpy/dnSpy) - that project is dead, use the [dnSpyEx fork](https://github.com/dnspyex/dnSpy)).
 
 Open `Assembly-CSharp.dll` in dnSpyEx. You'll see the entire game code in readable C#. Classes, functions, variables - everything.
 
-Want infinite health? Find the `Health` class, find the function that decreases health, and modify it. dnSpyEx lets you edit and recompile on the fly.
+Want infinite health? Find the `Health` class/method, find the function that decreases health, and modify it. dnSpyEx lets you edit and recompile on the fly.
 
 This is as easy as game hacking gets.
 
@@ -177,12 +189,13 @@ IL2CPP (Intermediate Language To C++) converts C# code to C++ and compiles it to
 **Tool:** [il2cpp-dumper](https://github.com/Perfare/Il2CppDumper)
 
 Run il2cpp-dumper on `GameAssembly.dll` and the `global-metadata.dat` file (in the il2cpp-data folder). It will dump:
-- `dump.cs` - Class structures and function signatures (not actual code, just declarations)
-- `script.json` - Offsets for everything
+- `dump.cs` - Class structures and function signatures (not actual code, just declarations) and offsets
+- `il2cpp.h` - Structure information header file
+- `script.json` - For ida.py, ghidra.py and Il2CppBinaryNinja
 
 Now you can use these offsets in Cheat Engine or write a C++ external/internal cheat.
 
-**Don't use il2cpp-inspector.** It's outdated. il2cpp-dumper is the standard.
+**Don't use [il2cpp-inspector](https://github.com/djkaty/Il2CppInspector).** It's outdated as hell. il2cpp-dumper is the standard.
 
 Example: You want to find the player's health. Look in `dump.cs` for the `PlayerHealth` class. Find the offset. Use that offset in your cheat.
 
@@ -202,7 +215,7 @@ Unreal is harder than Unity. The engine is huge, the code is complex, and you ne
 
 ### UEDumper
 
-For Unreal games, you need [UEDumper](https://github.com/guttir14/UnrealDumper-4.25) (or UE4Dumper depending on the engine version).
+For Unreal games, you need [Dumper-7](https://github.com/Encryqed/Dumper-7), [UEDumper](https://github.com/Spuckwaffel/UEDumper) (or [UE4Dumper](https://github.com/guttir14/UnrealDumper-4.25) depending on the engine version, but UEDumper works for UE5.3 too).
 
 This dumps:
 - GObjects (global object array)
@@ -212,7 +225,9 @@ This dumps:
 
 But here's the problem: finding GObjects, GNames, and GWorld in the first place is complicated. You need to reverse the game binary, find patterns, understand Unreal's memory layout.
 
-[Here's a tutorial on finding GWorld in IDA](https://www.youtube.com/watch?v=Iyie3LD9W8Y).
+Here's a tutorial on finding GWorld in IDA:
+
+<iframe width="auto" height="auto" src="https://www.youtube.com/embed/Iyie3LD9W8Y" title="Finding GWorld signature in IDA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 **My recommendation:** Don't start with Unreal. If you want to hack an Unreal game, stick to Cheat Engine tables for now. Once you're comfortable with Unity IL2CPP and native games, then try Unreal.
 
@@ -224,28 +239,41 @@ Some games have anti-cheat systems: EAC (Easy Anti-Cheat), BattlEye, Vanguard, e
 
 Should you start with these games? **No.**
 
-Not because it's unethical (though you'll get banned). Because it's way harder.
+Not because it's unethical (though you'll get banned). But because it's way harder.
 
 Anti-cheats detect:
 - Cheat Engine by name
 - Common injection methods
 - Known byte patterns
 - Kernel-level hooks
+- Debuggers
 
 Bypassing anti-cheat requires:
-- Kernel drivers (or exploiting vulnerable drivers)
+- Kernel drivers (or exploiting vulnerable windows drivers)
 - Advanced obfuscation
 - DMA hardware (for the hardest anti-cheats)
 - Constant updates (anti-cheats patch bypasses regularly)
 
 Start with games that have **no anti-cheat**. Examples:
 - Single-player games
-- Older multiplayer games (CS 1.6, AssaultCube)
+- Older multiplayer games (CS 1.6, [AssaultCube](https://assault.cubers.net/))
 - Games with weak or no protection
 
 Once you're comfortable making cheats for unprotected games, then you can research anti-cheat bypasses.
 
 For something like Valorant (Vanguard) or Fortnite (EAC), you're looking at kernel-level work or DMA cards. That's not beginner territory.
+
+## Good Practice Targets
+
+When you're starting out, pick games that won't punish you for experimenting:
+
+**Recommended:**
+- **CS2 with `-insecure` launch option** - Disables VAC, lets you practice without getting banned. Add `-insecure` to launch options in Steam.
+- **AssaultCube** - Free, open source, no anti-cheat. Perfect beginner target.
+- **Your own games** - If you're a game dev, reverse your own projects. You have the source code, so you can compare what you wrote vs what the assembly looks like.
+- **Terraria, No Man's Sky, Satisfactory** - Single-player games with no anti-cheat. I spent 50+ hours reversing No Man's Sky alone.
+
+**Warning about platforms:** Even for single-player games, don't create/use cheats on platforms like Xbox or PlayStation. They're more aggressive about bans. Stick to Steam - they don't really care (yet).
 
 ## Don't Use AI for Reverse Engineering
 
@@ -256,7 +284,7 @@ Ask ChatGPT or Claude to help you reverse a game or bypass an anti-cheat, and it
 2. Give you generic advice that doesn't apply to your specific game
 3. Hallucinate completely wrong information
 
-Reverse engineering requires understanding the specific code in front of you. AI can't see your game's memory. It can't analyze your assembly. It can't help you find pointers.
+Reverse engineering requires understanding the specific code in front of you. AI can't see your game's memory. It can't analyze your assembly. It can't help you find pointers. No matter how hard you try, how many images and descriptions you send to it. It will always fail and you will waste time and mental health.
 
 You need to learn this yourself. Read tutorials, watch videos, ask humans on forums (like UnknownCheats), but don't rely on AI.
 
@@ -264,15 +292,17 @@ You need to learn this yourself. Read tutorials, watch videos, ask humans on for
 
 **Don't start with mobile games.** Rooting your phone, installing Game Guardian, only to find out that most mobile games are server-side or protected - it's not worth it. Mobile game hacking is its own beast. Don't touch it as a beginner or even intermediate.
 
-**Don't pay for "cheat development courses."** Most are overpriced garbage. The free resources (YouTube, UnknownCheats, GuidedHacking's free content) are more than enough.
+**Don't pay for "cheat development courses."** Most are overpriced garbage. The free resources (YouTube, [UnknownCheats](http://unknowncheats.me/), [GuidedHacking's free content](https://www.youtube.com/@GuidedHacking/videos)) are more than enough.
 
 **Don't use public cheats in online games.** You will get banned. Public cheats are detected within days. If you want to cheat in online games (which I don't recommend), make your own private cheat.
 
 **Don't skip the fundamentals.** You can't just download a source code paste, compile it, and understand what you're doing. Learn Cheat Engine first. Understand memory. Then move forward.
 
+**Don't Use AI for Reverse Engineering** You need to learn this yourself. Read tutorials, watch videos, ask humans on forums (like [UnknownCheats](http://unknowncheats.me/)), but don't rely on AI.
+
 ## Advice from Someone More Experienced
 
-I asked TheCruZ (creator of kdmapper, experienced in cheat development and kernel stuff) for advice when I was starting. Here's what he told me:
+I asked [TheCruZ](https://github.com/TheCruZ) (creator of [kdmapper](https://github.com/TheCruZ/kdmapper), experienced in cheat development and kernel stuff) for advice when I was starting. Here's what he told me:
 
 **Start with games you actually like.** Motivation comes from working on something you care about. If you hate the game, you won't stay motivated when things get hard.
 
@@ -305,7 +335,8 @@ Here's what actually helped me:
 
 Here's what you should do:
 
-1. **Pick a simple game.** Single-player, no anti-cheat, something you actually like playing.
+0. **Learn reverse engineering.** Please, do this first. You can check out my [RE tutorial blog](/blog/how-to-start-reverse-engineering) for more info
+1. **Pick a simple game.** Single-player, no anti-cheat, something you actually like playing. Or make your own game if you're a game developer.
 2. **Make a cheat table in Cheat Engine.** Find health, ammo, money - whatever's relevant.
 3. **Add pointers so the cheat works after restarting the game.**
 4. **Write a simple script.** Infinite health, god mode, speed hack - something basic.
@@ -313,7 +344,7 @@ Here's what you should do:
 
 Once you've done that, you understand the basics.
 
-Then move to Unity .NET games (easiest), then IL2CPP games (harder), then native games (hardest), and eventually Unreal if you're feeling ambitious.
+Then move to actual reverse engineering of Unity .NET games (easiest), then IL2CPP games (harder), then native games (hardest), and eventually Unreal if you're feeling ambitious.
 
 ## Final Thoughts
 
