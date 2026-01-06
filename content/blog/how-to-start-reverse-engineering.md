@@ -268,3 +268,4 @@ Good luck. And if you solve some interesting crackmes, let me know. I'm always l
 
 **Related posts:**
 - [Tools I use for reverse engineering](/blog/reverse-engineering-tools-i-use)
+- [How to start Game Hacking](/blog/how-to-start-game-hacking)
