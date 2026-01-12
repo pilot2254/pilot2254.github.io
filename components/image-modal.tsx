@@ -48,7 +48,7 @@ export function ImageModal({ src, alt }: ImageModalProps) {
                 src={src}
                 alt={alt}
                 className={`max-w-full max-h-[90vh] object-contain rounded-lg transition-transform duration-200 ${
-                  isZoomed ? 'scale-150 cursor-zoom-out' : 'cursor-zoom-in' // still deciding whether to put `scale-200` instead of `scale-150` (sizing like `1.0x -> 1.5x / 2.0x`)
+                  isZoomed ? 'scale-200 cursor-zoom-out' : 'cursor-zoom-in' // still deciding whether to put `scale-200` instead of `scale-150` (sizing like `1.0x -> 1.5x / 2.0x`)
                 }`}
                 onClick={(e) => {
                   e.stopPropagation()
