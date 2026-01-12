@@ -13,7 +13,6 @@
 
 - [ ] Add canonical URLs to all pages
 - [ ] Optimize images before deployment (use sharp or similar)
-- [ ] Consider adding dates to blog post URLs (e.g., `/blog/2025-12-23-post-name`)
 - [ ] Add missing fields to siteConfig (ogImage, email)
 - [ ] Update GitHub workflow to include image optimization and sitemap generation
 
@@ -38,11 +37,12 @@
 - [ ] Write "Breaking down a simple crackme step-by-step" post (the video I mentioned)
 - [ ] Delete the Boiled Water bullshit - either list it publicly or delete it (currently wasted in /unlisted)
 - [ ] Write more blog posts in general - this is more important than technical features
-- [x] Syntax highlighting (you have react-syntax-highlighter with oneDark theme)
+- [x] Syntax highlighting (react-syntax-highlighter with oneDark theme)
 - [x] LaTeX math support
 
 ## Things I won't add (waste of time and resources)
 
+- [ ] ~~Consider adding dates to blog post URLs (e.g., `/blog/2025-12-23-post-name`)~~
 - [ ] ~~Task list checkboxes~~ - Blog posts don't need this
 - [ ] ~~Mermaid diagrams~~ - I won't actually use this for my content
 - [ ] ~~Collapsible sections~~ - Unnecessary for my blog style
