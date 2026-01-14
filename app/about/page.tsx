@@ -61,19 +61,19 @@ export default function AboutPage() {
         <div className="flex-1 space-y-4 text-foreground leading-relaxed">
           <p>
             Hi there, I'm Mike.<br />
-            17 years old developer based in Slovakia. I focus on game and app development, low-level research, and open-source tooling.
+            17 years old, based in Slovakia. I do game dev, low-level research, and build tools that probably shouldn't exist but do anyway.
           </p>
 
           <p>
-            I currently study game development at Skyro.ai and spend my free time building projects that explore engine workflows, performance, and memory analysis. My work is research-oriented and aimed at understanding systems, debugging, and improving software resilience. Not to sell or abuse cheats.
+            I currently study game development at <a href="https://skyro.ai/" target="_blank" className="underline hover:text-muted-foreground transition-colors">skyro.ai</a> and spend my free time digging into engine workflows, performance optimization, and memory analysis. Everything I put on GitHub is educational or research-based.
           </p>
 
           <p>
-            Meaning that All projects presented on my github are research or educational in nature. I do not condone cheating in live multiplayer environments. Where my work touches game security, it is to study vulnerabilities, learn defensive techniques, and responsibly disclose findings.
+            I research game cheats as a hobby. Not to sell them or ruin lobbies, but because reverse engineering is fucking interesting. I'm more into the cheat side than anti-cheat right now, but honestly both require the same creative mindset. It's a cat and mouse game, and I'm just here to watch (and participate in) how it evolves.
           </p>
 
           <p>
-            I used to create websites, but now I focus solely on game development and reverse engineering. And I'm not planning to return to web development.
+            And yes, I used to do web development, made websites for clients and all that. Not doing that anymore. Switched entirely to game dev and reverse engineering, and I'm not going back.
           </p>
         </div>
 
