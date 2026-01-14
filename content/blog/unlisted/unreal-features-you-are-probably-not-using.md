@@ -24,11 +24,39 @@ I use this for:
 
 Game changer for keeping your code clean and not repeating yourself like an NPC.
 
+## Format Text (String Formatting Done Right)
+
+If you're still doing "Append" nodes in a chain to build strings... there's a better way.
+
+Format Text node lets you build formatted strings with variables inline. Instead of:
+```
+"Health: " + Append + ToString(Health) + Append + "/" + Append + ToString(MaxHealth)
+```
+
+You just do:
+```
+Format Text: "Health: {Health}/{MaxHealth}"
+```
+
+Type your format string with `{VariableName}` placeholders, then the node auto-generates input pins for each variable. Way cleaner.
+
+I use this constantly for:
+- UI text (`"+{Amount}HP"`, `"Wave {Current}/{Total}"`)
+- Debug messages (`"Player at {X}, {Y}, {Z}"`)
+- Damage numbers (`"-{Damage}"`)
+- Literally any string with variables
+
+Supports multiple types too - integers, floats, booleans, names, whatever. No more ToString spam everywhere.
+
+Here is a simple example:
+
+![Alt text](/images/blog/unreal-features-you-are-probably-not-using/format-text.png)
+
 ## Execute Console Command
 
 This one's simple but stupid useful. You can run ANY console command directly from blueprints during runtime.
 
-Node is literally called "Execute Console Command" - type it in blueprint search. Feed it a string like `stat fps` or `r.SetRes 1920x1080` and boom, it runs.
+Node is literally called "Execute Console Command" - type it in blueprint search. Feed it a string like `exit`, `stat fps` or `r.SetRes 1920x1080` and boom, it runs.
 
 Why is this useful? 
 - Quick debug toggles (visibility channels, collision visualization)
@@ -44,7 +72,7 @@ If you're still using animation blueprints with a million branches and "play ani
 
 BlendSpace lets you blend between multiple animations based on 1-2 input variables. Moving forward? Blend between idle, walk, run based on speed. Aiming? Blend between aim directions based on pitch/yaw.
 
-Animation → BlendSpace → 1D or 2D depending on your needs.
+Animation → BlendSpace → 1D or 2D (depending on your needs).
 
 Most common use: locomotion. Horizontal axis = movement speed (0-600), plug in idle/walk/run animations. The engine smoothly blends between them automatically. No code, no bullshit transition graphs.
 

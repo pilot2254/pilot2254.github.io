@@ -6,7 +6,7 @@ description: "StackOverflow just returned to month-one activity levels. December
 
 StackOverflow just returned to month-one activity levels. December 2025 had 3,862 questions asked. Their first full month back in 2008? 3,749 questions. It's literally gone full circle back to the start.
 
-![Alt text](/images/blog/stackoverflow-is-dying/graph.png)
+![graph](/images/blog/stackoverflow-is-dying/graph.png)
 
 And like... fuck, bro. I have mixed feelings about this.
 
