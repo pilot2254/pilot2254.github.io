@@ -146,3 +146,35 @@ Make a montage (right-click animation → Create → Animation Montage), then pl
 - Slots for layering animations
 
 Way more control than just playing animations raw.
+
+Cool, here's the section:
+
+## Soft Object References (Stop Loading Everything at Once)
+
+If you're using regular object references for everything, your game is probably loading way more shit into memory than it needs to.
+
+Hard reference = loads the asset immediately when your blueprint loads
+Soft reference = loads only when you actually need it
+
+Example: You got a weapon system with 50 different gun meshes/sounds. If you use hard references to all of them in your weapon manager, ALL 50 guns load into memory at game start. Even if the player only uses 3 of them.
+
+Use Soft Object References instead.
+
+In your blueprint variable, change type from `Static Mesh` to `Soft Object Reference → Static Mesh`. Now it doesn't auto-load.
+
+When you actually need it:
+1. Use "Load Asset" or "Async Load Asset" nodes
+2. Wait for it to load
+3. Use it
+
+[Async](https://en.wikipedia.org/wiki/Async/await) Load is better - doesn't freeze the game while loading.
+
+This is huge for:
+- Large texture/mesh libraries
+- Audio banks (music, sound effects)
+- Level streaming assets
+- Anything you don't need immediately at startup
+
+Yeah, it's more nodes than just dragging a reference. But when your game starts in 2 seconds instead of 15, you'll get it.
+
+Also use this for Data Tables if they're massive. Load them async when transitioning between menus/levels, not at startup.
