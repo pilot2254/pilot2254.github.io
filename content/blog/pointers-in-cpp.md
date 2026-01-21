@@ -6,7 +6,7 @@ description: "Pointers confused me for a good while, but once they clicked, a lo
 
 If you've been learning C++ for a while, you've probably heard about pointers. And if you're like me when I first started, you probably thought "what the hell is this" when you saw code with asterisks and ampersands everywhere.
 
-Pointers confused me for a good while, but once they clicked, a lot of things in C++ started making sense. So let me break them down for you.
+Pointers confused me for a good while, but once they clicked, a lot of things in C++ started making sense.
 
 ## What Are Pointers?
 
@@ -17,8 +17,6 @@ Think of it like this - your house has an address, right? The address isn't your
 ## Why Do We Even Need Pointers?
 
 Good question. When I first learned about them, I thought "why not just use regular variables?"
-
-Here's why pointers are useful:
 
 **Memory efficiency** - When you pass large objects (like arrays or structs) to functions, copying them is expensive. Pointers let you pass just the address instead of copying the whole thing.
 
