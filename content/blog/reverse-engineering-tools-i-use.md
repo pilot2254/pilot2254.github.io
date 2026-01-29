@@ -14,7 +14,7 @@ I started with [Cheat Engine](https://www.cheatengine.org/) for games. Simple st
 
 This is where everyone has opinions. Here's mine.
 
-I tried **[IDA](https://hex-rays.com/ida-free)**, **[Ghidra](https://github.com/NationalSecurityAgency/ghidra)**, **[Cutter](https://cutter.re/)**, **[x64dbg](https://x64dbg.com/)**, and more. Let me break it down:
+I tried **[IDA](https://hex-rays.com/ida-free)**, **[Ghidra](https://github.com/NationalSecurityAgency/ghidra)**, **[Cutter](https://cutter.re/)**, **[x64dbg](https://x64dbg.com/)**, and more.
 
 **[IDA](https://hex-rays.com/ida-free):** Industry standard, sure. The free version is limited as hell. The Pro versions cost \$1k-\$9k. I'm not paying that to *learn* before I even have a job. My parents are already paying \$6k a year for school. Pass.
 
