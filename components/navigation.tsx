@@ -11,6 +11,7 @@ export function Navigation() {
 
   const links = [
     { href: "/about", label: "About" },
+    { href: "/", label: "Blog" },
     { href: "/projects", label: "Projects" },
   ]
 
@@ -34,7 +35,7 @@ export function Navigation() {
               href={link.href}
               className={cn(
                 "text-sm transition-colors",
-                pathname === link.href
+                pathname === link.href && link.href !== "/"
                   ? "text-foreground"
                   : "text-muted-foreground hover:text-foreground"
               )}
