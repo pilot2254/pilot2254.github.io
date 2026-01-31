@@ -28,7 +28,10 @@ export function ImageModal({ src, alt }: ImageModalProps) {
         onClick={() => setIsOpen(true)}
       />
 
-      <Dialog open={isOpen} onOpenChange={setIsOpen}>
+      <Dialog open={isOpen} onOpenChange={(open) => {
+        setIsOpen(open)
+        if (!open) setIsZoomed(false) // Reset zoom when closing
+      }}>
         <DialogPortal>
           <DialogOverlay />
           <button
@@ -49,6 +52,11 @@ export function ImageModal({ src, alt }: ImageModalProps) {
                 alt={alt}
                 className={`max-w-full max-h-[90vh] object-contain rounded-lg transition-transform duration-200 ${
                   isZoomed ? 'scale-200 cursor-zoom-out' : 'cursor-zoom-in' // still deciding whether to put `scale-200` instead of `scale-150` (sizing like `1.0x -> 1.5x / 2.0x`)
+                                                                            // or maybe i can make it to automatically size up and down, so there wont be any uhh... you know
+                                                                            //
+                                                                            // also, there are some problems with responsiveness on smaller screens
+                                                                            // - this can be resolved by adding option to drag the image when its too big, or smth
+                                                                            //  - something that discord has
                 }`}
                 onClick={(e) => {
                   e.stopPropagation()

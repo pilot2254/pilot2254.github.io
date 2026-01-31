@@ -22,7 +22,7 @@ export function Footer() {
           rel="noopener noreferrer"
           className="hover:text-foreground transition-colors"
         >
-          Source
+          Source Code
         </a>
       </div>
     </footer>
