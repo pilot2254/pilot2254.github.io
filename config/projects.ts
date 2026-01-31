@@ -22,6 +22,27 @@ export const projects: Project[] = [
   /* ------------------------------------------------ 2026 ------------------------------------------------ */
   /* ------------------------------------------------------------------------------------------------------ */
 
+  {
+    id: "game",
+    title: "UE5.6 Game",
+    description: "Just me making random game mechanics. And when I say random, I really mean random - shooting system, slovak singer chasing you with multiplied doppler effect, post processing like you have schizophrenia, etc...",
+    year: 2026,
+    tags: ["Unreal Engine", "C++", "UE Blueprints"],
+    images: [],
+    link: "",
+    github: "https://github.com/michal-flaska/game",
+  },
+  {
+    id: "asm_projects",
+    title: "Assembly Projects",
+    description: "Random projects I made in assembly for fun. Simmilar to my C++ Projects repository. But unfortunately it currently only contains hello world, because I mostly use assembly in reverse engineering and not to make random projects with it.",
+    year: 2026,
+    tags: ["Assembly", "NASM"],
+    images: [],
+    link: "",
+    github: "https://github.com/michal-flaska/asm_projects",
+  },
+
   /* ------------------------------------------------------------------------------------------------------ */
   /* ------------------------------------------------ 2025 ------------------------------------------------ */
   /* ------------------------------------------------------------------------------------------------------ */
