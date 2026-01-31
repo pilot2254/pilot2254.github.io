@@ -28,7 +28,10 @@ export function ImageModal({ src, alt }: ImageModalProps) {
         onClick={() => setIsOpen(true)}
       />
 
-      <Dialog open={isOpen} onOpenChange={setIsOpen}>
+      <Dialog open={isOpen} onOpenChange={(open) => {
+        setIsOpen(open)
+        if (!open) setIsZoomed(false) // Reset zoom when closing
+      }}>
         <DialogPortal>
           <DialogOverlay />
           <button
