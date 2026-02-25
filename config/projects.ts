@@ -43,6 +43,16 @@ export const projects: Project[] = [
     github: "https://github.com/michal-flaska/repo-hax",
   },
   {
+    id: "skyroprojekt2026",
+    title: "Bomberman3D",
+    description: "School Project - Remake of Bomberman (NES)",
+    year: 2026,
+    tags: ["C++", "Unreal Engine 5", "UE Blueprints"],
+    images: [],
+    link: "",
+    github: "https://github.com/redfox-studios/SkyroProjekt2026",
+  },
+  {
     id: "ue5_cpp_tutorial",
     title: "ue5_cpp_tutorial",
     description: "Just me learning unreal's c++ (and also teaching other people)",
