@@ -35,8 +35,8 @@
 - [ ] Write "How I reverse engineered [specific game]" post with code/screenshots
 - [ ] Write "My first Unity vs Unreal project comparison" post
 - [ ] Write "Breaking down a simple crackme step-by-step" post (the video I mentioned)
-- [ ] Delete the Boiled Water bullshit - either list it publicly or delete it (currently wasted in /unlisted)
-- [ ] Write more blog posts in general - this is more important than technical features
+- [x] Delete the Boiled Water bullshit - either list it publicly or delete it (currently wasted in /unlisted)
+- [x] Write more blog posts in general - this is more important than technical features
 - [x] Syntax highlighting (react-syntax-highlighter with oneDark theme)
 - [x] LaTeX math support
 

@@ -43,6 +43,7 @@ function CodeBlock({ language, value }: { language: string; value: string }) {
       <SyntaxHighlighter
         language={language || 'text'}
         style={oneDark}
+        showLineNumbers={false} // planning to set this to true one day
         customStyle={{
           margin: 0,
           borderTopLeftRadius: 0,
