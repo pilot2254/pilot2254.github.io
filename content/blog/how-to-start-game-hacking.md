@@ -2,6 +2,7 @@
 title: "How to start Game Hacking"
 date: "2026-01-06" # yy mm dd
 description: "Continuation of my older post about reverse engineering"
+related: ["how-to-start-reverse-engineering", "reverse-engineering-tools-i-use", "the-right-way-to-learn-a-programming-language", "pointers-in-cpp", "stop-using-ai-to-do-your-work"]
 ---
 
 This is a continuation of my [reverse engineering guide](/blog/how-to-start-reverse-engineering). If you haven't read that yet, go read it first, so you will be able to understand more in this blog.

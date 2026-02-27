@@ -2,6 +2,7 @@
 title: "Example Blog Post"
 date: "2024-12-20"
 description: "This is an example blog post for me to test functionalities of markdown rendering in my post."
+related: ["example-post"]
 ---
 
 # This is a heading

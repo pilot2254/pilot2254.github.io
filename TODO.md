@@ -24,7 +24,7 @@
 ## Features Worth Adding
 
 - [ ] Simple client-side search (Fuse.js or just basic filter)
-- [ ] Related posts section at bottom of blog posts (2-3 posts based on tags/date)
+- [x] Related posts section at bottom of blog posts (2-3 posts based on tags/date)
 - [ ] GitHub-style callouts/alerts for blog posts (`> [!NOTE]` syntax)
 
 ## Content Improvements

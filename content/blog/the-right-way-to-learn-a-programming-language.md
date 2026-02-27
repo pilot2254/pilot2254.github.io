@@ -2,6 +2,7 @@
 title: "The Right Way to Learn a Programming Language"
 date: "2026-01-29"
 description: "Everyone learns their first language wrong. Here's how to actually learn a new one without fucking yourself over."
+related: ["stop-using-ai-to-do-your-work"]
 ---
 
 I'm currently learning C++. I also work with C# and Assembly (where I suck the most). I used to do JavaScript and TypeScript too, but I stopped with web dev because the scene is oversaturated as hell - [I wrote about that here](/blog/why-i-stopped-with-web-development).

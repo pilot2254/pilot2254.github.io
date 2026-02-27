@@ -2,6 +2,7 @@
 title: "Why I Stopped with Web Development"
 date: "2025-12-21"
 description: "After 5 years of web dev, I switched to game development and reverse engineering. Here's why."
+related: ["stop-using-ai-to-do-your-work", "how-to-start-reverse-engineering", "how-to-start-game-hacking"]
 ---
 
 I've been doing web development since 2020. That's 4 years of React, Next.js, Tailwind, and all that shit. At the start of 2025, I stopped. Completely. And let me explain why:

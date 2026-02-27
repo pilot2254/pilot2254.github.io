@@ -2,6 +2,7 @@
 title: "Tools I Actually Use for Reverse Engineering"
 date: "2025-12-23"
 description: "My actual RE toolkit - no bullshit, just what works."
+related: ["how-to-start-reverse-engineering", "how-to-start-game-hacking", "the-right-way-to-learn-a-programming-language"]
 ---
 
 I've been doing reverse engineering actively since November 2024. Still in the early stages, but I've figured out what tools actually work and which ones are overhyped garbage. But it's still a PERSONAL preference, everyone is going to tell you the same thing.

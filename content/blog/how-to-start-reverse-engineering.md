@@ -2,6 +2,7 @@
 title: "How to start Reverse Engineering"
 date: "2026-01-05" # yy mm dd
 description: "If you're the type of person who sees a locked door and immediately wants to know what's behind it, or you've ever wondered 'how the hell does this program actually work under the hood,' then this might be for you."
+related: ["reverse-engineering-tools-i-use", "how-to-start-game-hacking", "the-right-way-to-learn-a-programming-language", "pointers-in-cpp", "stop-using-ai-to-do-your-work"]
 ---
 
 Reverse engineering is hard as fuck. But if you're the type of person who sees a locked door and immediately wants to know what's behind it, or you've ever wondered "how the hell does this program actually work under the hood," then this might be for you.

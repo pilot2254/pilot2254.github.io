@@ -1,4 +1,4 @@
-import { getPostBySlug, getAllPosts, getAllUnlistedPosts } from "@/lib/blog"
+import { getPostBySlug, getAllPosts, getAllUnlistedPosts, getRelatedPosts } from "@/lib/blog"
 import { notFound } from "next/navigation"
 import Link from "next/link"
 import { MarkdownContent } from "@/components/markdown-content"
@@ -59,9 +59,9 @@ export default async function BlogPost({
   const { slug } = await params
   const post = await getPostBySlug(slug)
 
-  if (!post) {
-    notFound()
-  }
+  if (!post) notFound()
+
+  const relatedPosts = await getRelatedPosts(post.related ?? [])
 
   return (
     <>
@@ -83,6 +83,26 @@ export default async function BlogPost({
         </header>
 
         <MarkdownContent content={post.content} />
+
+        {relatedPosts.length > 0 && (
+          <div className="mt-16 pt-8 border-t border-border">
+            <h2 className="text-sm font-medium text-muted-foreground mb-6">Read more</h2>
+            <div className="space-y-6">
+              {relatedPosts.map((related) => (
+                <Link
+                  key={related.slug}
+                  href={`/blog/${related.slug}`}
+                  className="group block"
+                >
+                  <h3 className="text-foreground group-hover:text-muted-foreground transition-colors mb-1">
+                    {related.title}
+                  </h3>
+                  <span className="text-muted-foreground text-sm">{related.readTime}</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
       </article>
       <ScrollToTop />
     </>
