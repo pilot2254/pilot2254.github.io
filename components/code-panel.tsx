@@ -57,25 +57,18 @@ export function CodePanel() {
 
   if (!panel.isOpen) return null
 
-  // ── Mobile: bottom sheet ──────────────────────────────────────────────────
+  // ── Mobile: fullscreen overlay ────────────────────────────────────────────
   if (isMobile) {
     return (
-      <div className="fixed inset-x-0 bottom-0 z-40 flex flex-col bg-card border-t border-border shadow-2xl rounded-t-xl"
-        style={{ height: "70vh" }}
-      >
-        {/* Handle bar */}
-        <div className="flex justify-center pt-2 pb-1 shrink-0">
-          <div className="w-10 h-1 rounded-full bg-muted-foreground/30" />
-        </div>
-
+      <div className="fixed inset-0 z-50 flex flex-col bg-card">
         {/* Header */}
-        <div className="flex items-center justify-between px-4 py-2 border-b border-border bg-muted shrink-0">
+        <div className="flex items-center justify-between px-4 py-3 border-b border-border bg-muted shrink-0">
           <span className="text-xs font-mono text-muted-foreground">{panel.language || "text"}</span>
           <div className="flex items-center gap-2">
             <button onClick={handleCopy} className="text-muted-foreground hover:text-foreground transition-colors p-1" aria-label="Copy code">
               {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
             </button>
-            <button onClick={closePanel} className="text-muted-foreground hover:text-foreground transition-colors p-1" aria-label="Close panel">
+            <button onClick={closePanel} className="text-muted-foreground hover:text-foreground transition-colors p-1" aria-label="Close">
               <X className="w-4 h-4" />
             </button>
           </div>

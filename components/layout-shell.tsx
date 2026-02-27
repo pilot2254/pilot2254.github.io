@@ -15,10 +15,12 @@ export function LayoutShell({ children }: { children: React.ReactNode }) {
     closePanel()
   }, [pathname]) // eslint-disable-line react-hooks/exhaustive-deps
 
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 768
+
   return (
     <div
       className="transition-[padding] duration-300"
-      style={{ paddingRight: panel.isOpen ? panelWidth : 0 }}
+      style={{ paddingRight: panel.isOpen && !isMobile ? panelWidth : 0 }}
     >
       <Navigation />
       <main className="min-h-screen max-w-2xl mx-auto px-6 py-24">
