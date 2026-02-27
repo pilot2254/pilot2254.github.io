@@ -12,7 +12,6 @@
 ## SEO & Performance
 
 - [ ] Add canonical URLs to all pages
-- [ ] Optimize images before deployment (use sharp or similar)
 - [ ] Add missing fields to siteConfig (ogImage, email)
 - [ ] Update GitHub workflow to include image optimization and sitemap generation
 
@@ -24,7 +23,6 @@
 
 ## Features Worth Adding
 
-- [ ] RSS feed for blog
 - [ ] Simple client-side search (Fuse.js or just basic filter)
 - [ ] Related posts section at bottom of blog posts (2-3 posts based on tags/date)
 - [ ] GitHub-style callouts/alerts for blog posts (`> [!NOTE]` syntax)
@@ -35,10 +33,16 @@
 - [ ] Write "How I reverse engineered [specific game]" post with code/screenshots
 - [ ] Write "My first Unity vs Unreal project comparison" post
 - [ ] Write "Breaking down a simple crackme step-by-step" post (the video I mentioned)
+- [x] Add collapsible code blocks to blogs
 - [x] Delete the Boiled Water bullshit - either list it publicly or delete it (currently wasted in /unlisted)
 - [x] Write more blog posts in general - this is more important than technical features
 - [x] Syntax highlighting (react-syntax-highlighter with oneDark theme)
 - [x] LaTeX math support
+
+## Uncategorized
+- [ ] The Navigation active state logic is a bit off — `/` (Blog) is never highlighted as active because the check is pathname === link.href && link.href !== "/", so the blog link never shows active
+- [ ] No `<meta name="author">` tag anywhere
+- [ ] The about page uses `MessageCircleMore` for both Discord and Reddit which is wrong, Reddit has no good lucide icon but it's still odd
 
 ## Things I won't add (waste of time and resources)
 
@@ -50,12 +54,6 @@
 - [ ] ~~Newsletter signup~~ - I'm not writing a newsletter
 - [ ] ~~Social share buttons~~ - Nobody uses these anymore
 - [ ] ~~Heavy analytics~~ - Keep it simple with what GitHub Pages offers
-
-## Priority Order
-
-1. Fix scroll restoration (most annoying UX issue)
-2. Add sitemap.xml and robots.txt (easy SEO wins)
-3. Fix mobile issues (project modals, code blocks, navigation)
-4. Add callouts for blog posts (actually useful for technical writing)
-5. Write more content (more valuable than any technical feature)
-6. Everything else when I have time
+- [ ] ~~Add canonical URLs to all pages~~ - we're on GitHub Pages with `trailingSlash: true`, it's fine
+- [ ] ~~Optimize images before deployment (use sharp or similar)~~ - `unoptimized: true` is already in our next config for static export, sharp won't help much here
+- [ ] ~~RSS feed for blog~~ - do my readers use RSS? probably not

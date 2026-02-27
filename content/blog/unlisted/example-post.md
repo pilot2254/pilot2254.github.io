@@ -47,6 +47,9 @@ end
 
 has collapsible code blocks:
 ```cpp
+// algorithm.cpp
+// taken from my own cpp lib: https://github.com/pilot2254/mikelib
+
 #ifndef MIKE_ALGORITHM_HPP
 #define MIKE_ALGORITHM_HPP
 
