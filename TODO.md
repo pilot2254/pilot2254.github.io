@@ -2,11 +2,11 @@
 
 ## Critical Fixes
 
-- [ ] Fix scroll restoration on page navigation (currently stays scrolled when going back)
+- [x] Fix scroll restoration on page navigation (currently stays scrolled when going back)
 - [ ] Add proper meta tags (OpenGraph/Twitter cards are incomplete)
-- [ ] Create sitemap.xml for better SEO/indexing
-- [ ] Fix code block spacing/overlap on mobile
-- [ ] Add robots.txt file
+- [x] Create sitemap.xml for better SEO/indexing
+- [x] Fix code block spacing/overlap on mobile
+- [x] Add robots.txt file
 - [ ] Add favicon (currently using Next.js defaults)
 
 ## SEO & Performance
