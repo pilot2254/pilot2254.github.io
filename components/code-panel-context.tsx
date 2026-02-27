@@ -2,6 +2,12 @@
 
 import { createContext, useContext, useState } from "react"
 
+// --- Config ------------------------------------------------------------------
+const DEFAULT_PANEL_WIDTH = 600  // px
+const MIN_PANEL_WIDTH     = 280  // px
+const MAX_PANEL_WIDTH     = 1200 // px
+// -----------------------------------------------------------------------------
+
 interface CodePanelState {
   isOpen: boolean
   language: string
@@ -11,11 +17,15 @@ interface CodePanelState {
 
 interface CodePanelContextType {
   panel: CodePanelState
+  panelWidth: number
+  setPanelWidth: (w: number) => void
   openPanel: (code: string, language: string, title?: string) => void
   closePanel: () => void
 }
 
 const CodePanelContext = createContext<CodePanelContextType | null>(null)
+
+export { MIN_PANEL_WIDTH, MAX_PANEL_WIDTH }
 
 export function CodePanelProvider({ children }: { children: React.ReactNode }) {
   const [panel, setPanel] = useState<CodePanelState>({
@@ -24,6 +34,7 @@ export function CodePanelProvider({ children }: { children: React.ReactNode }) {
     code: "",
     title: "",
   })
+  const [panelWidth, setPanelWidth] = useState(DEFAULT_PANEL_WIDTH)
 
   const openPanel = (code: string, language: string, title = "") => {
     setPanel({ isOpen: true, language, code, title })
@@ -34,7 +45,7 @@ export function CodePanelProvider({ children }: { children: React.ReactNode }) {
   }
 
   return (
-    <CodePanelContext.Provider value={{ panel, openPanel, closePanel }}>
+    <CodePanelContext.Provider value={{ panel, panelWidth, setPanelWidth, openPanel, closePanel }}>
       {children}
     </CodePanelContext.Provider>
   )

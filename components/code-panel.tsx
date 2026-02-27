@@ -1,14 +1,15 @@
 "use client"
 
-import { useCodePanel } from "./code-panel-context"
+import { useCodePanel, MIN_PANEL_WIDTH, MAX_PANEL_WIDTH } from "./code-panel-context"
 import { X, Copy, Check } from "lucide-react"
-import { useState } from "react"
+import { useState, useCallback, useEffect } from "react"
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism"
 
 export function CodePanel() {
-  const { panel, closePanel } = useCodePanel()
+  const { panel, panelWidth, setPanelWidth, closePanel } = useCodePanel()
   const [copied, setCopied] = useState(false)
+  const [isDragging, setIsDragging] = useState(false)
 
   const handleCopy = async () => {
     await navigator.clipboard.writeText(panel.code)
@@ -16,10 +17,63 @@ export function CodePanel() {
     setTimeout(() => setCopied(false), 2000)
   }
 
+  const onDragStart = useCallback((e: React.MouseEvent) => {
+    e.preventDefault()
+    setIsDragging(true)
+
+    const startX = e.clientX
+    const startWidth = panelWidth
+
+    const onMouseMove = (e: MouseEvent) => {
+      const delta = startX - e.clientX
+      const newWidth = Math.min(MAX_PANEL_WIDTH, Math.max(MIN_PANEL_WIDTH, startWidth + delta))
+      setPanelWidth(newWidth)
+    }
+
+    const onMouseUp = () => {
+      setIsDragging(false)
+      window.removeEventListener("mousemove", onMouseMove)
+      window.removeEventListener("mouseup", onMouseUp)
+    }
+
+    window.addEventListener("mousemove", onMouseMove)
+    window.addEventListener("mouseup", onMouseUp)
+  }, [panelWidth, setPanelWidth])
+
+  // Prevent text selection while dragging
+  useEffect(() => {
+    if (isDragging) {
+      document.body.style.userSelect = "none"
+      document.body.style.cursor = "col-resize"
+    } else {
+      document.body.style.userSelect = ""
+      document.body.style.cursor = ""
+    }
+  }, [isDragging])
+
   if (!panel.isOpen) return null
 
   return (
-    <div className="fixed top-0 right-0 h-screen w-[45vw] max-w-[700px] min-w-[320px] bg-card border-l border-border flex flex-col z-40 shadow-2xl">
+    <div
+      className="fixed top-0 right-0 h-screen bg-card border-l border-border flex flex-col z-40 shadow-2xl"
+      style={{ width: panelWidth }}
+    >
+      {/* Drag handle */}
+      <div
+        onMouseDown={onDragStart}
+        className="absolute left-0 top-0 h-full w-1 cursor-col-resize hover:bg-border transition-colors group z-10"
+        aria-label="Resize panel"
+      >
+        {/* Visual grabber dots */}
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col gap-1 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+          <span className="w-0.5 h-0.5 rounded-full bg-muted-foreground" />
+          <span className="w-0.5 h-0.5 rounded-full bg-muted-foreground" />
+          <span className="w-0.5 h-0.5 rounded-full bg-muted-foreground" />
+          <span className="w-0.5 h-0.5 rounded-full bg-muted-foreground" />
+          <span className="w-0.5 h-0.5 rounded-full bg-muted-foreground" />
+        </div>
+      </div>
+
       {/* Header */}
       <div className="flex items-center justify-between px-4 py-3 border-b border-border bg-muted shrink-0">
         <span className="text-xs font-mono text-muted-foreground">
@@ -57,9 +111,7 @@ export function CodePanel() {
             fontSize: "0.8rem",
           }}
           codeTagProps={{
-            style: {
-              background: "transparent",
-            },
+            style: { background: "transparent" },
           }}
         >
           {panel.code}
