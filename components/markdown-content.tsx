@@ -8,8 +8,12 @@ import rehypeKatex from "rehype-katex"
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import { useState } from 'react'
-import { Check, Copy } from 'lucide-react'
+import { Check, Copy, Maximize2 } from 'lucide-react'
 import { ImageModal } from './image-modal'
+import { useCodePanel } from './code-panel-context'
+
+const PANEL_LINE_THRESHOLD = 50
+const CODE_FONT_SIZE = "0.875rem"
 
 interface MarkdownContentProps {
   content: string
@@ -17,6 +21,10 @@ interface MarkdownContentProps {
 
 function CodeBlock({ language, value }: { language: string; value: string }) {
   const [copied, setCopied] = useState(false)
+  const { openPanel } = useCodePanel()
+
+  const lineCount = value.split('\n').length
+  const isLong = lineCount > PANEL_LINE_THRESHOLD
 
   const handleCopy = async () => {
     await navigator.clipboard.writeText(value)
@@ -24,6 +32,65 @@ function CodeBlock({ language, value }: { language: string; value: string }) {
     setTimeout(() => setCopied(false), 2000)
   }
 
+  if (isLong) {
+    return (
+      <div className="rounded-lg border border-border bg-muted my-4 overflow-hidden">
+        {/* Top bar */}
+        <div className="flex items-center justify-between px-4 py-2 border-b border-border">
+          <span className="text-xs text-muted-foreground font-mono">{language || 'text'}</span>
+          <span className="text-xs text-muted-foreground">{lineCount} lines</span>
+        </div>
+
+        {/* Collapsed preview - first 6 lines */}
+        <div className="relative overflow-hidden" style={{ maxHeight: '8rem' }}>
+          <SyntaxHighlighter
+            language={language || 'text'}
+            style={oneDark}
+            showLineNumbers={false}
+            customStyle={{
+              margin: 0,
+              borderRadius: 0,
+              background: 'var(--color-muted)',
+              fontSize: CODE_FONT_SIZE,
+              pointerEvents: 'none',
+              userSelect: 'none',
+            }}
+            codeTagProps={{ style: { background: 'transparent' } }}
+          >
+            {value.split('\n').slice(0, 6).join('\n')}
+          </SyntaxHighlighter>
+          {/* Fade out */}
+          <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-muted to-transparent" />
+        </div>
+
+        {/* Expand button row */}
+        <div className="flex items-center justify-between px-4 py-2 border-t border-border bg-muted/60">
+          <span className="text-xs text-muted-foreground">
+            {lineCount - 6} more lines
+          </span>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={handleCopy}
+              className="text-muted-foreground hover:text-foreground transition-colors"
+              aria-label="Copy code"
+            >
+              {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
+            </button>
+            <button
+              onClick={() => openPanel(value, language)}
+              className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors border border-border rounded px-2 py-1 hover:bg-accent"
+              aria-label="Open in panel"
+            >
+              <Maximize2 className="w-3.5 h-3.5" />
+              Open in panel
+            </button>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  // Normal short code block
   return (
     <div className="relative group">
       <div className="flex items-center justify-between bg-muted border border-border rounded-t-lg px-4 py-2">
@@ -57,12 +124,12 @@ function CodeBlock({ language, value }: { language: string; value: string }) {
         codeTagProps={{
           style: {
             background: 'transparent',
-            fontSize: '0.875rem',
+            fontSize: CODE_FONT_SIZE,
           }
         }}
       >
         {value}
-    </SyntaxHighlighter>
+      </SyntaxHighlighter>
     </div>
   )
 }
@@ -97,7 +164,6 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
             const language = match ? match[1] : ''
             const value = String(children).replace(/\n$/, '')
 
-            // Force inline rendering if there's no language class and content is short
             const forceInline = !className && value.length < 50 && !value.includes('\n')
 
             return (!inline && !forceInline) ? (
@@ -110,7 +176,6 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
               </code>
             )
           },
-          // pre: ({ ...props }) => <div className="mb-4" {...props} />,
           hr: ({ ...props }) => <hr className="my-8 border-border" {...props} />,
           table: ({ ...props }) => (
             <div className="overflow-x-auto mb-4">
@@ -121,7 +186,7 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
           td: ({ ...props }) => <td className="border border-border px-4 py-2 text-foreground" {...props} />,
           blockquote: ({ ...props }) => <blockquote className="border-l-3 border-muted pl-4 italic text-muted-foreground [&_*]:text-muted-foreground my-4" {...props} />,
           // img: ({ ...props }) => <img className="rounded-lg my-4 max-w-full" {...props} alt={props.alt || ""} />,
-          img: ({ src, alt, ...props }) => (
+          img: ({ src, alt }) => (
             <ImageModal src={String(src || "")} alt={String(alt || "")} />
           ),
         }}

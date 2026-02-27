@@ -6,6 +6,9 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { ThemeProvider } from "@/components/theme-provider"
 import { siteConfig } from "@/config/site"
+import { CodePanelProvider } from "@/components/code-panel-context"
+import { CodePanel } from "@/components/code-panel"
+import { LayoutShell } from "@/components/layout-shell"
 
 export const metadata: Metadata = {
   title: siteConfig.name,
@@ -26,11 +29,12 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navigation />
-          <main className="min-h-screen max-w-2xl mx-auto px-6 py-24">
-            {children}
-          </main>
-          <Footer />
+          <CodePanelProvider>
+            <LayoutShell>
+              {children}
+            </LayoutShell>
+            <CodePanel />
+          </CodePanelProvider>
         </ThemeProvider>
       </body>
     </html>

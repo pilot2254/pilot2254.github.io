@@ -47,7 +47,7 @@ export const projects: Project[] = [
     title: "Bomberman3D",
     description: "School Project - Remake of Bomberman (NES)",
     year: 2026,
-    tags: ["C++", "Unreal Engine 5", "UE Blueprints"],
+    tags: ["Unreal Engine 5", "C++", "Blueprints", "Blender", "Reaper", "Substance Painter"],
     images: [],
     link: "",
     github: "https://github.com/redfox-studios/SkyroProjekt2026",
