@@ -1,11 +1,19 @@
 "use client"
 
+import { useEffect } from "react"
+import { usePathname } from "next/navigation"
 import { useCodePanel } from "./code-panel-context"
 import { Navigation } from "./navigation"
 import { Footer } from "./footer"
 
 export function LayoutShell({ children }: { children: React.ReactNode }) {
-  const { panel, panelWidth } = useCodePanel()
+  const { panel, panelWidth, closePanel } = useCodePanel()
+  const pathname = usePathname()
+
+  // Close panel whenever the route changes
+  useEffect(() => {
+    closePanel()
+  }, [pathname]) // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div

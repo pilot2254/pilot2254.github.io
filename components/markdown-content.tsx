@@ -13,6 +13,7 @@ import { ImageModal } from './image-modal'
 import { useCodePanel } from './code-panel-context'
 
 const PANEL_LINE_THRESHOLD = 50
+const CODE_FONT_SIZE = "0.875rem"
 
 interface MarkdownContentProps {
   content: string
@@ -50,7 +51,7 @@ function CodeBlock({ language, value }: { language: string; value: string }) {
               margin: 0,
               borderRadius: 0,
               background: 'var(--color-muted)',
-              fontSize: '0.8rem',
+              fontSize: CODE_FONT_SIZE,
               pointerEvents: 'none',
               userSelect: 'none',
             }}
@@ -123,7 +124,7 @@ function CodeBlock({ language, value }: { language: string; value: string }) {
         codeTagProps={{
           style: {
             background: 'transparent',
-            fontSize: '0.875rem',
+            fontSize: CODE_FONT_SIZE,
           }
         }}
       >
