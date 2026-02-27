@@ -2,6 +2,7 @@
 title: "How I made a Terminal Wave Animation in C++"
 date: "2026-01-01"
 description: "A few days ago I was messing around with terminal graphics and thought - what if I could make something that looks cool with just ASCII characters? So I ended up creating this wave animation thing that runs in your console..."
+related: ["the-right-way-to-learn-a-programming-language"]
 ---
 
 A few days ago I was messing around with terminal graphics and thought - what if I could make something that looks cool with just ASCII characters? So I ended up creating this wave animation thing that runs in your console.

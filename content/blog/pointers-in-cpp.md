@@ -2,6 +2,7 @@
 title: "Understanding Pointers in C++"
 date: "2025-12-27"
 description: "Pointers confused me for a good while, but once they clicked, a lot of things in C++ started making sense. So let me break them down for you..."
+related: ["the-right-way-to-learn-a-programming-language"]
 ---
 
 If you've been learning C++ for a while, you've probably heard about pointers. And if you're like me when I first started, you probably thought "what the hell is this" when you saw code with asterisks and ampersands everywhere.

@@ -2,6 +2,7 @@
 title: "Example Blog Post"
 date: "2024-12-20"
 description: "This is an example blog post for me to test functionalities of markdown rendering in my post."
+related: ["example-post"]
 ---
 
 # This is a heading
@@ -47,6 +48,9 @@ end
 
 has collapsible code blocks:
 ```cpp
+// algorithm.cpp
+// taken from my own cpp lib: https://github.com/pilot2254/mikelib
+
 #ifndef MIKE_ALGORITHM_HPP
 #define MIKE_ALGORITHM_HPP
 
