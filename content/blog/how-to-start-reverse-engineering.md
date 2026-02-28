@@ -107,7 +107,7 @@ A program compiled for x86-64 on Windows won't run on ARM. The machine code is c
 There's no way around this. You can use decompilers (tools that try to convert assembly back to C-like code), but they're not perfect. You'll need to read raw assembly eventually.
 
 Assembly looks frustrating at first:
-```asm
+```nasm
 push rbp
 mov rbp, rsp
 mov dword ptr [rbp - 4], 0
