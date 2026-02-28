@@ -34,6 +34,31 @@ PlayerController.DebugEnergy   - public bool
 
 The devs left debug flags in the shipping build. `DebugNoTumble` blocks the ragdoll system. `DebugEnergy` disables stamina drain. They literally did the work for me, I just had to find it and set it to true. Goofy ahh devs.
 
+## Finding fields and methods in dnSpyEx
+
+This is the part nobody explains well. When you find a field you want to use from your cheat, you need two things: the field name and whether it's public or private.
+
+Click any field or method in dnSpyEx and the status bar at the bottom shows you the token (like `0x04002377`). You don't actually use the token in code, it's just a unique ID. What matters is the access modifier in the decompiled code.
+
+If it's `public`, access it directly:
+```csharp
+pc.DebugNoTumble = true; // public, no reflection needed
+```
+
+If it's `private` or `internal`, you need reflection:
+```csharp
+// get the FieldInfo once at class level and cache it
+private static readonly FieldInfo _healthField = typeof(PlayerHealth)
+    .GetField("health", BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
+
+// then use it wherever
+_healthField?.SetValue(ph, 100);
+```
+
+`BindingFlags.NonPublic | BindingFlags.Public` covers both cases so you don't have to guess. The `?.` null check is there because if you typo the field name, `GetField` returns null instead of crashing immediately (easier to debug)
+
+For methods it's the same idea but with `GetMethod` and `Invoke`. Didn't need that here since almost everything I used was public.
+
 ## Project setup
 
 Create a Class Library project in Visual Studio, target .NET 4.8, and reference these from `REPO_Data/Managed/`:
