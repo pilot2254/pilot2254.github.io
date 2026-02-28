@@ -247,6 +247,16 @@ export const projects: Project[] = [
     link: "",
     github: "https://github.com/michal-flaska/cpp_projects",
   },
+  {
+    id: "pilot2254.github.io",
+    title: "pilot2254.github.io",
+    description: "My personal website where I put my blogs, projects, and other stuff. Currently maintained by Claude AI since I'm focusing on more important things than web development.",
+    year: 2025,
+    tags: ["React", "Next.js", "Shadcn/UI", ""],
+    images: [],
+    link: "https://pilot2254.github.io/",
+    github: "https://github.com/pilot2254/pilot2254.github.io",
+  },
 
   /* ------------------------------------------------------------------------------------------------------ */
   /* ------------------------------------------------ 2024 ------------------------------------------------ */
