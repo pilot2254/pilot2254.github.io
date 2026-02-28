@@ -204,6 +204,16 @@
     @apply bg-background text-foreground;
   }
 
+  html {
+    font-size: 15px;  /*
+                      default is 16px
+                      but i decided to change this because
+                      i got feedback from multiple people
+                      that they prefer to set the size
+                      of my website from 100% to 90%
+                      */
+  }
+
   /* Custom scrollbar */
   ::-webkit-scrollbar {
     width: 10px;
