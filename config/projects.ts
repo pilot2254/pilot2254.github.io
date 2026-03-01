@@ -50,7 +50,7 @@ export const projects: Project[] = [
     tags: ["Unreal Engine 5", "C++", "Blueprints", "Blender", "Reaper", "Substance Painter"],
     images: [],
     link: "",
-    github: "https://github.com/redfox-studios/SkyroProjekt2026",
+    github: "https://github.com/redfox-studios/Bomberman3D",
   },
   {
     id: "ue5_cpp_tutorial",
