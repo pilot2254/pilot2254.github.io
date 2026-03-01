@@ -131,7 +131,7 @@ In Cheat Engine, when you create a script, you can use either method. AOB is bet
 
 Example AOB script structure:
 
-```asm
+```nasm
 [ENABLE]
 
 aobscan(INJECT,89 46 44 48 8B 46 38) // should be unique

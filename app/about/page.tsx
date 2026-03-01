@@ -66,7 +66,7 @@ export default function AboutPage() {
 
           <p>
             Right now I'm studying game development at <a href="https://skyro.ai/" target="_blank" className="underline hover:text-muted-foreground transition-colors">skyro.ai</a> and
-            building <a href="https://github.com/redfox-studios/SkyroProjekt2026/" target="_blank" className="underline hover:text-muted-foreground transition-colors">Bomberman3D</a>, my first real Unreal Engine 5 game written in actual C++, not just Blueprints.
+            building <a href="https://github.com/redfox-studios/Bomberman3D" target="_blank" className="underline hover:text-muted-foreground transition-colors">Bomberman3D</a>, my first real Unreal Engine 5 game written in actual C++, not just Blueprints.
             It's a school project but I'm treating it like a real game.
           </p>
 
