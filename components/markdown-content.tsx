@@ -210,41 +210,23 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
 
             if (match) {
               const type = calloutTypes[match[1]]
-
-              // Strip the [!TYPE] line from the children tree
-              const childArray = Array.isArray(children) ? children : [children]
-              const stripped = childArray
-                .map((child) => {
-                  if (!React.isValidElement(child)) return child
-                  const el = child as React.ReactElement<{ children: React.ReactNode }>
-                  const subChildren = Array.isArray(el.props.children)
-                    ? el.props.children
-                    : [el.props.children]
-
-                  // Filter out the text node that is just the [!TYPE] tag
-                  const filtered = subChildren.filter((c: React.ReactNode) => {
-                    if (typeof c === "string" && c.trim().match(/^\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]$/)) return false
-                    return true
-                  })
-
-                  if (filtered.length === 0) return null
-                  return React.cloneElement(el, { ...el.props, children: filtered })
-                })
-                .filter(Boolean)
+              // Get text after the [!TYPE] line
+              const bodyText = fullText.split("\n").slice(1).join("\n").trim()
 
               return (
                 <div className={`border-l-4 rounded-r-md px-4 py-3 my-4 ${type.className}`}>
                   <p className="text-sm font-semibold mb-2">{type.label}</p>
-                  <div className="text-sm [&_strong]:font-semibold [&_a]:underline [&_p]:mb-0">{stripped}</div>
+                  <div className="text-sm [&_strong]:font-semibold [&_a]:underline [&_p]:mb-0">
+                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                      {bodyText}
+                    </ReactMarkdown>
+                  </div>
                 </div>
               )
             }
 
             return (
-              <blockquote
-                className="border-l-3 border-muted pl-4 italic text-muted-foreground [&_*]:text-muted-foreground my-4"
-                {...props}
-              >
+              <blockquote className="border-l-3 border-muted pl-4 italic text-muted-foreground [&_*]:text-muted-foreground my-4" {...props}>
                 {children}
               </blockquote>
             )
