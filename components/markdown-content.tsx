@@ -184,7 +184,50 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
           ),
           th: ({ ...props }) => <th className="border border-border bg-muted px-4 py-2 text-left font-medium text-foreground" {...props} />,
           td: ({ ...props }) => <td className="border border-border px-4 py-2 text-foreground" {...props} />,
-          blockquote: ({ ...props }) => <blockquote className="border-l-3 border-muted pl-4 italic text-muted-foreground [&_*]:text-muted-foreground my-4" {...props} />,
+          blockquote: ({ children, ...props }) => {
+            const calloutTypes: Record<string, { label: string; className: string }> = {
+              NOTE:      { label: "Note",      className: "border-blue-500/50 bg-blue-500/5 text-blue-400" },
+              TIP:       { label: "Tip",       className: "border-green-500/50 bg-green-500/5 text-green-400" },
+              IMPORTANT: { label: "Important", className: "border-purple-500/50 bg-purple-500/5 text-purple-400" },
+              WARNING:   { label: "Warning",   className: "border-yellow-500/50 bg-yellow-500/5 text-yellow-400" },
+              CAUTION:   { label: "Caution",   className: "border-red-500/50 bg-red-500/5 text-red-400" },
+            }
+
+            function extractText(node: React.ReactNode): string {
+              if (typeof node === "string") return node
+              if (Array.isArray(node)) return node.map(extractText).join("")
+              if (node && typeof node === "object" && "props" in (node as React.ReactElement)) {
+                return extractText((node as React.ReactElement).props.children)
+              }
+              return ""
+            }
+
+            const fullText = extractText(children).trim()
+            const lines = fullText.split("\n").map((l) => l.trim()).filter(Boolean)
+            const firstLine = lines[0] ?? ""
+            const match = firstLine.match(/^\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]$/)
+
+            if (match) {
+              const type = calloutTypes[match[1]]
+              const content = lines.slice(1).join(" ")
+
+              return (
+                <div className={`border-l-4 rounded-r-md px-4 py-3 my-4 ${type.className}`}>
+                  <p className="text-sm font-semibold mb-2">{type.label}</p>
+                  <p className="text-sm">{content}</p>
+                </div>
+              )
+            }
+
+            return (
+              <blockquote
+                className="border-l-3 border-muted pl-4 italic text-muted-foreground [&_*]:text-muted-foreground my-4"
+                {...props}
+              >
+                {children}
+              </blockquote>
+            )
+          },
           // img: ({ ...props }) => <img className="rounded-lg my-4 max-w-full" {...props} alt={props.alt || ""} />,
           img: ({ src, alt }) => (
             <ImageModal src={String(src || "")} alt={String(alt || "")} />
