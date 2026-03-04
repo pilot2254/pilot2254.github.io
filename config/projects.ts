@@ -23,6 +23,16 @@ export const projects: Project[] = [
   /* ------------------------------------------------------------------------------------------------------ */
 
   {
+    id: "digging-hax",
+    title: "digging-hax",
+    description: "dll cheat for A Game About Digging A Hole. Has a lot of features including RBG PP, Flyhack, Noclip, Speedhack, inf money, inf items, godmode, and much more.",
+    year: 2026,
+    tags: ["C++", "Dumper7"],
+    images: [],
+    link: "",
+    github: "https://github.com/michal-flaska/digging-hax",
+  },
+  {
     id: "cpp_web",
     title: "C++ Web",
     description: "Website built with a language meant to control nuclear plants btw. Now also has an API. Planning to add libsodium in the future just for fun xd",
