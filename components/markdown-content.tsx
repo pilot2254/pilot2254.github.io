@@ -1,5 +1,6 @@
 "use client"
 
+import React from "react" // for React.isValidElement and React.cloneElement
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 import remarkMath from "remark-math"
@@ -202,19 +203,39 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
               return ""
             }
 
+            // Check first line for callout tag
             const fullText = extractText(children).trim()
-            const lines = fullText.split("\n").map((l) => l.trim()).filter(Boolean)
-            const firstLine = lines[0] ?? ""
+            const firstLine = fullText.split("\n")[0].trim()
             const match = firstLine.match(/^\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]$/)
 
             if (match) {
               const type = calloutTypes[match[1]]
-              const content = lines.slice(1).join(" ")
+
+              // Strip the [!TYPE] line from the children tree
+              const childArray = Array.isArray(children) ? children : [children]
+              const stripped = childArray
+                .map((child) => {
+                  if (!React.isValidElement(child)) return child
+                  const el = child as React.ReactElement<{ children: React.ReactNode }>
+                  const subChildren = Array.isArray(el.props.children)
+                    ? el.props.children
+                    : [el.props.children]
+
+                  // Filter out the text node that is just the [!TYPE] tag
+                  const filtered = subChildren.filter((c: React.ReactNode) => {
+                    if (typeof c === "string" && c.trim().match(/^\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]$/)) return false
+                    return true
+                  })
+
+                  if (filtered.length === 0) return null
+                  return React.cloneElement(el, { ...el.props, children: filtered })
+                })
+                .filter(Boolean)
 
               return (
                 <div className={`border-l-4 rounded-r-md px-4 py-3 my-4 ${type.className}`}>
                   <p className="text-sm font-semibold mb-2">{type.label}</p>
-                  <p className="text-sm">{content}</p>
+                  <div className="text-sm [&_strong]:font-semibold [&_a]:underline">{stripped}</div>
                 </div>
               )
             }
