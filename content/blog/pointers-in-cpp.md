@@ -90,7 +90,8 @@ Modern C++ (C++11 and later) introduced `nullptr`, which is explicitly a null po
 int* ptr = nullptr;
 ```
 
-Always use `nullptr` in modern C++. It's type-safe and makes your intentions clear. If you want to dive deeper into why `nullptr` exists, [this article explains it well](https://www.learncpp.com/cpp-tutorial/null-pointers/).
+> [!IMPORTANT]
+> Always use `nullptr` in modern C++. It's type-safe and makes your intentions clear. If you want to dive deeper into why `nullptr` exists, [this article explains it well](https://www.learncpp.com/cpp-tutorial/null-pointers/).
 
 ## Pointer Arithmetic
 

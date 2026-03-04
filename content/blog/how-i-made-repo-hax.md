@@ -215,9 +215,10 @@ Nothing worked. Still drifts left at distance. I even left a debug label in show
 
 ![nga esp not working](/images/blog/how-i-made-repo-hax/esp-bug.png)
 
-Gave up on it. ESP in a friend lobby cheat is kinda useless anyway.
-
-If you know what's wrong, let me know on discord, or just create a PR/issue on github.
+> [!NOTE]
+> Gave up on it. ESP in a friend lobby cheat is kinda useless anyway.
+> 
+> If you know what's wrong, let me know on discord, or just create a PR/issue on github.
 
 ## Building and injecting
 

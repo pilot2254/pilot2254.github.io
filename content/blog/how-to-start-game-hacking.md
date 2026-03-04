@@ -2,7 +2,7 @@
 title: "How to start Game Hacking"
 date: "2026-01-06" # yy mm dd
 description: "Continuation of my older post about reverse engineering"
-related: ["how-to-start-reverse-engineering", "reverse-engineering-tools-i-use", "the-right-way-to-learn-a-programming-language", "pointers-in-cpp", "stop-using-ai-to-do-your-work"]
+related: ["how-to-start-reverse-engineering", "reverse-engineering-tools-i-use", "the-right-way-to-learn-a-programming-language", "pointers-in-cpp"]
 ---
 
 This is a continuation of my [reverse engineering guide](/blog/how-to-start-reverse-engineering). If you haven't read that yet, go read it first, so you will be able to understand more in this blog.
@@ -35,9 +35,11 @@ If any of that sounds confusing, [go read the RE guide first](/blog/how-to-start
 
 ## Legal Disclaimer
 
-I recommend practicing on single-player games or games you own. Most online games have Terms of Service that ban cheating, and I'm not responsible if you get banned or face legal consequences.
+> [!IMPORTANT]
+> I recommend practicing on single-player games or games you own. Most online games have Terms of Service that ban cheating, and I'm not responsible if you get banned or face legal consequences.
 
-This guide is for educational purposes. Learn the skills, understand how games work, but don't be a dickhead in ranked matches.
+> [!WARNING]
+> Also, this guide is for educational purposes. Learn the skills, understand how games work, but don't be a dickhead in ranked matches.
 
 Now that's out of the way, let's get started.
 
@@ -402,9 +404,3 @@ Don't expect to hack AAA games with anti-cheat in your first month. Start small.
 And most importantly: actually play around with this stuff. Don't just read tutorials and think you understand. You learn by doing.
 
 Good luck. And if you hack something cool, let me know.
-
----
-
-**Related posts:**
-- [How to start reverse engineering](/blog/how-to-start-reverse-engineering)
-- [Tools I use for reverse engineering](/blog/reverse-engineering-tools-i-use)

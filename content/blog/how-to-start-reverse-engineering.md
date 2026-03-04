@@ -2,7 +2,7 @@
 title: "How to start Reverse Engineering"
 date: "2026-01-05" # yy mm dd
 description: "If you're the type of person who sees a locked door and immediately wants to know what's behind it, or you've ever wondered 'how the hell does this program actually work under the hood,' then this might be for you."
-related: ["reverse-engineering-tools-i-use", "how-to-start-game-hacking", "the-right-way-to-learn-a-programming-language", "pointers-in-cpp", "stop-using-ai-to-do-your-work"]
+related: ["reverse-engineering-tools-i-use", "how-to-start-game-hacking", "the-right-way-to-learn-a-programming-language", "pointers-in-cpp"]
 ---
 
 Reverse engineering is hard as fuck. But if you're the type of person who sees a locked door and immediately wants to know what's behind it, or you've ever wondered "how the hell does this program actually work under the hood," then this might be for you.
@@ -19,7 +19,8 @@ If you don't have any programming experience, please stop reading and go learn t
 - How programs are structured
 - Basic debugging
 
-**You should know C or C++.** Not Python. Not JavaScript. Not Java. Here's why:
+> [!IMPORTANT]
+> **You should know C or C++.** Not Python. Not JavaScript. Not Java. Here's why:
 
 Python and JavaScript are high-level interpreted languages. They hide everything interesting from you. When you write `x = 5`, you don't allocate memory, you don't manage types, the language does it for you. That's great for productivity, terrible for understanding what's actually happening.
 
@@ -264,9 +265,3 @@ But when you finally crack a challenge, when you understand what the program is 
 If you want to give it a try, go download a Level 1 crackme right now. Don't overthink it. Just load it in Cutter and start goofing around. You won't understand everything immediately. That's fine. You learn by struggling.
 
 Good luck. And if you solve some interesting crackmes, let me know. I'm always looking for recommendations :D
-
----
-
-**Related posts:**
-- [Tools I use for reverse engineering](/blog/reverse-engineering-tools-i-use)
-- [How to start Game Hacking](/blog/how-to-start-game-hacking)
