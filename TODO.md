@@ -23,13 +23,13 @@
 
 ## Features Worth Adding
 
-- [ ] Simple client-side search (Fuse.js or just basic filter)
+- [x] Simple client-side search (Fuse.js or just basic filter)
 - [x] Related posts section at bottom of blog posts (2-3 posts based on tags/date)
-- [ ] GitHub-style callouts/alerts for blog posts (`> [!NOTE]` syntax)
+- [x] GitHub-style callouts/alerts for blog posts (`> [!NOTE]` syntax)
 
 ## Content Improvements
 
-- [ ] Rewrite About page - add what i'm currently building, why people should care, best projects
+- [x] Rewrite About page - add what i'm currently building, why people should care, best projects
 - [ ] Write "How I reverse engineered [specific game]" post with code/screenshots
 - [ ] Write "My first Unity vs Unreal project comparison" post
 - [ ] Write "Breaking down a simple crackme step-by-step" post (the video I mentioned)
@@ -40,7 +40,7 @@
 - [x] LaTeX math support
 
 ## Uncategorized
-- [ ] The Navigation active state logic is a bit off — `/` (Blog) is never highlighted as active because the check is pathname === link.href && link.href !== "/", so the blog link never shows active
+- [x] The Navigation active state logic is a bit off — `/` (Blog) is never highlighted as active because the check is pathname === link.href && link.href !== "/", so the blog link never shows active
 - [ ] No `<meta name="author">` tag anywhere
 - [ ] The about page uses `MessageCircleMore` for both Discord and Reddit which is wrong, Reddit has no good lucide icon but it's still odd
 
