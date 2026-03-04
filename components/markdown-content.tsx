@@ -1,6 +1,6 @@
 "use client"
 
-import React from "react" // for React.isValidElement and React.cloneElement
+import React from "react"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 import remarkMath from "remark-math"
@@ -30,11 +30,13 @@ function preprocessCallouts(content: string): string {
 
       if (!match) return block
 
+      const body = lines
         .slice(1)
         .map((l) => l.replace(/^> ?/, ""))
         .join("\n")
 
       return `<callout type="${match[1]}">\n\n${body}\n\n</callout>\n`
+    }
   )
 }
 
@@ -42,7 +44,6 @@ function CodeBlock({ language, value }: { language: string; value: string }) {
   const [copied, setCopied] = useState(false)
   const { openPanel } = useCodePanel()
 
-  const lineCount = value.split('\n').length
   const lineCount = value.split("\n").length
   const isLong = lineCount > PANEL_LINE_THRESHOLD
 
@@ -56,6 +57,7 @@ function CodeBlock({ language, value }: { language: string; value: string }) {
     return (
       <div className="rounded-lg border border-border bg-muted my-4 overflow-hidden">
         <div className="flex items-center justify-between px-4 py-2 border-b border-border">
+          <span className="text-xs text-muted-foreground font-mono">{language || "text"}</span>
           <span className="text-xs text-muted-foreground">{lineCount} lines</span>
         </div>
 
@@ -69,7 +71,7 @@ function CodeBlock({ language, value }: { language: string; value: string }) {
               borderRadius: 0,
               background: "var(--color-muted)",
               fontSize: CODE_FONT_SIZE,
-              userSelect: 'none',
+              pointerEvents: "none",
               userSelect: "none",
             }}
             codeTagProps={{ style: { background: "transparent" } }}
