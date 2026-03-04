@@ -235,7 +235,7 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
               return (
                 <div className={`border-l-4 rounded-r-md px-4 py-3 my-4 ${type.className}`}>
                   <p className="text-sm font-semibold mb-2">{type.label}</p>
-                  <div className="text-sm [&_strong]:font-semibold [&_a]:underline">{stripped}</div>
+                  <div className="text-sm [&_strong]:font-semibold [&_a]:underline [&_p]:mb-0">{stripped}</div>
                 </div>
               )
             }
