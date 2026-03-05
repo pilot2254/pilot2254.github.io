@@ -115,7 +115,7 @@ function CodeBlock({ language, filename, value }: { language: string; filename: 
   }
 
   return (
-    <div className="relative group">
+    <div className="relative group my-4">
       <div className="flex items-center justify-between bg-muted border border-border rounded-t-lg px-4 py-2">
         <div className="flex items-center gap-1">
           {filename && (
@@ -218,11 +218,11 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
             const forceInline = !className && value.length < 50 && !value.includes("\n")
 
             return !inline && !forceInline ? (
-              <div className="my-4 font-light">
+              <>
                 <CodeBlock language={language} filename={filename} value={value} />
-              </div>
+              </>
             ) : (
-              <code className="bg-muted rounded px-1.5 py-0.5 font-mono text-sm text-foreground font-light" {...props}>
+              <code className="bg-muted rounded px-1.5 font-mono text-sm text-foreground font-light" {...props}>
                 {children}
               </code>
             )
