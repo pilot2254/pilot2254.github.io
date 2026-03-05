@@ -219,7 +219,7 @@ Nothing worked. Still drifts left at distance. I even left a debug label in show
 > [!NOTE]
 > Gave up on it. ESP in a friend lobby cheat is kinda useless anyway.
 > 
-> If you know what's wrong, let me know on discord, or just create a PR/issue on github.
+> As of March 5th, the ESP is fully working and repo hax comes with a lot of new features. Make sure you go and [check it out](https://github.com/michal-flaska/repo-hax)!
 
 ## Building and injecting
 
