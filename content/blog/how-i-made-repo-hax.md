@@ -19,7 +19,8 @@ For those uneducated people, it's a co-op horror game where you collect valuable
 - [SharpMonoInjector](https://github.com/warbler/SharpMonoInjector) - to inject the compiled DLL into the running game
 - Visual Studio - to write and build the cheat (how unexpected)
 
-If you don't know the difference between Mono and IL2CPP Unity builds, go read my [game hacking guide](/blog/how-to-start-game-hacking) first, or some Unity docs.
+> [!TIP]
+> If you don't know the difference between Mono and IL2CPP Unity builds, go read my [game hacking guide](/blog/how-to-start-game-hacking) first, or some Unity docs.
 
 ## Reading the game code
 
