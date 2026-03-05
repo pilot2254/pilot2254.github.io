@@ -15,7 +15,7 @@ The concept is simple: use sine waves to generate values, then map those values 
 
 Here's what I came up with:
 
-```cpp
+```cpp:main.cpp
 #include <iostream>
 #include <cmath>
 #include <thread>

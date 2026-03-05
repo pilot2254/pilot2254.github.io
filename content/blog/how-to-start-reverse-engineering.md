@@ -203,7 +203,7 @@ I cover my full game hacking setup in [my tools post](/blog/reverse-engineering-
 ## Practice: Reverse your own code
 
 This is underrated advice. Write a simple C++ program:
-```cpp
+```cpp:main.cpp
 #include <iostream>
 #include <string>
 

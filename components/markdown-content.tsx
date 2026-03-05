@@ -57,12 +57,12 @@ function CodeBlock({ language, filename, value }: { language: string; filename: 
     return (
       <div className="rounded-lg border border-border bg-muted my-4 overflow-hidden">
         <div className="flex items-center justify-between px-4 py-2 border-b border-border">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1">
             {filename && (
               <span className="text-xs text-muted-foreground font-mono">{filename}</span>
             )}
             {filename && (
-              <span className="text-xs text-muted-foreground">·</span>
+              <span className="text-xs text-muted-foreground">-</span>
             )}
             <span className="text-xs text-muted-foreground font-mono">{language || "text"}</span>
           </div>
