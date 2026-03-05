@@ -251,6 +251,12 @@ namespace mikelib
 #endif
 ```
 
+also supports fine names in codeblocks:
+
+```cpp:main.cpp
+int main() { ... }
+```
+
 ## Inline code
 
 Here's some inline code `printf("Hello World!");`

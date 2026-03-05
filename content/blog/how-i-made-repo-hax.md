@@ -245,7 +245,7 @@ The tradeoff is it's more detectable and only works on Mono builds, but for mess
 
 This is what the source code looked like while I was writing this blog. It will probably be updated on github soon, so don't take this as the final version:
 
-```cpp
+```csharp:Class1.cs
 using System;
 using System.Reflection;
 using UnityEngine;

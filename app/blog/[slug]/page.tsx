@@ -5,6 +5,8 @@ import { MarkdownContent } from "@/components/markdown-content"
 import { siteConfig } from "@/config/site"
 import type { Metadata } from "next"
 import { ScrollToTop } from "@/components/scroll-to-top"
+import { ReadingProgress } from "@/components/reading-progress"
+import { CopyLink } from "@/components/copy-link"
 
 export async function generateStaticParams() {
   const listedPosts = await getAllPosts()
@@ -65,6 +67,7 @@ export default async function BlogPost({
 
   return (
     <>
+      <ReadingProgress />
       <article>
         <Link
           href="/"
@@ -79,6 +82,8 @@ export default async function BlogPost({
             <time>{post.date}</time>
             <span>•</span>
             <span>{post.readTime}</span>
+            <span>•</span>
+            <CopyLink />
           </div>
         </header>
 

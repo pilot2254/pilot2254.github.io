@@ -169,7 +169,7 @@ Or better yet, use smart pointers (`std::unique_ptr`, `std::shared_ptr`) which h
 
 Here's a simple program that shows pointers in action:
 
-```cpp
+```cpp:main.cpp
 #include <iostream>
 
 int main() {

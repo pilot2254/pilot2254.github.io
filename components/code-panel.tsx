@@ -1,19 +1,19 @@
 "use client"
 
 import { useCodePanel, MIN_PANEL_WIDTH, MAX_PANEL_WIDTH } from "./code-panel-context"
+import { useIsMobile } from "@/hooks/use-is-mobile"
 import { X, Copy, Check } from "lucide-react"
-import { useState, useRef, useEffect } from "react"
+import { useState, useRef } from "react"
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism"
 
-// Shared font size for all code blocks
 const CODE_FONT_SIZE = "0.875rem"
 
 export function CodePanel() {
   const { panel, panelWidth, setPanelWidth, closePanel } = useCodePanel()
   const [copied, setCopied] = useState(false)
   const panelRef = useRef<HTMLDivElement>(null)
-  const isMobile = typeof window !== "undefined" && window.innerWidth < 768
+  const isMobile = useIsMobile()
 
   const handleCopy = async () => {
     await navigator.clipboard.writeText(panel.code)
@@ -21,8 +21,6 @@ export function CodePanel() {
     setTimeout(() => setCopied(false), 2000)
   }
 
-  // Drag resize — manipulate DOM directly during drag, commit to state on mouseup
-  // This avoids React re-renders on every mousemove which caused the lag
   const onDragStart = (e: React.MouseEvent) => {
     e.preventDefault()
     const startX = e.clientX
@@ -34,7 +32,6 @@ export function CodePanel() {
     const onMouseMove = (e: MouseEvent) => {
       const delta = startX - e.clientX
       const newWidth = Math.min(MAX_PANEL_WIDTH, Math.max(MIN_PANEL_WIDTH, startWidth + delta))
-      // Directly mutate DOM — no React state, no re-render
       if (panelRef.current) {
         panelRef.current.style.width = `${newWidth}px`
       }
@@ -43,7 +40,6 @@ export function CodePanel() {
     const onMouseUp = (e: MouseEvent) => {
       document.body.style.userSelect = ""
       document.body.style.cursor = ""
-      // Commit final width to state once
       const delta = startX - e.clientX
       const finalWidth = Math.min(MAX_PANEL_WIDTH, Math.max(MIN_PANEL_WIDTH, startWidth + delta))
       setPanelWidth(finalWidth)
@@ -61,7 +57,6 @@ export function CodePanel() {
   if (isMobile) {
     return (
       <div className="fixed inset-0 z-50 flex flex-col bg-card">
-        {/* Header */}
         <div className="flex items-center justify-between px-4 py-3 border-b border-border bg-muted shrink-0">
           <span className="text-xs font-mono text-muted-foreground">{panel.language || "text"}</span>
           <div className="flex items-center gap-2">
@@ -74,7 +69,6 @@ export function CodePanel() {
           </div>
         </div>
 
-        {/* Code */}
         <div className="flex-1 overflow-auto">
           <SyntaxHighlighter
             language={panel.language || "text"}
@@ -97,7 +91,6 @@ export function CodePanel() {
       className="fixed top-0 right-0 h-screen bg-card border-l border-border flex flex-col z-40 shadow-2xl"
       style={{ width: panelWidth }}
     >
-      {/* Drag handle */}
       <div
         onMouseDown={onDragStart}
         className="absolute left-0 top-0 h-full w-1 cursor-col-resize hover:bg-border transition-colors group z-10"
@@ -110,9 +103,8 @@ export function CodePanel() {
         </div>
       </div>
 
-      {/* Header */}
       <div className="flex items-center justify-between px-4 py-3 border-b border-border bg-muted shrink-0">
-        <span className="text-xs font-mono text-muted-foreground">{panel.language || "text"}</span>
+        <span className="text-xs font-mono text-muted-foreground">{panel.title || panel.language || "text"}</span>
         <div className="flex items-center gap-2">
           <button onClick={handleCopy} className="text-muted-foreground hover:text-foreground transition-colors p-1" aria-label="Copy code">
             {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
@@ -123,7 +115,6 @@ export function CodePanel() {
         </div>
       </div>
 
-      {/* Code */}
       <div className="flex-1 overflow-auto">
         <SyntaxHighlighter
           language={panel.language || "text"}

@@ -3,6 +3,7 @@
 import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 import { useState, useEffect } from "react"
+import { siteConfig } from "@/config/site"
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme()
@@ -16,9 +17,19 @@ export function ThemeToggle() {
     return <div className="w-5 h-5" />
   }
 
+  const toggle = () => {
+    if (siteConfig.features.themeTransition) {
+      document.documentElement.setAttribute("data-theme-transitioning", "true")
+      setTimeout(() => {
+        document.documentElement.removeAttribute("data-theme-transitioning")
+      }, 300)
+    }
+    setTheme(theme === "dark" ? "light" : "dark")
+  }
+
   return (
     <button
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      onClick={toggle}
       className="text-muted-foreground hover:text-foreground transition-colors"
       aria-label="Toggle theme"
     >

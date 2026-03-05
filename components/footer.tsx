@@ -12,12 +12,12 @@ export function Footer() {
             rel="noopener noreferrer"
             className="hover:text-foreground transition-colors"
           >
-            (@{siteConfig.author.twitter.replace('@', '')})
+            (@{siteConfig.author.twitter})
           </a>
         </div>
 
         <a
-          href={siteConfig.social.github}
+          href={siteConfig.social.githubRepo}
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-foreground transition-colors"
