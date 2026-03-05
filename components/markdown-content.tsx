@@ -40,7 +40,7 @@ function preprocessCallouts(content: string): string {
   )
 }
 
-function CodeBlock({ language, value }: { language: string; value: string }) {
+function CodeBlock({ language, filename, value }: { language: string; filename: string; value: string }) {
   const [copied, setCopied] = useState(false)
   const { openPanel } = useCodePanel()
 
@@ -57,7 +57,15 @@ function CodeBlock({ language, value }: { language: string; value: string }) {
     return (
       <div className="rounded-lg border border-border bg-muted my-4 overflow-hidden">
         <div className="flex items-center justify-between px-4 py-2 border-b border-border">
-          <span className="text-xs text-muted-foreground font-mono">{language || "text"}</span>
+          <div className="flex items-center gap-2">
+            {filename && (
+              <span className="text-xs text-muted-foreground font-mono">{filename}</span>
+            )}
+            {filename && (
+              <span className="text-xs text-muted-foreground">·</span>
+            )}
+            <span className="text-xs text-muted-foreground font-mono">{language || "text"}</span>
+          </div>
           <span className="text-xs text-muted-foreground">{lineCount} lines</span>
         </div>
 
@@ -92,7 +100,7 @@ function CodeBlock({ language, value }: { language: string; value: string }) {
               {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
             </button>
             <button
-              onClick={() => openPanel(value, language)}
+              onClick={() => openPanel(value, language, filename)}
               className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors border border-border rounded px-2 py-1 hover:bg-accent"
               aria-label="Open in panel"
             >
@@ -108,7 +116,15 @@ function CodeBlock({ language, value }: { language: string; value: string }) {
   return (
     <div className="relative group">
       <div className="flex items-center justify-between bg-muted border border-border rounded-t-lg px-4 py-2">
-        <span className="text-xs text-muted-foreground font-mono">{language || "text"}</span>
+        <div className="flex items-center gap-2">
+          {filename && (
+            <span className="text-xs text-muted-foreground font-mono">{filename}</span>
+          )}
+          {filename && (
+            <span className="text-xs text-muted-foreground">·</span>
+          )}
+          <span className="text-xs text-muted-foreground font-mono">{language || "text"}</span>
+        </div>
         <button
           onClick={handleCopy}
           className="text-muted-foreground hover:text-foreground transition-colors"
@@ -194,14 +210,15 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
           ul: ({ ...props }) => <ul className="list-disc list-outside ml-6 text-foreground mb-4 space-y-2" {...props} />,
           ol: ({ ...props }) => <ol className="list-decimal list-outside ml-6 text-foreground mb-4 space-y-2" {...props} />,
           code: ({ inline, className, children, ...props }: { inline?: boolean; className?: string; children?: React.ReactNode } & React.HTMLAttributes<HTMLElement>) => {
-            const match = /language-(\w+)/.exec(className || "")
-            const language = match ? match[1] : ""
+            const match = /language-([^:]+)(?::(.+))?/.exec(className || "")
+            const language = match?.[1] ?? ""
+            const filename = match?.[2] ?? ""
             const value = String(children).replace(/\n$/, "")
             const forceInline = !className && value.length < 50 && !value.includes("\n")
 
             return !inline && !forceInline ? (
               <div className="my-4 font-light">
-                <CodeBlock language={language} value={value} />
+                <CodeBlock language={language} filename={filename} value={value} />
               </div>
             ) : (
               <code className="bg-muted rounded px-1.5 py-0.5 font-mono text-sm text-foreground font-light" {...props}>
