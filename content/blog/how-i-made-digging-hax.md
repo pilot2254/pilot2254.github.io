@@ -7,7 +7,9 @@ related: ["how-to-start-game-hacking", "how-to-start-reverse-engineering", "how-
 
 I've been learning Unreal Engine C++ for about a month now - school project, Bomberman3D, whole thing. At some point I thought making a cheat for a UE5 game would teach me more about how the engine actually works under the hood than following tutorials ever would.
 
-So I picked [A Game About Digging A Hole](https://store.steampowered.com/app/3244220/A_Game_About_Digging_A_Hole/). $5 indie game, no anti-cheat, UE 5.5.4. The grind to max everything is like 20 hours. I did it in an afternoon.
+So I picked [A Game About Digging A Hole](https://store.steampowered.com/app/3244220/A_Game_About_Digging_A_Hole/). $5 indie game, no anti-cheat, UE 5.5.4. The grind to max everything is like 20 hours. I did it in an afternoon. And this is how it looks:
+
+<iframe width="500" height="auto" src="https://www.youtube.com/embed/AkNAlE80ejc?si=P60giP_9SconRqLU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 This is different from my [REPO cheat post](/blog/how-i-made-repo-hax). That was Unity Mono - open dnSpy, read C#, done. UE5 is native code. No free source code handout. You actually have to work for it.
 
