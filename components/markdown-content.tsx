@@ -12,6 +12,7 @@ import { useState } from "react"
 import { Check, Copy, Maximize2 } from "lucide-react"
 import { ImageModal } from "./image-modal"
 import { useCodePanel } from "./code-panel-context"
+import { siteConfig } from "@/config/site"
 
 const PANEL_LINE_THRESHOLD = 50
 const CODE_FONT_SIZE = "0.875rem"
@@ -196,7 +197,7 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
           h3: ({ ...props }) => <h3 className="text-xl font-bold text-foreground mt-6 mb-3" {...props} />,
           p: ({ ...props }) => <p className="text-foreground leading-7 mb-4" {...props} />,
           a: ({ href, ...props }) => {
-            const isExternal = href?.startsWith("http") && !href.includes("pilot2254.github.io")
+            const isExternal = href?.startsWith("http") && !href.includes(siteConfig.url.replace("https://", ""))
             return (
               <a
                 className="text-foreground hover:text-muted-foreground underline transition-colors"

@@ -13,6 +13,19 @@ import { LayoutShell } from "@/components/layout-shell"
 export const metadata: Metadata = {
   title: siteConfig.name,
   description: siteConfig.description,
+  authors: [{ name: siteConfig.author.name }],
+  openGraph: {
+    title: siteConfig.name,
+    description: siteConfig.description,
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    site: `@${siteConfig.author.twitter}`,
+    creator: `@${siteConfig.author.twitter}`,
+  },
 }
 
 export default function RootLayout({

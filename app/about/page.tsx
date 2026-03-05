@@ -86,7 +86,7 @@ export default function AboutPage() {
 
         <div className="flex-shrink-0">
           <Image
-            src="https://avatars.githubusercontent.com/pilot2254"
+            src={siteConfig.avatar}
             alt={siteConfig.name}
             width={200}
             height={200}
