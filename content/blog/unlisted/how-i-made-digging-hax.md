@@ -31,6 +31,9 @@ Dumper-7 works by injecting into the running game and reading UE's reflection sy
 
 Now you have a folder full of generated C++ headers. Every class, every property, every function - all with correct offsets. No pattern scanning needed.
 
+> [!NOTE]
+> If you had had any problems with the dumping process, please check the [Dumper7 docs](https://github.com/Encryqed/Dumper-7/blob/main/README.md).
+
 ## Project Setup
 
 DLL project in Visual Studio. x64 Release, C++20. Drag the entire SDK folder into your project.
@@ -206,7 +209,8 @@ else if (flyWasActive && Movement)
 }
 ```
 
-Also `MOVE_Flying` in UE still has some residual buoyancy so you slowly drift upward even with `GravityScale = 0`. Didn't bother fixing it.
+> [!NOTE]
+> `MOVE_Flying` in UE still has some residual buoyancy so you slowly drift upward even with `GravityScale = 0`. Didn't bother fixing it.
 
 ## Rotation-Aware Movement
 
