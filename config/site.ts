@@ -11,7 +11,8 @@ export const siteConfig = {
     sticky: false,
   },
   features: {
-    readingProgressBar: true, // toggle reading progress bar on blog posts
+    readingProgressBar: true,   // thin progress bar at top of blog posts
+    themeTransition: false,     // smooth transition when toggling dark/light mode
   },
   social: {
     twitter: "https://twitter.com/pilot2254",                       // twitter, even tho i dont use it
