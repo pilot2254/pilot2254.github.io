@@ -45,10 +45,10 @@ export const projects: Project[] = [
   {
     id: "repo-hax",
     title: "repo-hax",
-    description: "Unity Mono injection cheat for R.E.P.O - made for fun, not maintained. Currently has speedhack, godmode, inf stamina, no ragdoll, no break, custom upgrades, esp, and much much more.",
+    description: "Unity Mono injection cheat for R.E.P.O - made for fun. Currently has speedhack, godmode, inf stamina, no ragdoll, no break, custom upgrades, esp, and much much more.",
     year: 2026,
     tags: ["C#", ".NET"],
-    images: [],
+    images: ["1.png", "2.png", "3.png"],
     link: "",
     github: "https://github.com/michal-flaska/repo-hax",
   },
