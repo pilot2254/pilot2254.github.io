@@ -25,5 +25,6 @@ export const siteConfig = {
     kofi: "https://ko-fi.com/pilot2254",                            // send me money plz
     btc: "bc1qr8x3k39mn7sz2l9kyk8j8293xf5spm2wsxymh9",              // send me money plz
     eth: "0x4281F208799E24531CBE21D4d263C08E7CB68d86",              // send me money plz
+    telegram: "https://t.me/michalflaska"                           // telegram because im a drug dealer. MUEHEHEHEEHEHE
   },
 }
