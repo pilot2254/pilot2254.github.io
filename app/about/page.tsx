@@ -5,7 +5,8 @@ import {
   DollarSign,
   Gamepad2,
   Coffee,
-  MessageCircleMore
+  MessageCircleMore,
+  Send
 } from "lucide-react"
 import type { Metadata } from "next"
 
@@ -32,9 +33,9 @@ export default function AboutPage() {
       icon: MessageCircleMore
     },
     {
-      name: "Reddit",
-      href: siteConfig.social.reddit,
-      icon: MessageCircleMore
+      name: "Telegram",
+      href: siteConfig.social.telegram,
+      icon: Send
     },
     {
       name: "Steam",
@@ -61,12 +62,11 @@ export default function AboutPage() {
         <div className="flex-1 space-y-4 text-foreground leading-relaxed">
           <p>
             I'm Mike. 17, based in Slovakia. I do game dev, reverse engineering, and low-level programming.
-            I used to do web development - made websites for clients, the whole thing. Stopped. Not going back.
           </p>
 
           <p>
             Right now I'm studying game development at <a href="https://skyro.ai/" target="_blank" className="underline hover:text-muted-foreground transition-colors">skyro.ai</a> and
-            building <a href="https://github.com/redfox-studios/Bomberman3D" target="_blank" className="underline hover:text-muted-foreground transition-colors">Bomberman3D</a>, my first real Unreal Engine 5 game written in actual C++, not just Blueprints.
+            building <a href="https://redfox-studios.com" target="_blank" className="underline hover:text-muted-foreground transition-colors">RedFox Studios</a> and <a href="https://github.com/redfox-studios/Bomberman3D" target="_blank" className="underline hover:text-muted-foreground transition-colors">Bomberman3D</a>, my first real Unreal Engine 5 game written in actual C++, not just Blueprints.
             It's a school project but I'm treating it like a real game.
           </p>
 
@@ -79,7 +79,7 @@ export default function AboutPage() {
 
           <p>
             I try not to be an NPC about how I learn. I don't follow trends, I don't outsource my thinking to AI,
-            and I actually try to solve problems before asking for help. Right now I'm a jack of all trades -
+            and I actually try to solve problems and learn before asking for help. Right now I'm a jack of all trades -
             C++, C#, reverse engineering, game dev, some assembly - not mastering any of it yet, but working on it.
           </p>
         </div>
