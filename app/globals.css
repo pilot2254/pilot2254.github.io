@@ -279,3 +279,11 @@
 .katex-display {
   font-weight: 300;
 }
+
+.token {
+  text-shadow: none !important;
+}
+
+code, pre {
+  font-weight: 400;
+}
