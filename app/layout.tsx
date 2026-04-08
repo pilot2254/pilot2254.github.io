@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { GeistSans } from "geist/font/sans"
 import { GeistMono } from "geist/font/mono"
+import { JetBrains_Mono } from "next/font/google"
 import "./globals.css"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
@@ -9,6 +10,11 @@ import { siteConfig } from "@/config/site"
 import { CodePanelProvider } from "@/components/code-panel-context"
 import { CodePanel } from "@/components/code-panel"
 import { LayoutShell } from "@/components/layout-shell"
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains-mono",
+})
 
 export const metadata: Metadata = {
   title: siteConfig.name,
@@ -34,7 +40,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${GeistSans.variable} ${GeistMono.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${GeistSans.variable} ${GeistMono.variable} ${jetbrainsMono.variable}`}>
       <body className="bg-background text-foreground font-sans">
         <ThemeProvider
           attribute="class"
