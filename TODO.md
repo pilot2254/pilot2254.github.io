@@ -40,7 +40,7 @@
 - [x] LaTeX math support
 
 ## Uncategorized
-- [x] The Navigation active state logic is a bit off — `/` (Blog) is never highlighted as active because the check is pathname === link.href && link.href !== "/", so the blog link never shows active
+- [x] The Navigation active state logic is a bit off - `/` (Blog) is never highlighted as active because the check is pathname === link.href && link.href !== "/", so the blog link never shows active
 - [ ] No `<meta name="author">` tag anywhere
 - [ ] The about page uses `MessageCircleMore` for both Discord and Reddit which is wrong, Reddit has no good lucide icon but it's still odd
 

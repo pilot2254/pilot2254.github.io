@@ -4,7 +4,7 @@ import {
   Twitter,
   DollarSign,
   Gamepad2,
-  Coffee,
+  Users,
   MessageCircleMore,
   Send
 } from "lucide-react"
@@ -48,9 +48,9 @@ export default function AboutPage() {
       icon: DollarSign
     },
     {
-      name: "Ko-fi",
-      href: siteConfig.social.kofi,
-      icon: Coffee
+      name: "Linkedin",
+      href: siteConfig.social.linkedin,
+      icon: Users
     },
   ]
 

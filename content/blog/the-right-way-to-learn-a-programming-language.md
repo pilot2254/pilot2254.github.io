@@ -16,7 +16,7 @@ Let me tell you the mistakes I see constantly - and the ones I made myself.
 
 Each language has its own way of doing things. Learn it properly.
 
-**Copy-pasting from AI or Stack Overflow without understanding it.** This one is deadly. I wrote a whole blog about [my AI addiction](/blog/stop-using-ai-to-do-your-work) (that's thankfully gone), so I'm not gonna repeat everything here. But let me be clear: if you're learning, you cannot copy-paste code you don't understand. You're not building a product right now, you're building your skills. Every time you paste code without understanding it, you're making yourself dumber.
+**Copy-pasting from AI or Stack Overflow without understanding it.** This one is deadly. But let me be clear: if you're learning, you cannot copy-paste code you don't understand. You're not building a product right now, you're building your skills. Every time you paste code without understanding it, you're making yourself dumber.
 
 **Being too ambitious too early.** When I started learning C++, I really wanted to build something big already. I thought small projects were useless. I ignored the basics. I wanted to jump straight to game engines, reverse engineering tools, complex systems.
 
