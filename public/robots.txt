@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://pilot2254.github.io/sitemap.xml
